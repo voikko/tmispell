@@ -1,0 +1,251 @@
+                             Tmispell version 0.2.3
+
+  Pauli Virtanen <pauli.virtanen@hut.fi>
+
+   --------------------------------------------------------------------------
+
+What Tmispell is?
+
+   Tmispell is an Ispell compatible front-end for spell checking modules. To
+   do the actual spell checking, for Finnish it uses the high-quality spell
+   checking module [1]Soikko, which is made by Pasi Ryhänen.
+
+   What makes Tmispell quite useful is that many programs (e.g. mail clients
+   and document processors) use Ispell for spell checking. Since Tmispell is
+   compatible with Ispell, these programs can use it without any changes
+   needed.
+
+   Additionally Tmispell can launch Ispell if there is no module for the
+   selected language. Thus it can be used as a drop-in replacement for
+   Ispell.
+
+Usage
+
+   Currently Tmispell has an interactive text-mode user interface that can be
+   used for spell checking text. It can be started by typing
+
+ tmispell -dsuomi file.txt
+
+   When a misspelled word is encountered, you will be asked what to do. The
+   usage of the interface should fairly obvious, but you can get help about
+   keys by pressing '?'.
+
+   If you would like to use the filters, put one of the options '-t', '-n'
+   and '-h' (TeX, nroff and Sgml, respectively) in front of the file name to
+   spell check. For more information about options, see the ispell(1) manual
+   page.
+
+Installation
+
+   These instructions tell how to build and install Tmispell from scratch.
+   There are also prebuilt packages, which you likely want to use instead of
+   doing installation the hard way.
+
+    1. Compile and install Tmispell:
+
+           ./configure
+           make
+           make install
+
+
+       The make install just copies the tmispell executable and manual page
+       to suitable places.
+
+    2. Download and install Soikko (see http://www.iki.fi/~pry/soikko/).
+
+    3. Create the configuration file and place it to the place where Tmispell
+       looks for it. There is also an example configuration file
+       tmispell.conf.example, which should be used as a template. (See "The
+       configuration file format" below.) Check that the path names in spell
+       checker entries point to correct places.
+
+    4. To make other programs use Tmispell instead of Ispell, first move
+       aside the original Ispell executable, and then create a link from
+       "tmispell" to "ispell". For example:
+
+             mv /usr/bin/ispell /usr/bin/ispell.real
+             ln -s /usr/local/bin/tmispell /usr/bin/ispell
+
+
+       Remember to change the "ispell=..." line in configuration file to
+       point to the real Ispell executable.
+
+       Other programs must also know that a Finnish spell checking is
+       possible, so run the following command to create fake dictionary
+       files:
+
+             touch /usr/lib/ispell/suomi.{hash,aff}
+
+
+       Note that the path might also be "/usr/share/ispell" or something
+       similar, depending on your system.
+
+    5. To check that Tmispell works properly, type the following command:
+
+             ispell -dsuomi -a
+
+
+       If you had specified a dictionary with identifier "suomi" in the
+       configuration file, then you should see a line similar to this:
+
+ @(#) International Ispell Version 3.1.20 compatible tmispell 0.1.1
+
+       Now you can type words to spell check. For more information about this
+       command mode, refer to the ispell(1) manual.
+
+Program-specific information
+
+     o Emacs (both Ispell and Flyspell modes)
+
+       Note that you might have to add something like the following to your
+       ~/.emacs configuration file, since Ispell support in Emacs does not
+       know about Finnish dictionary by default:
+
+ (setq ispell-local-dictionary-alist
+       (append ispell-local-dictionary-alist
+        '(("suomi"
+           "[%.0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
+           "[^.%0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
+           "[':]" nil nil nil iso-8859-1))))
+
+       Depending on your configuration, the ispell-local-dictionary-alist
+       could also be ispell-dictionary-alist. You can change the active
+       dictionary with the command "M-x ispell-change-dictionary". If you
+       like to have Finnish as the default dictionary, add also:
+
+ (setq ispell-dictionary "suomi")
+
+       If you still encounter problems (e.g. with TeX files), try turning the
+       multi byte character support of Emacs off.
+
+     o Pspell (Sylpheed, Balsa and many more)
+
+       Although Pspell is being replaced by Aspell, some programs still use
+       it. To use Tmispell with it, you need to have pspell-ispell module for
+       Pspell installed, and a file /usr/share/pspell/fi-ispell.pwli with the
+       following line in it:
+
+ /usr/lib/ispell/suomi.hash iso8859-15
+
+     o Other programs (most KDE applications, LyX, ...)
+
+       When the fake dictionary files (see Installation) exist, Finnish
+       should appear in the dictionary list in these programs.
+
+The configuration file format
+
+   The configuration file contains spell checker entries and options. "#" is
+   a comment character: everything on a line after it is ignored.
+
+   Syntax for options is simple:
+
+ key=value
+
+   Note that the value string, if enclosed between quotes, may span multiple
+   lines.
+
+   Currently the options are:
+
+   ispell
+
+           The location of the real Ispell executable to be called as a
+           fall-back. Note that the full path to the program should be given.
+           This option must always be specified.
+
+   tex-command-filter
+
+           A list of TeX commands and their parameter lists to use when
+           filtering TeX input. The syntax is "cmdname oOpP, ...", where
+           "oOpP" is a string of characters denoting the type of command's
+           parameters. Uppercase letter means that a parameter should be
+           spell checked, lowercase that it should not. 'O' and 'o' denote
+           optional parameters, 'P' and 'p' normal parameters.
+
+   tex-environment-filter
+
+           A list of environments to skip when filtering TeX input.
+
+   sgml-attributes-to-check
+
+           A list of SGML or HTML tag attributes to spell check.
+
+   A dictionary specification consists of 7 strings on the same line,
+   separated by whitespace and possibly enclosed in double or single quotes.
+   Backslashes can be used to quote characters inside the quotes. The
+   meanings of the strings are:
+
+    1. The name by which the dictionary is known, similar to the name of an
+       Ispell hash file name without the extension ".hash". This must be
+       specified.
+
+    2. The file name of the library file to load. This must be specified.
+
+    3. The file name of the dictionary file that the library uses. This must
+       be specified.
+
+    4. The input encoding this module uses. E.g. latin9. This must be
+       specified.
+
+    5. The value of the locale variable LC_CTYPE that should be used with
+       this module. This determines the default set of characters that are
+       considered to belong to a word. If empty or not given, the value of a
+       suitable environment variable is used.
+
+    6. The set of additional word characters not specified by the locale. If
+       not given, no additional word characters are assumed.
+
+    7. The set of word boundary characters. They are considered to be a part
+       of a word only when occurring inside one. If not given, no boundary
+       characters are assumed.
+
+   Example 1. A configuration file example
+
+ ispell=/usr/bin/ispell.real
+
+ suomi "/usr/local/OpenOffice.org1.0/program/libsoikko.so" "/usr/local/OpenOffice.org1.0/share/dict/soikko-sp.fi_FI.dic" "latin9" "fi_FI@euro" "." "-':"
+
+ tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
+ tex-environment-filter="equation $ eqnarray displaymath math"
+
+   The first line of the configuration file just specifies the location of
+   the fallback ispell program to use
+
+   The second line adds a module for Finnish, identified by the name "suomi",
+   which uses the given library file associated with a dictionary file. The
+   input encoding to use is iso-8859-15 aka "latin9". Only the letters
+   specified by the locale "fi_FI@euro" and period are considered as word
+   characters, and the boundary characters are "-", "'" and ":".
+
+   So every time when Tmispell is invoked with "-d suomi" or "-d
+   /usr/lib/ispell/suomi.hash" as arguments, the Soikko module is used for
+   spell checking. Otherwise the Ispell program is started instead.
+
+   The fifth line specifies that in TeX filter mode the parameters to
+   commands begin{}, end{} and usepackage{} should not be spell checked,
+   whereas the second optional and second obligatory parameters to newcommand
+   should.
+
+   The sixth line specifies that in TeX filter mode no math environment
+   should be spell checked.
+
+Known issues
+
+  Missing features
+
+     o Implement entity encoding and decoding in SGML filter. To do this
+       reasonably, some changes are likely required in filter architecture.
+
+     o Support for multibyte (UTF-8, UTF-16, etc.) encodings. Might go
+       together with encode decoding etc.
+
+  Other things to do
+
+     o Investigate how Aspell support could be implemented. Need for a
+       Soikko-patched Aspell?
+
+     o Think about Ispell extended characters (whatever they are).
+
+References
+
+   Visible links
+   1. http://www.iki.fi/~pry/soikko/

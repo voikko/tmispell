@@ -1,0 +1,1217 @@
+2006-05-27 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Adapted to use Voikko instead of Soikko
+
+2005-10-22 19:30 +0000 [r2879-2881]  pauli <pauli@localhost>
+
+	* doc/sgml/Makefile.am, doc/sgml/fi.po: Update.
+
+	* po/fi.po: To utf8
+
+	* debian/changelog, debian/rules: Bump.
+
+2005-03-28 15:25 +0000 [r2563]  pauli <pauli@localhost>
+
+	* doc/devel: Ignore html.
+
+2004-12-05 17:14 +0000 [r2419-2422]  pauli <pauli@localhost>
+
+	* tmispell.spec: Requires gettext
+
+	* enchant/soikko_provider.cc: Adapt to the new internal utf8
+
+	* enchant/Makefile.am: Fix build.
+
+	* src/tmispell.cc, src/spell.cc: Fix error handling...
+
+2004-11-20 19:30 +0000 [r2405-2408]  pauli <pauli@localhost>
+
+	* src/charset.cc, src/regexp.cc, src/config_file.hh, src/filter.hh,
+	  src/spell.cc, src/ui/cursesui.cc, src/charset.hh,
+	  src/config_file.cc, src/Makefile.am, src/filter.cc,
+	  src/ui/listui.cc, src/personal_dictionary.cc, src/ui/pipeui.cc:
+	  Throw errors.
+
+	* src/tmispell.cc: Throw errors.
+
+	* src/options.cc: Throw errors.
+
+	* src/tmerror.cc (added), src/tmerror.hh (added): Some error
+	  handling...
+
+2004-11-20 18:15 +0000 [r2403-2404]  pauli <pauli@localhost>
+
+	* autogen.sh: Generate ChangeLog, add src/glibmm/m4 to aclocal and
+	  use libtool.
+
+	* doc/devel/Doxyfile: Add .cpp and .h to file list.
+
+2004-11-20 17:38 +0000 [r2393-2402]  pauli <pauli@localhost>
+
+	* Makefile.am: Add enchant.
+
+	* configure.ac: Add utf8, debug and enchant.
+
+	* enchant/Makefile.am (added), enchant/soikko_provider.cc (added):
+	  Add enchant.
+
+	* enchant (added): Add.
+
+	* src/glibmm/convert.h (added), src/glibmm/buildconvert.sh (added),
+	  src/glibmm/private (added), src/glibmm/unicode.cc (added),
+	  src/glibmm/m4/cxx_std.m4 (added), src/glibmm/unicode.h (added),
+	  src/glibmm/error.cc (added), src/glibmm/error.h (added),
+	  src/glibmm/ustring.cc (added), src/glibmm/m4 (added),
+	  src/glibmm/ustring.h (added), src/glibmm/exception.cc (added),
+	  src/glibmm/glibmmconfig.h (added), src/glibmm/exception.h
+	  (added), src/glibmm/utility.cc (added), src/glibmm/utility.h
+	  (added), src/glibmm/README (added),
+	  src/glibmm/private/convert_p.h (added), src/glibmm (added),
+	  src/glibmm/m4/cxx.m4 (added), src/glibmm/m4/sun.m4 (added),
+	  src/glibmm/convert.cc (added), src/glibmm/private/unicode_p.h
+	  (added): Imported glibmm UTF-8 utilities.
+
+	* src/spell.hh, src/tmispell.cc, src/options.cc,
+	  src/config_file.hh, src/filter.hh, src/spell.cc, src/common.hh,
+	  src/personal_dictionary.hh, src/tmispell.hh, src/config_file.cc,
+	  src/Makefile.am, src/options.hh, src/common.cc,
+	  src/personal_dictionary.cc: UTF8ize
+
+	* src/ui/cursesui_pimpl.hh, src/ui/cursesui.cc, src/ui/pipeui.hh,
+	  src/ui/listui.cc, src/ui/pipeui.cc: UTF8ize
+
+	* src/regexp.cc, src/regexp.hh: UTF8ize
+
+	* src/charset.cc (added), src/charset.hh (added): Charset
+	  conversion.
+
+	* src/filter.cc: UTF-8ize
+
+2004-04-18 13:09 +0000 [r2192]  pauli <pauli@localhost>
+
+	* src/options.hh: Fix comments: all the filters are implemented.
+
+2003-06-04 19:43 +0000 [r2191]  pauli <pauli@localhost>
+
+	* src/options.cc: Guess file filters automatically by file
+	  extension. Removed unnecessary headers. Removed misleading usage
+	  text.
+
+2003-06-03 19:28 +0000 [r2190]  pauli <pauli@localhost>
+
+	* src/filter.cc, src/ui/pipeui.cc: equal -> std::equal
+
+2003-05-21 15:37 +0000 [r2189]  pauli <pauli@localhost>
+
+	* tmispell.spec: Include tmispell.mo in package.
+
+2003-05-19 15:34 +0000 [r2187]  pauli <pauli@localhost>
+
+	* src/ui/pipeui.cc: getline -> std::getline
+
+2003-05-19 15:17 +0000 [r2186]  pauli <pauli@localhost>
+
+	* src/i18n.cc: No need for LC_NUMERIC.
+
+2003-05-19 15:07 +0000 [r2185]  pauli <pauli@localhost>
+
+	* src/ui/pipeui.cc: cctype -> ctype.h
+
+2003-05-19 15:02 +0000 [r2184]  pauli <pauli@localhost>
+
+	* src/ui/cursesui.cc: std::tolower -> tolower
+
+2003-05-19 14:58 +0000 [r2180-2183]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/fi.po, tmispell.spec,
+	  debian/changelog: Bump version.
+
+	* NEWS.fi, NEWS: News.
+
+	* src/config_file.cc: std::tolower -> tolower
+
+	* src/Makefile.am, configure.ac: Check for curses. Bump version.
+
+2003-05-18 19:07 +0000 [r2179]  pauli <pauli@localhost>
+
+	* tmispell.spec: Update from MM.
+
+2003-05-18 18:09 +0000 [r2178]  pauli <pauli@localhost>
+
+	* src/i18n.cc: std::setlocale -> setlocale
+
+2003-05-15 14:50 +0000 [r2176]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml: Mention about
+	  ispell-local-dictionary-alist <-> ispell-dictionary-alist and
+	  ispell-change-dictionary.
+
+2003-05-15 14:36 +0000 [r2175]  pauli <pauli@localhost>
+
+	* NEWS: Fix date.
+
+2003-05-15 14:32 +0000 [r2173-2174]  pauli <pauli@localhost>
+
+	* debian/changelog: Bump version.
+
+	* NEWS.fi, NEWS: Rephrase.
+
+2003-05-14 20:11 +0000 [r2172]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/fi.po: ispell-dictionary-alist
+	  -> ispell-local-dictionary-alist
+
+2003-05-14 20:04 +0000 [r2170-2171]  pauli <pauli@localhost>
+
+	* src/regexp.cc, src/filter.hh, src/ui/cursesui.cc: Fix warnings.
+
+	* Makefile.am: Add debian/preinst to dist.
+
+2003-05-14 19:44 +0000 [r2167-2169]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/fi.po, tmispell.spec,
+	  configure.ac, NEWS.fi, NEWS: Bump version.
+
+	* src/tmispell.cc: clocale -> locale.h, std::setlocale ->
+	  setlocale.
+
+	* src/personal_dictionary.cc, src/regexp.cc, src/options.cc,
+	  src/i18n.cc, src/spell.cc: cctype -> ctype.h, cstdlib ->
+	  stdlib.h, etc.
+
+2003-05-14 19:22 +0000 [r2164-2166]  pauli <pauli@localhost>
+
+	* src/config_file.cc: Fix regexp bad on earlier libc.
+
+	* src/filter.cc: cctype -> ctype.h
+
+	* src/ui/cursesui.cc: cctype -> ctype.h. Fix crash on empty file.
+
+2003-05-13 13:10 +0000 [r2162]  pauli <pauli@localhost>
+
+	* NEWS.fi: Fix date.
+
+2003-05-13 13:02 +0000 [r2161]  pauli <pauli@localhost>
+
+	* tmispell.spec: Update ChangeLog.
+
+2003-05-13 11:51 +0000 [r2160]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/fi.po, tmispell.spec,
+	  configure.ac, NEWS.fi, debian/changelog, NEWS: Bump version.
+
+2003-05-13 10:55 +0000 [r2158-2159]  pauli <pauli@localhost>
+
+	* src/i18n.hh, src/i18n.cc: Fix gettext return value to non-const.
+
+	* src/spell.cc: Stupid mistake.
+
+2003-05-11 22:37 +0000 [r2156]  pauli <pauli@localhost>
+
+	* src/ui/cursesui.cc: Fix case->if conversion went awry.
+
+2003-05-11 22:11 +0000 [r2155]  pauli <pauli@localhost>
+
+	* src/ui/cursesui.cc: Typo.
+
+2003-05-11 21:43 +0000 [r2154]  pauli <pauli@localhost>
+
+	* NEWS.fi, NEWS: Set version.
+
+2003-05-11 21:40 +0000 [r2149-2153]  pauli <pauli@localhost>
+
+	* debian/changelog: New version.
+
+	* configure.ac: Bump version to 0.2.
+
+	* tmispell.spec: Update version.
+
+	* autogen.sh: Generate ChangeLog in po/ also.
+
+	* doc/sgml/Makefile.am, Makefile.am: More to maintainer-clean.
+
+2003-05-11 21:33 +0000 [r2145-2148]  pauli <pauli@localhost>
+
+	* po/fi.po: Update.
+
+	* src/ui/cursesui.cc: Make keys translatable.
+
+	* Makefile.am: More to dist, more to maintainer-clean.
+
+	* doc/Makefile.am: More to maintainer-clean
+
+2003-05-11 21:29 +0000 [r2143-2144]  pauli <pauli@localhost>
+
+	* doc/sgml/Makefile.am: Translate Docbook-generated English
+	  strings.
+
+	* doc/sgml/fi.po: Fix.
+
+2003-05-11 20:10 +0000 [r2140-2142]  pauli <pauli@localhost>
+
+	* doc/sgml/fi.po: Update.
+
+	* doc/sgml/tmispell.configfile.ent: Add doc about
+	  sgml-attributes-to-check.
+
+	* doc/sgml/Makefile.am: Dump text docs with links (it produces
+	  better output than lynx or w3m).
+
+2003-05-11 19:38 +0000 [r2137-2139]  pauli <pauli@localhost>
+
+	* debian/rules: Add -Wall
+
+	* debian/tmispell.conf.debian, tmispell.conf.example: Add
+	  sgml-attributes-to-check
+
+	* src/ui/cursesui.cc: Fix warning.
+
+2003-05-11 18:22 +0000 [r2136]  pauli <pauli@localhost>
+
+	* src/filter.cc: Added missing returns... Fix warning.
+
+2003-05-11 01:00 +0000 [r2132-2135]  pauli <pauli@localhost>
+
+	* debian/tmispell.conf.debian: Sync w/ tmispell.conf.example.
+
+	* tmispell.conf.example: Add floatname to tex-command-filter.
+
+	* doc/sgml/Makefile.am: Dump with w3m.
+
+	* doc/sgml/fi.po: Update.
+
+2003-05-11 00:53 +0000 [r2131]  pauli <pauli@localhost>
+
+	* doc/sgml/fi.po: Update.
+
+2003-05-11 00:43 +0000 [r2128-2130]  pauli <pauli@localhost>
+
+	* doc/sgml/fi.po: Fix.
+
+	* doc/sgml/fi.po: Update.
+
+	* doc/sgml/tmispell.sgml: Tell that there are prebuilt packages.
+	  Tell that Soikko should be installed.
+
+2003-05-11 00:36 +0000 [r2127]  pauli <pauli@localhost>
+
+	* doc/sgml/fi.po: Update.
+
+2003-05-11 00:29 +0000 [r2124-2126]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.configfile-example.ent: manpage compliance
+
+	* doc/sgml/tmispell.sgml: Document usage.
+
+	* doc/sgml/tmispell.todo.ent: Update.
+
+2003-05-10 23:32 +0000 [r2122-2123]  pauli <pauli@localhost>
+
+	* po/fi.po: Update.
+
+	* NEWS.fi, NEWS: Updates.
+
+2003-05-10 23:25 +0000 [r2121]  pauli <pauli@localhost>
+
+	* src/filter.cc: SGML filter: handle end-tags properly. Skip
+	  entities.
+
+2003-05-10 23:06 +0000 [r2120]  pauli <pauli@localhost>
+
+	* src/filter.cc: Small improvement on *roff filter.
+
+2003-05-10 21:34 +0000 [r2119]  pauli <pauli@localhost>
+
+	* src/filter.cc: Skip *roff \fX
+
+2003-05-10 21:29 +0000 [r2117-2118]  pauli <pauli@localhost>
+
+	* src/options.hh, src/options.cc: Take the debian control file
+	  filter off my todo list for now.
+
+	* src/filter.cc: Fix off-by-one errors in *roff filter. Remove ref
+	  to debian filter.
+
+2003-05-10 21:16 +0000 [r2110-2116]  pauli <pauli@localhost>
+
+	* src/filter.cc: Added SGML and *roff filters. Fixed a segfault
+	  source in TeX filter settings parser.
+
+	* src/tmispell.cc: Use the new generic option parsing in
+	  ConfigFile.
+
+	* src/regexp.hh: An utility to return the nth matched substring as
+	  a string.
+
+	* src/ui/cursesui_pimpl.hh, src/ui/cursesui.cc: Added automatic
+	  context line calculation.
+
+	* src/options.cc: Default to automatic context line count.
+
+	* src/options.hh: Added sgml filter checkable attributes option.
+
+	* src/config_file.cc, src/config_file.hh: Replaced the special
+	  ispell* tex* options with a general option parser.
+
+2003-05-09 23:53 +0000 [r2109]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/tmispell.configfile-example.ent,
+	  doc/sgml/tmispell.description.ent,
+	  doc/sgml/tmispell.configfile.ent, doc/sgml/tmispell.todo.ent,
+	  doc/sgml/tmispell.man.sgml: Updates and polishing to
+	  documentation.
+
+2003-05-09 23:02 +0000 [r2108]  pauli <pauli@localhost>
+
+	* debian/tmispell.conf.debian, tmispell.conf.example: Wording.
+
+2003-05-09 21:20 +0000 [r2107]  pauli <pauli@localhost>
+
+	* src/config_file.cc, src/filter.cc, src/tmispell.cc,
+	  src/ui/cursesui.cc: Doxygen compliant grouping comments.
+
+2003-05-09 20:49 +0000 [r2106]  pauli <pauli@localhost>
+
+	* src/i18n.cc: Comment fix.
+
+2003-05-09 20:38 +0000 [r2105]  pauli <pauli@localhost>
+
+	* src/ui/pipeui.cc: Ispell compatibility: ~ should not change the
+	  filter.
+
+2003-05-09 18:37 +0000 [r2103-2104]  pauli <pauli@localhost>
+
+	* debian/tmispell.conf.debian: Sync with .conf.example.
+
+	* tmispell.conf.example: noop.
+
+2003-05-09 18:27 +0000 [r2102]  pauli <pauli@localhost>
+
+	* src/config_file.cc: Revamped config file parsing to allow
+	  multiline quoted strings.
+
+2003-05-09 18:16 +0000 [r2099-2101]  pauli <pauli@localhost>
+
+	* src/filter.cc: Made tex environment and command filtering
+	  user-specifiable.
+
+	* src/options.hh, src/tmispell.cc, tmispell.conf.example,
+	  src/config_file.hh: Added TeX filter settings.
+
+	* src/ui/cursesui.cc: g++-2.95 compatibility and warning fixes.
+
+2003-05-09 14:57 +0000 [r2098]  pauli <pauli@localhost>
+
+	* src/filter.cc: Added comments to TeX filter.
+
+2003-05-09 11:35 +0000 [r2096-2097]  pauli <pauli@localhost>
+
+	* src/filter.cc: Zero boundary character array first (forgot to do
+	  this earlier!). Do not discard environments, they do not wait
+	  parameters.
+
+	* src/ui/cursesui.cc: filter->reset not needed after
+	  filter->set_line
+
+2003-05-09 00:44 +0000 [r2092-2095]  pauli <pauli@localhost>
+
+	* src/filter.cc: Tentatite TeX filter.
+
+	* src/options.cc: Made selecting filter to work.
+
+	* src/regexp.hh, src/regexp.cc: Feature: regexp search can be
+	  started from arbitrary position in string.
+
+	* src/ui/listui.cc: Call filter->set_line on each line.
+
+2003-05-08 17:35 +0000 [r2091]  pauli <pauli@localhost>
+
+	* src/ui/cursesui.cc: It is necessary to remove non-printing
+	  characters (e.g. ^M) from (context) strings before printing them.
+
+2003-05-07 21:22 +0000 [r2089-2090]  pauli <pauli@localhost>
+
+	* src/common.cc: Increased ssprintf length limit (got hit by it,
+	  should think an alternative.)
+
+	* NEWS.fi, NEWS: Mention about localization.
+
+2003-05-07 21:15 +0000 [r2086-2088]  pauli <pauli@localhost>
+
+	* src/Makefile.am: Add @INTLLIBS@
+
+	* debian/rules: Install files translated to Finnish.
+
+	* po/fi.po: Fixes.
+
+2003-05-07 21:01 +0000 [r2084-2085]  pauli <pauli@localhost>
+
+	* po/fi.po: Fix to translation.
+
+	* src/tmispell.cc: Actually initialize gettext etc.
+
+2003-05-07 20:40 +0000 [r2083]  pauli <pauli@localhost>
+
+	* autogen.sh: Generate POTFILES.in automatically.
+
+2003-05-07 20:36 +0000 [r2077-2082]  pauli <pauli@localhost>
+
+	* doc/sgml/Makefile.am: Add fi.po do EXTRA_DIST, it won't hurt.
+
+	* doc/devel/Doxyfile: Be sensible.
+
+	* Makefile.am: Add po.
+
+	* autogen.sh: Add gettextize here.
+
+	* configure.ac: Add gettext support.
+
+	* src/i18n.cc: Forgot these.
+
+2003-05-07 20:24 +0000 [r2076]  pauli <pauli@localhost>
+
+	* po (added), po/fi.po (added): Added Finnish translation.
+
+2003-05-07 19:47 +0000 [r2075]  pauli <pauli@localhost>
+
+	* src/common.hh (added), src/config_file.cc, src/Makefile.am,
+	  src/common.cc (added), src/personal_dictionary.cc,
+	  src/ui/pipeui.cc, src/i18n.hh (added), src/tmispell.cc,
+	  src/options.cc, src/i18n.cc (added), src/spell.cc,
+	  src/ui/cursesui.cc: Moved some common functions to common.cc and
+	  common.hh. Preparing for localization with gettext.
+
+2003-05-07 18:49 +0000 [r2074]  pauli <pauli@localhost>
+
+	* configure.ac, NEWS.fi (added), NEWS: Begin preparations for a new
+	  release.
+
+2003-05-07 18:41 +0000 [r2073]  pauli <pauli@localhost>
+
+	* autogen.sh: Reflect the new doc generation system.
+
+2003-05-07 18:35 +0000 [r2071-2072]  pauli <pauli@localhost>
+
+	* doc/Makefile.am: Moved generation stuff away.
+
+	* doc/sgml/Makefile.am: Moved generation stuff here.
+
+2003-05-07 18:23 +0000 [r2070]  pauli <pauli@localhost>
+
+	* doc/sgml/fi.po: Update.
+
+2003-05-07 16:54 +0000 [r2068-2069]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/tmispell.configfile-example.ent:
+	  Removed unnecessary whitespace from screen etc.
+
+	* doc/sgml/fi.po: Updated translation.
+
+2003-05-07 16:43 +0000 [r2067]  pauli <pauli@localhost>
+
+	* doc/sgml/Makefile.am: Handle &quot; more intelligently. Do not
+	  generate doc.pot from itself.
+
+2003-05-06 20:51 +0000 [r2066]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.configfile-example.sgml (removed),
+	  doc/sgml/Makefile.am, doc/sgml/tmispell.sgml, doc/sgml/fi.po,
+	  doc/sgml/tmispell.configfile-example.ent (added),
+	  doc/sgml/tmispell.description.sgml (removed),
+	  doc/sgml/tmispell.configfile.sgml (removed),
+	  doc/sgml/tmispell.todo.sgml (removed),
+	  doc/sgml/tmispell.description.ent (added),
+	  doc/sgml/tmispell.configfile.ent (added),
+	  doc/sgml/tmispell.todo.ent (added), doc/sgml/tmispell.man.sgml:
+	  Made the translation system to actually work.
+
+2003-05-06 20:04 +0000 [r2065]  pauli <pauli@localhost>
+
+	* src/ui/cursesui.cc: Prefer to have more next than previous lines
+	  in context when context line number is not divisible by 2.
+
+2003-05-06 19:58 +0000 [r2064]  pauli <pauli@localhost>
+
+	* src/personal_dictionary.hh, src/tmispell.hh, src/regexp.hh,
+	  src/options.hh, src/spell.hh, src/ui/cursesui_pimpl.hh,
+	  src/options.cc, src/config_file.hh, src/filter.hh,
+	  src/ui/cursesui.cc: Changed commentation to a more
+	  doxygen-friendly format.
+
+2003-05-06 19:20 +0000 [r2062-2063]  pauli <pauli@localhost>
+
+	* src/ui/cursesui_pimpl.hh, src/ui/cursesui.cc: Separated context
+	  handling from rest of stuff, and commented heavily. Curses UI
+	  seems now to be working.
+
+	* src/tmispell.hh, src/ui/pipeui.cc: Cleanup.
+
+2003-05-03 18:08 +0000 [r2061]  pauli <pauli@localhost>
+
+	* src/ui/cursesui_pimpl.hh, src/ui/cursesui.cc: Added comments.
+	  Also made some cleanups.
+
+2003-05-03 00:55 +0000 [r2060]  pauli <pauli@localhost>
+
+	* src/ui/cursesui_pimpl.hh, src/ui/cursesui.cc: Fix curses window
+	  overlapping. Moved stuff around. Added help text and confirmation
+	  for quitting. Still toying around with context fifo. Implemented
+	  saving and backupping (FIXME: now it mangles CRLF to LF :-/).
+
+2003-05-03 00:09 +0000 [r2058-2059]  pauli <pauli@localhost>
+
+	* src/ui/cursesui.cc: Prefill context fifo. A bit more intelligent
+	  context line handling and fixed one reversed min/max.
+
+	* src/options.cc: Two context lines by default.
+
+2003-05-03 00:01 +0000 [r2057]  pauli <pauli@localhost>
+
+	* src/ui/cursesui_pimpl.hh, src/ui/cursesui.cc: Curses interface
+	  basics in place. Still missing (also major) parts.
+
+2003-05-02 22:46 +0000 [r2055-2056]  pauli <pauli@localhost>
+
+	* src/ui/pipeui.hh, src/ui/listui.cc, src/ui/listui.hh: Some
+	  comments..
+
+	* src/Makefile.am, src/tmispell.cc, src/ui/cursesui.hh (added),
+	  src/ui/cursesui_pimpl.hh (added), src/ui/cursesui.cc (added):
+	  Working on curses UI.
+
+2003-05-02 20:32 +0000 [r2054]  pauli <pauli@localhost>
+
+	* src/ui/pipeui.hh (added), src/tmispell.hh, src/config_file.cc,
+	  src/Makefile.am, src/ui/listui.cc (added), src/ui/pipeui.cc
+	  (added), src/tmispell.cc, src/ui (added), src/pipe.cc (removed),
+	  src/spell.cc, src/ui/listui.hh (added): Separated UIs from
+	  engine.
+
+2003-02-22 21:31 +0000 [r2053]  pauli <pauli@localhost>
+
+	* doc/sgml/fi.po (added): Finnish document translation.
+
+2003-02-20 21:40 +0000 [r2052]  pauli <pauli@localhost>
+
+	* debian/changelog: Fix my address.
+
+2003-02-20 21:33 +0000 [r2051]  pauli <pauli@localhost>
+
+	* debian/postinst: libsoikko0 has its stuff in /usr/lib/libsoikko0
+
+2003-02-20 21:06 +0000 [r2050]  pauli <pauli@localhost>
+
+	* debian/postinst: Some paranoia.
+
+2003-02-20 20:59 +0000 [r2049]  pauli <pauli@localhost>
+
+	* debian/templates.fi, debian/README.debian, debian/templates,
+	  debian/control, debian/changelog: Recommend libsoikko0 and update
+	  documentation.
+
+2003-02-17 21:55 +0000 [r2048]  pauli <pauli@localhost>
+
+	* debian/templates.fi, debian/templates, debian/postinst,
+	  debian/config: Support libsoikko0
+
+2003-01-20 22:20 +0000 [r2047]  pauli <pauli@localhost>
+
+	* debian/README.debian: Update: Nothing can be configured via
+	  debconf.
+
+2003-01-20 22:12 +0000 [r2045-2046]  pauli <pauli@localhost>
+
+	* debian/postinst (added): Run debconf.
+
+	* debian/control: Typo.
+
+2003-01-20 22:01 +0000 [r2044]  pauli <pauli@localhost>
+
+	* debian/control: Depend on debconf.
+
+2003-01-20 21:48 +0000 [r2042-2043]  pauli <pauli@localhost>
+
+	* debian/rules: Add the ispell link to the package.
+
+	* debian/templates, debian/control, debian/postinst (removed),
+	  debian/postrm (added), debian/preinst (added), debian/config,
+	  debian/prerm (removed): Remove ubiquitous debconf fluff, and
+	  divert /usr/bin/ispell by default.
+
+2003-01-18 21:08 +0000 [r2037-2041]  pauli <pauli@localhost>
+
+	* Makefile.am: Include debian/ in dist. Remove depcomp on
+	  maintainer-clean.
+
+	* debian/changelog: Bump release version.
+
+	* doc/sgml/tmispell.sgml: Instructions how to add support in Emacs.
+
+	* src/pipe.cc: Just remind that PIPE_INPUT_DEBUG exists.
+
+	* src/tmispell.cc: If spell checker module given in config file did
+	  not load successfully, try start ispell instead after spewing an
+	  error message.
+
+2003-01-18 19:14 +0000 [r2036]  pauli <pauli@localhost>
+
+	* debian/templates.fi, debian/templates,
+	  debian/tmispell.conf.debian (added), debian/config: Warn if
+	  soikko uninstalled.
+
+2003-01-17 17:42 +0000 [r2035]  pauli <pauli@localhost>
+
+	* debian/rules: Install tmispell.conf customized for Debian.
+
+2003-01-17 17:14 +0000 [r2033-2034]  pauli <pauli@localhost>
+
+	* debian/conffiles: Conffiles should have full path.
+
+	* debian/rules: Make mandir conform Debian policy.
+
+2003-01-16 22:23 +0000 [r2031-2032]  pauli <pauli@localhost>
+
+	* debian/templates: Use debconf l10n tools.
+
+	* debian/templates.fi (added): Added Finnish template translation.
+
+2003-01-16 22:18 +0000 [r2030]  pauli <pauli@localhost>
+
+	* debian/templates: Added Finnish translations.
+
+2003-01-16 22:10 +0000 [r2029]  pauli <pauli@localhost>
+
+	* debian/README.debian: Mention debconf.
+
+2003-01-16 22:07 +0000 [r2028]  pauli <pauli@localhost>
+
+	* debian/postinst, debian/config, debian/prerm: Made scripts
+	  idempotent (thus more robust), as the policy requires.
+
+2003-01-16 21:50 +0000 [r2027]  pauli <pauli@localhost>
+
+	* debian/changelog: Fill in my email.
+
+2003-01-16 21:46 +0000 [r2026]  pauli <pauli@localhost>
+
+	* debian/README.debian, debian/templates (added), debian/control,
+	  debian/postinst (added), debian/config (added), debian/prerm
+	  (added), debian/diversions (removed), debian/changelog,
+	  debian/conffiles (added), debian/rules: The debconf stuff should
+	  work now.
+
+2003-01-16 19:37 +0000 [r2025]  pauli <pauli@localhost>
+
+	* debian/README.debian (added), debian (added), debian/control
+	  (added), debian/diversions (added), debian/changelog (added),
+	  debian/copyright (added), debian/rules (added): Added debian
+	  packaging.
+
+2002-10-09 13:07 +0000 [r2024]  pauli <pauli@localhost>
+
+	* tmispell.spec: Update from MM.
+
+2002-10-07 14:31 +0000 [r2023]  pauli <pauli@localhost>
+
+	* tmispell.spec: cr+lf -> lf
+
+2002-10-07 13:48 +0000 [r2021]  pauli <pauli@localhost>
+
+	* NEWS: Set date.
+
+2002-10-07 13:38 +0000 [r2020]  pauli <pauli@localhost>
+
+	* tmispell.spec: Bump version.
+
+2002-10-07 13:27 +0000 [r2017-2019]  pauli <pauli@localhost>
+
+	* AUTHORS: Reformat.
+
+	* doc/sgml/tmispell.todo.sgml: Updated.
+
+	* tmispell.spec: Update from MM.
+
+2002-10-05 12:44 +0000 [r2016]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.todo.sgml, NEWS: Update.
+
+2002-10-05 11:57 +0000 [r2014-2015]  pauli <pauli@localhost>
+
+	* src/pipe.cc: Flush after the banner, just in case.
+
+	* src/tmispell.cc: g++-3.2 did not work well with
+	  std::ios::sync_with_stdio(false), since getline did not get lines
+	  any more but buffered them.
+
+2002-10-05 10:43 +0000 [r2013]  pauli <pauli@localhost>
+
+	* tmispell.spec: Update from MM.
+
+2002-10-04 20:27 +0000 [r2011-2012]  pauli <pauli@localhost>
+
+	* NEWS: NEWS update.
+
+	* tmispell.spec: Update from Marko Myllynen.
+
+2002-10-04 15:38 +0000 [r2007-2010]  pauli <pauli@localhost>
+
+	* AUTHORS: Added MM.
+
+	* Makefile.am: Include tmispell.spec in the distribution.
+
+	* configure.ac: Bump version.
+
+	* tmispell.spec (added): Contributed by Marko Myllynen.
+
+2002-10-03 21:07 +0000 [r2006]  pauli <pauli@localhost>
+
+	* src/personal_dictionary.hh, src/personal_dictionary.cc,
+	  src/tmispell.cc, src/pipe.cc: Make failing to save personal
+	  dictionary non-fatal. Save personal dictionary only when changed.
+	  Return success for exit code even if saving personal dictionary
+	  failed.
+
+2002-09-27 16:34 +0000 [r2004-2005]  pauli <pauli@localhost>
+
+	* tmispell.conf.example: Explain why there are two similar entries.
+
+	* doc/sgml/tmispell.todo.sgml: Something weird is going on with
+	  g++-3.2...
+
+2002-09-27 16:28 +0000 [r2000-2003]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.configfile-example.sgml: Use "." as an extra
+	  word character in the example.
+
+	* doc/sgml/tmispell.configfile.sgml: Small changes.
+
+	* doc/sgml/tmispell.sgml: Fixed the instructions for how to use
+	  Tmispell with KDE. Bump version.
+
+	* src/tmispell.hh, src/options.hh, src/personal_dictionary.cc,
+	  src/tmispell.cc, src/options.cc, src/pipe.cc: Small-scale
+	  tidying. Implemented redirecting output from the pipe mode to a
+	  file. Implemented disregarding words shorter than the value given
+	  by the user.
+
+2002-09-27 16:22 +0000 [r1998-1999]  pauli <pauli@localhost>
+
+	* doc/devel/Doxyfile (added): For generating source-code
+	  documentation with Doxygen.
+
+	* doc/devel (added), doc/devel/versions.txt (added): Wrote version
+	  numbering scheme down.
+
+2002-09-20 20:39 +0000 [r1995-1996]  pauli <pauli@localhost>
+
+	* doc/Makefile.am: Put doc.xslt in distribution.
+
+	* doc/sgml/tmispell.todo.sgml: The speed issue was not an issue.
+
+2002-09-20 20:20 +0000 [r1994]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, configure.ac, NEWS: Bump version.
+
+2002-09-20 20:10 +0000 [r1993]  pauli <pauli@localhost>
+
+	* tmispell.conf.example: Added "finnish" entry for spell checking
+	  Finnish, since many program use it instead of "suomi". Made "." a
+	  word character.
+
+2002-09-17 19:50 +0000 [r1990-1991]  pauli <pauli@localhost>
+
+	* autogen.sh: Use cvs2log.pl.
+
+	* doc/sgml/tmispell.sgml: Improved installation instructions.
+
+2002-09-17 19:40 +0000 [r1988-1989]  pauli <pauli@localhost>
+
+	* NEWS: New news.
+
+	* doc/sgml/tmispell.todo.sgml: More verbose about speed and fixed
+	  some facts.
+
+2002-09-17 19:17 +0000 [r1986-1987]  pauli <pauli@localhost>
+
+	* TODO (removed): No need to maintain two separate todo lists.
+
+	* doc/sgml/tmispell.todo.sgml: Tell about speed problems.
+
+2002-09-17 17:44 +0000 [r1985]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/tmispell.configfile.sgml:
+	  Rephrasing.
+
+2002-09-17 17:14 +0000 [r1982-1984]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.todo.sgml: Capitalization support now in
+	  personal dictionary.
+
+	* TODO: Updated.
+
+	* src/personal_dictionary.hh, src/personal_dictionary.cc: Personal
+	  dictionary now handles word capitalization properly.
+
+2002-09-16 19:32 +0000 [r1981]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml, doc/sgml/tmispell.description.sgml,
+	  doc/sgml/tmispell.todo.sgml: Doc updates.
+
+2002-09-16 18:39 +0000 [r1980]  pauli <pauli@localhost>
+
+	* src/tmispell.hh: Still g++-3.0 compilation fixes.
+
+2002-09-12 12:42 +0000 [r1979]  pauli <pauli@localhost>
+
+	* src/config_file.hh: g++-3.0 compilation fix.
+
+2002-09-06 14:29 +0000 [r1978]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.configfile-example.sgml,
+	  doc/sgml/tmispell.configfile.sgml: Document that the ispell
+	  program is specified in the configuration file.
+
+2002-09-06 14:18 +0000 [r1975-1977]  pauli <pauli@localhost>
+
+	* tmispell.conf.example: More exemplary configuration file.
+
+	* src/config_file.cc: Fixed a regexp.
+
+	* src/tmispell.cc: Use the value read from config file...
+
+2002-09-06 14:08 +0000 [r1972-1974]  pauli <pauli@localhost>
+
+	* src/tmispell.hh, src/config_file.cc, configure.ac,
+	  src/tmispell.cc, src/config_file.hh: The configuration file now
+	  specifies the ispell program to use.
+
+	* src/regexp.cc: Reserve match space for the whole regexp.
+
+	* src/regexp.hh: By default .end() and .begin() correspond to the
+	  whole regexp.
+
+2002-09-06 13:19 +0000 [r1971]  pauli <pauli@localhost>
+
+	* src/options.cc: Added -vv option.
+
+2002-09-04 11:38 +0000 [r1970]  pauli <pauli@localhost>
+
+	* src/options.cc: Recognize now the -e[e1234] options. Fixed bug in
+	  ispell option generation.
+
+2002-09-03 12:41 +0000 [r1969]  pauli <pauli@localhost>
+
+	* doc/sgml/tmispell.sgml: Removed unnecessary document information.
+
+2002-09-03 12:38 +0000 [r1968]  pauli <pauli@localhost>
+
+	* doc/Makefile.am, doc/sgml/tmispell.configfile-example.sgml,
+	  doc/sgml/tmispell.sgml, doc/doc.xslt (added),
+	  doc/sgml/tmispell.description.sgml,
+	  doc/sgml/tmispell.configfile.sgml, doc/sgml/tmispell.todo.sgml,
+	  doc/sgml/tmispell.man.sgml, doc/doc.dsl (removed): Switch to
+	  DocBook XML and XSLT processing.
+
+2002-09-03 11:26 +0000 [r1967]  pauli <pauli@localhost>
+
+	* doc/Makefile.am, doc/txt2readme.pl (removed),
+	  doc/sgml/tmispell.sgml, doc/doc.dsl (added): HTML generation
+	  tweaks.
+
+2002-09-02 21:58 +0000 [r1966]  pauli <pauli@localhost>
+
+	* autogen.sh: Copy, don't link the README.
+
+2002-09-02 21:44 +0000 [r1965]  pauli <pauli@localhost>
+
+	* configure.ac: Generate doc/sgml/Makefile.
+
+2002-09-02 21:39 +0000 [r1962-1964]  pauli <pauli@localhost>
+
+	* doc/Makefile.am, Makefile.am: Remove generated items on
+	  maintainer-clean.
+
+	* configure.ac: Removed unnecessary tests.
+
+	* doc/Makefile.am, doc/sgml/tmispell.configfile-example.sgml
+	  (added), doc/tmispell.sgml (removed), doc/sgml/Makefile.am
+	  (added), doc/sgml/tmispell.sgml (added),
+	  doc/tmispell.description.sgml (removed),
+	  doc/sgml/tmispell.description.sgml (added),
+	  doc/tmispell.configfile.sgml (removed), doc/tmispell.todo.sgml
+	  (removed), doc/sgml/tmispell.configfile.sgml (added),
+	  doc/sgml/tmispell.todo.sgml (added), doc/sgml (added),
+	  doc/tmispell.man.sgml (removed), doc/sgml/tmispell.man.sgml
+	  (added), doc/tmispell.configfile-example.sgml (removed): Moved
+	  sgml files to a subdirectory.
+
+2002-09-02 21:28 +0000 [r1960-1961]  pauli <pauli@localhost>
+
+	* autogen.sh: Generate README automatically. Generate ChangeLog
+	  only for HEAD branch.
+
+	* README (removed): Generate README automatically.
+
+2002-09-02 21:25 +0000 [r1958-1959]  pauli <pauli@localhost>
+
+	* doc/Makefile.am: Removed an unnecessary argument to jade.
+
+	* doc/Makefile.am, doc/txt2readme.pl (added): Quick hack for
+	  creating the README file from sgml documents.
+
+2002-09-02 20:47 +0000 [r1957]  pauli <pauli@localhost>
+
+	* doc/tmispell.sgml: Need <para> in <note>.
+
+2002-09-02 19:50 +0000 [r1954]  pauli <pauli@localhost>
+
+	* src/spell.cc: No need to count the length of the word again.
+
+2002-08-31 13:10 +0000 [r1953]  pauli <pauli@localhost>
+
+	* configure.ac, src/options.cc: Ispell does not use getopt, so
+	  switched to hand-crafted option parsing.
+
+2002-08-31 10:54 +0000 [r1952]  pauli <pauli@localhost>
+
+	* src/tmispell.cc: Do not fail if personal dictionary does not
+	  exist yet.
+
+2002-08-29 13:52 +0000 [r1950-1951]  pauli <pauli@localhost>
+
+	* doc/Makefile.am (added): Added this.
+
+	* doc/tmispell.sgml: KSpell startup instructions and testing
+	  examples.
+
+2002-08-29 13:12 +0000 [r1948-1949]  pauli <pauli@localhost>
+
+	* README, doc/tmispell.sgml: Wrong version number :)
+
+	* README: Added email address.
+
+2002-08-29 13:06 +0000 [r1947]  pauli <pauli@localhost>
+
+	* src/filter.cc, src/options.hh: g++-3.0 compilation fixes.
+
+2002-08-29 12:40 +0000 [r1943-1946]  pauli <pauli@localhost>
+
+	* Makefile.am: Added tmispell.conf.example to EXTRA_DIST.
+
+	* autogen.sh: Autogen magick.
+
+	* configure.ac: Added makefile in doc.
+
+	* src/Makefile.am: Added tm_openoffice.hxx to distribution.
+
+2002-08-26 21:18 +0000 [r1939-1942]  pauli <pauli@localhost>
+
+	* Makefile.am: Add doc.
+
+	* README: Sync from sgml.
+
+	* tmispell.conf.example: Updated.
+
+	* configure.ac: Man page generation.
+
+2002-08-26 21:12 +0000 [r1938]  pauli <pauli@localhost>
+
+	* doc/tmispell.sgml: Proper author info.
+
+2002-08-26 21:02 +0000 [r1937]  pauli <pauli@localhost>
+
+	* doc/tmispell.sgml (added), doc/tmispell.description.sgml (added),
+	  doc/tmispell.configfile.sgml (added), doc/tmispell.todo.sgml
+	  (added), doc (added), doc/tmispell.man.sgml (added),
+	  doc/tmispell.configfile-example.sgml (added): Added
+	  documentation.
+
+2002-08-26 18:31 +0000 [r1935-1936]  pauli <pauli@localhost>
+
+	* tmispell.conf.example: Updated.
+
+	* src/personal_dictionary.hh (added), src/tmispell.hh,
+	  src/config_file.cc, src/Makefile.am, src/filter.cc,
+	  src/options.hh, src/dictionary.cc (removed),
+	  src/personal_dictionary.cc (added), src/spell.hh,
+	  src/tmispell.cc, src/options.cc, src/config_file.hh,
+	  src/spell.cc, src/dictionary.hh (removed): Dictionary ->
+	  PersonalDictionary. Grouped data read from config file into
+	  SpellcheckerEntries. Read encoding and lc_ctype from config file.
+
+2002-08-22 09:41 +0000 [r1933-1934]  pauli <pauli@localhost>
+
+	* TODO: Updated.
+
+	* src/config_file.cc, src/options.hh, src/tmispell.cc,
+	  src/options.cc, src/pipe.cc, src/config_file.hh: Use only the
+	  dictionary identifier as part of personal dictionary name.
+	  s/language/dictionary_identifier/g
+
+2002-08-22 00:34 +0000 [r1929-1932]  pauli <pauli@localhost>
+
+	* NEWS: Some news.
+
+	* TODO: Updated.
+
+	* README: Added documentation.
+
+	* src/config_file.cc, src/filter.cc, src/options.hh,
+	  src/tmispell.cc, src/options.cc, src/config_file.hh:
+	  s/separator/boundary/g
+
+2002-08-22 00:05 +0000 [r1927-1928]  pauli <pauli@localhost>
+
+	* src/tmispell.hh, src/filter.cc, src/pipe.cc, src/filter.hh: The
+	  offsets in response for ^ command count also the '^' character.
+	  Fixes bug with emacs ispell mode.
+
+	* src/config_file.cc: Updated comment.
+
+2002-08-21 22:43 +0000 [r1924-1926]  pauli <pauli@localhost>
+
+	* tmispell.conf.example (added): Added an example configuration
+	  file.
+
+	* src/tmispell.cc: Added better handling of separator characters.
+	  Fixed -l mode to work the right way (was inverted...)
+
+	* src/config_file.cc, src/filter.cc, src/options.hh,
+	  src/options.cc, src/config_file.hh: Added better handling of
+	  separator characters.
+
+2002-08-21 21:46 +0000 [r1922-1923]  pauli <pauli@localhost>
+
+	* src/regexp.hh, src/dictionary.cc, src/regexp.cc,
+	  src/dictionary.hh, src/spell.cc: Fixed compiler warnings.
+
+	* src/config_file.cc: Fixed stupid bugs.
+
+2002-08-21 21:03 +0000 [r1921]  pauli <pauli@localhost>
+
+	* src/tmispell.hh, src/config_file.cc, src/regexp.hh,
+	  src/dictionary.cc, src/filter.cc, src/options.hh, src/spell.hh,
+	  src/tmispell.cc, src/options.cc, src/pipe.cc, src/config_file.hh,
+	  src/dictionary.hh, src/filter.hh, src/spell.cc: Generic cleanups
+	  and more comments.
+
+2002-08-21 18:49 +0000 [r1920]  pauli <pauli@localhost>
+
+	* src/options.hh: Fix for g++-3.0.
+
+2002-08-21 18:43 +0000 [r1911-1919]  pauli <pauli@localhost>
+
+	* src/filter.cc: Fix crashing bug. Add word characters from
+	  Options.
+
+	* src/pipe.cc: Fix for compiling with g++-2.95.
+
+	* src/options.hh: Allow passing only specific characters to ispell.
+
+	* src/spell.cc: Fixed parameter order. Fix compiling for g++-2.95.
+
+	* src/spell.hh: Fixed parameter order.
+
+	* src/tmispell.cc: Add extra word chars from configuration file.
+	  Pass only specific options to ispell. Fix to allow compiling with
+	  g++-2.95.
+
+	* src/config_file.hh: Added support for extra word chars in config
+	  file.
+
+	* src/config_file.cc: Made file parsing to work properly, and added
+	  support for extra word character specification in the config
+	  file.
+
+	* src/options.cc: Added support for passing only specific options
+	  further to ispell. Added --help documentation of the command-line
+	  options.
+
+2002-08-20 17:00 +0000 [r1908-1910]  pauli <pauli@localhost>
+
+	* src/config.hh (removed): Oops. This is generated automatically.
+
+	* configure.ac: Use config file.
+
+	* src/config_file.cc (added), src/regexp.hh (added),
+	  src/Makefile.am, src/filter.cc, src/options.hh, src/spell.hh,
+	  src/tmispell.cc, src/regexp.cc (added), src/options.cc,
+	  src/config_file.hh (added), src/config.hh (added): Before
+	  rewrite...
+
+2002-08-19 20:33 +0000 [r1906-1907]  pauli <pauli@localhost>
+
+	* configure.ac: Changed name to tmispell. Use /usr/bin/ispell as
+	  default.
+
+	* src/tmispell.hh (added), src/Makefile.am, src/soikko-ispell.cc
+	  (removed), src/tmispell.cc (added), src/pipe.cc,
+	  src/soikko-ispell.hh (removed): Changed name to tmispell.
+
+2002-05-12 20:00 +0000 [r1904-1905]  pauli <pauli@localhost>
+
+	* autogen.sh (added): Do autoconf etc. stuff.
+
+	* src/Makefile.am, Makefile.am: Added files to clean on
+	  maintainer-clean.
+
+2002-05-12 19:55 +0000 [r1903]  pauli <pauli@localhost>
+
+	* README (added), spell.cc (removed), dictionary.hh (removed),
+	  config.hh (removed), TODO (added), src/options.cc (added),
+	  Makefile.am (added), filter.cc (removed), src/soikko-ispell.hh
+	  (added), src/filter.hh (added), options.cc (removed), pipe.cc
+	  (removed), tm_openoffice.hxx (removed), soikko-ispell.hh
+	  (removed), AUTHORS (added), src (added), dictionary.cc (removed),
+	  src/dictionary.hh (added), src/soikko-ispell.cc (added),
+	  src/Makefile.am (added), src/filter.cc (added), configure.ac
+	  (added), src/spell.hh (added), COPYING (added), src/pipe.cc
+	  (added), soikko-ispell.cc (removed), src/tm_openoffice.hxx
+	  (added), NEWS (added), spell.hh (removed), Makefile (removed),
+	  src/dictionary.cc (added), src/options.hh (added), filter.hh
+	  (removed), options.hh (removed), src/spell.cc (added): Began
+	  using autoconf+automake.
+
+2002-05-11 21:40 +0000 [r1901-1902]  pauli <pauli@localhost>
+
+	* options.cc, filter.hh, filter.cc, options.hh: Added comments.
+
+	* pipe.cc (added), soikko-ispell.hh (added), soikko-ispell.cc:
+	  Moved the pipe reader part to another file.
+
+2002-05-11 20:25 +0000 [r1900]  pauli <pauli@localhost>
+
+	* soikko-ispell.cc: Split pipe interpreting function into parts.
+	  Save personal dictionary on exit. Do not print empty lines after
+	  ispell pipe commands; print them only after spell checking words.
+
+2002-05-09 00:38 +0000 [r1897-1899]  pauli <pauli@localhost>
+
+	* soikko-ispell.cc: Moved word checking to a helper function:
+	  searches also personal and session dictionaries.
+
+	* dictionary.hh: Use set default sort.
+
+	* dictionary.cc: Made loading dictionaries to work. (Stupid me!)
+
+2002-05-08 21:51 +0000 [r1894-1896]  pauli <pauli@localhost>
+
+	* filter.hh: No need for <iostream>
+
+	* dictionary.hh (added), dictionary.cc (added), soikko-ispell.cc:
+	  Added support for session and personal dictionaries.
+
+	* filter.cc: Use finnish locale.
+
+2002-05-08 18:15 +0000 [r1893]  pauli <pauli@localhost>
+
+	* Makefile, spell.hh, config.hh (added), filter.hh, spell.cc,
+	  filter.cc, soikko-ispell.cc: Stuff.
+
+2002-05-08 09:14 +0000 [r1889]  pauli <pauli@localhost>
+
+	* Makefile (added), spell.hh (added), options.cc (added), filter.hh
+	  (added), spell.cc (added), tm_openoffice.hxx (added), filter.cc
+	  (added), options.hh (added), soikko-ispell.cc (added): Initial
+	  revision
+

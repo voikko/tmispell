@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+
+  <para>
+    The configuration file contains spell checker entries and options.
+    "#" is a comment character: everything on a line after it is ignored.
+  </para>
+
+  <para>
+    Syntax for options is simple:
+    <screen><replaceable>key</replaceable>=<replaceable>value</replaceable></screen>
+    Note that the value string, if enclosed between quotes, may span
+    multiple lines.
+  </para>
+  <para>
+    Currently the options are:
+    
+    <variablelist>
+      <varlistentry>
+	<term>ispell</term> 
+	<listitem><para>The location of the real Ispell executable to
+	    be called as a fall-back. Note that the full path to the
+	    program should be given. This option must always be
+	    specified.</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>tex-command-filter</term> 
+	<listitem>
+	  <para>
+	    A list of TeX commands and their parameter lists to use when
+	    filtering TeX input. The syntax is
+	    "<replaceable>cmdname</replaceable> <replaceable>oOpP</replaceable>, ...", 
+	    where "oOpP" is a string of characters denoting the type
+	    of command's parameters. Uppercase letter means that
+	    a parameter should be spell checked, lowercase that it
+	    should not. 'O' and 'o' denote optional parameters,
+	    'P' and 'p' normal parameters.
+	  </para>
+	</listitem>
+      </varlistentry>
+      
+      <varlistentry>
+	<term>tex-environment-filter</term> 
+	<listitem><para>A list of environments to skip when filtering
+	  TeX input.</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>sgml-attributes-to-check</term>
+	<listitem><para>A list of SGML or HTML tag attributes to spell
+	    check.</para></listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+
+  <para>
+    A dictionary specification consists of 7 strings on the same line,
+    separated by whitespace and possibly enclosed in double or
+    single quotes. Backslashes can be used to quote characters
+    inside the quotes. The meanings of the strings are:
+
+    <orderedlist continuation="restarts">
+      <listitem>
+	<para>
+	  The name by which the dictionary is known,
+	  similar to the name of an Ispell hash file name without the
+	  extension ".hash". This must be specified.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  The file name of the library file to load. This must
+	  be specified.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  The file name of the dictionary file that the library
+	  uses. This must be specified.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  The input encoding this module uses. E.g. latin9. This
+	  must be specified.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  The value of the locale variable <varname>LC_CTYPE</varname> that
+	  should be used with this module. This determines the default set of
+	  characters that are considered to belong to a word. If empty or not
+	  given, the value of a suitable environment variable is
+	  used.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  The set of additional word characters not specified by
+	  the locale. If not given, no additional word
+	  characters are assumed.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  The set of word boundary characters. They are
+	  considered to be a part of a word only when occurring
+	  inside one. If not given, no boundary characters are
+	  assumed.
+	</para>
+      </listitem>
+    </orderedlist>
+  </para>

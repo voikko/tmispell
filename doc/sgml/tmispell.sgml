@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+                         "/usr/share/sgml/docbook/dtd/xml/4.2/docbookx.dtd" [
+  <!ENTITY tmispell-description SYSTEM "tmispell.description.ent">
+  <!ENTITY tmispell-configfile SYSTEM "tmispell.configfile.ent">
+  <!ENTITY tmispell-configfile-example SYSTEM "tmispell.configfile-example.ent">
+  <!ENTITY tmispell-todo SYSTEM "tmispell.todo.ent">
+]>
+<article>
+  <articleinfo>
+    <author>
+      <firstname>Pauli</firstname>
+      <surname>Virtanen</surname>
+      <email>pauli.virtanen@hut.fi</email>
+    </author>
+    
+    <title>Tmispell version 0.2.3</title>
+  </articleinfo>
+  
+  
+  <sect1>
+    <title>What Tmispell is?</title>
+    &tmispell-description;
+  </sect1>
+  
+  <sect1>
+    <title>Usage</title>
+    <para>
+      Currently Tmispell has an interactive text-mode user interface
+      that can be used for spell checking text. It can be started by
+      typing
+      <screen><userinput>tmispell -dsuomi <replaceable>file.txt</replaceable></userinput></screen>
+      When a misspelled word is encountered, you will be asked what to do.
+      The usage of the interface should fairly obvious, but you can get
+      help about keys by pressing '?'.
+    </para>
+    <para>
+      If you would like to use the filters, put one of the options
+      '<option>-t</option>', '<option>-n</option>' and
+      '<option>-h</option>' (TeX, nroff and Sgml, respectively) in
+      front of the file name to spell check. For more information about
+      options, see the ispell(1) manual page.
+    </para>
+  </sect1>
+
+  <sect1>
+    <title>Installation</title>
+    <para>
+      These instructions tell how to build and install Tmispell from scratch.
+      There are also prebuilt packages, which you likely want to use instead of
+      doing installation the hard way.
+    </para>
+    <procedure>
+      <step>
+	<para>Compile and install Tmispell:</para>
+	<screen>
+	  <userinput>./configure</userinput>
+	  <userinput>make</userinput>
+	  <userinput>make install</userinput>
+	</screen>
+
+	<para>
+	  The <command>make install</command> just copies the tmispell
+	  executable and manual page to suitable places.
+	</para>
+      </step>
+      <step>
+        <para>
+	  Download and install Soikko (see http://www.iki.fi/~pry/soikko/).
+	</para>
+      </step>
+      <step>
+	<para>
+	  Create the configuration file and place it to the place
+	  where Tmispell looks for it. There is also an example
+	  configuration file <filename>tmispell.conf.example</filename>, 
+	  which should be used as a template. (See "The configuration
+	  file format" below.) Check that the path names in spell checker
+	  entries point to correct places.
+	</para>
+      </step>
+      <step>
+	<para>
+	  To make other programs use Tmispell instead of Ispell, first
+	  move aside the original Ispell executable, and then create a
+	  link from "tmispell" to "ispell". For example:
+	  <screen>
+	    <userinput>mv /usr/bin/ispell /usr/bin/ispell.real</userinput>
+	    <userinput>ln -s /usr/local/bin/tmispell /usr/bin/ispell</userinput>
+	  </screen>
+	  Remember to change the "ispell=..." line in configuration file
+	  to point to the real Ispell executable.
+	</para>
+	<para>
+	  Other programs must also know that a Finnish spell checking
+	  is possible, so run the following command to create fake
+	  dictionary files:
+	  <screen>
+	    <userinput>touch /usr/lib/ispell/suomi.{hash,aff}</userinput>
+	  </screen>
+	  Note that the path might also be "/usr/share/ispell" or something
+	  similar, depending on your system.
+	</para>
+      </step>
+      <step>
+	<para>
+	  To check that Tmispell works properly, type the
+	  following command:
+      	  <screen>
+	    <userinput>ispell -dsuomi -a</userinput>
+	  </screen>
+	  If you had specified a dictionary with identifier "suomi" in
+	  the configuration file, then you should see a line similar
+	  to this:
+	  <screen>@(#) International Ispell Version 3.1.20 compatible tmispell 0.1.1</screen>
+	  Now you can type words to spell check. For more information
+	  about this command mode, refer to the ispell(1) manual.
+	</para>
+      </step>
+    </procedure>
+  </sect1>
+
+  <sect1>
+    <title>Program-specific information</title>
+
+    <itemizedlist>
+      <listitem>
+	<simpara>Emacs (both Ispell and Flyspell modes)</simpara>
+	<para>
+	  Note that you might have to add something like the
+	  following to your <filename>~/.emacs</filename>
+	  configuration file, since Ispell support in Emacs does not
+	  know about Finnish dictionary by default:
+
+<screen><![CDATA[(setq ispell-local-dictionary-alist
+      (append ispell-local-dictionary-alist
+       '(("suomi"
+          "[%.0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
+          "[^.%0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
+          "[':]" nil nil nil iso-8859-1))))]]></screen>
+
+	  Depending on your configuration, the ispell-local-dictionary-alist
+	  could also be ispell-dictionary-alist.
+
+	  You can change the active dictionary with the command
+	  "M-x ispell-change-dictionary".
+
+	  If you like to have Finnish as the default dictionary, add
+	  also: 
+	  <screen>(setq ispell-dictionary "suomi")</screen>
+	  If you still encounter problems (e.g. with TeX files),
+	  try turning the multi byte character support of Emacs off.
+	</para>
+      </listitem>
+      
+      <listitem>
+	<simpara>Pspell (Sylpheed, Balsa and many more)</simpara>
+	<para>
+	  Although Pspell is being replaced by Aspell, some programs
+	  still use it. To use Tmispell with it, you need to have
+	  pspell-ispell module for Pspell installed, and a file
+	  <filename>/usr/share/pspell/fi-ispell.pwli</filename>
+	  with the following line in it:
+	  <screen>/usr/lib/ispell/suomi.hash iso8859-15</screen>
+	</para>
+      </listitem>
+      
+      <listitem>
+	<simpara>Other programs (most KDE applications, LyX, ...)</simpara>
+	<para>
+	  When the fake dictionary files (see Installation) exist,
+	  Finnish should appear in the dictionary list in these
+	  programs.
+	</para>
+      </listitem>
+    </itemizedlist>
+  </sect1>
+    
+  <sect1 id="config-file-format">
+    <title>The configuration file format</title>
+    &tmispell-configfile;
+    &tmispell-configfile-example;
+  </sect1>
+
+  &tmispell-todo;
+</article>

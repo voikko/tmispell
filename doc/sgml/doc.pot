@@ -1,0 +1,629 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-10-23 17:59+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: tmispell.man.sgml.tmp:279 tmispell.sgml.tmp:13
+msgid "pauli.virtanen@hut.fi"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:18 tmispell.sgml.tmp:11
+msgid "Pauli"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:18 tmispell.sgml.tmp:12
+msgid "Virtanen"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:20
+msgid "2002-2003"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:21
+msgid "Pauli Virtanen"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:23
+msgid "august 26, 2002"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:26
+msgid "TMISPELL"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:26
+msgid "1"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:37
+msgid "tmispell"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:30
+msgid "An Ispell compatible front end for the spell checking module Soikko."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:38
+msgid "-F"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:77
+msgid "configfile"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:83
+msgid "Ispell options"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:40
+msgid "files"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:45
+msgid "DESCRIPTION"
+msgstr ""
+
+# %1$s: <ulink>
+#: tmispell.man.sgml.tmp:48 tmispell.sgml.tmp:24
+msgid ""
+"Tmispell is an Ispell compatible front-end for spell checking modules. To do "
+"the actual spell checking, for Finnish it uses the high-quality spell "
+"checking module %1$s, which is made by Pasi Ryhänen."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:273 tmispell.sgml.tmp:28
+msgid "Soikko"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:55 tmispell.sgml.tmp:31
+msgid ""
+"What makes Tmispell quite useful is that many programs (e.g. mail clients "
+"and document processors) use Ispell for spell checking. Since Tmispell is "
+"compatible with Ispell, these programs can use it without any changes needed."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:61 tmispell.sgml.tmp:37
+msgid ""
+"Additionally Tmispell can launch Ispell if there is no module for the "
+"selected language. Thus it can be used as a drop-in replacement for Ispell."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:70
+msgid "OPTIONS"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:71
+msgid "Tmispell understands the following options:"
+msgstr ""
+
+# %1$s: <replaceable>
+#: tmispell.man.sgml.tmp:74
+msgid "-F %1$s"
+msgstr ""
+
+# %1$s: <replaceable>
+# %2$s: <filename>
+#: tmispell.man.sgml.tmp:76
+msgid ""
+"Read the configuration file %1$s instead of the default configuration file %2"
+"$s."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:97
+msgid "@CONFIG_FILE@"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:85
+msgid ""
+"Tmispell should understand all options that Ispell does. For more "
+"information about them, see ispell(1)."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:93
+msgid "FILES"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:99
+msgid "The configuration file for Tmispell."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:104 tmispell.sgml.tmp:202
+msgid ""
+"The configuration file contains spell checker entries and options. &quot;"
+"#&quot; is a comment character: everything on a line after it is ignored."
+msgstr ""
+
+# %1$s: <screen>
+#: tmispell.man.sgml.tmp:109 tmispell.sgml.tmp:207
+msgid ""
+"Syntax for options is simple: %1$s Note that the value string, if enclosed "
+"between quotes, may span multiple lines."
+msgstr ""
+
+# %1$s: <replaceable>
+# %2$s: <replaceable>
+#: tmispell.man.sgml.tmp:111 tmispell.sgml.tmp:209
+msgid "%1$s=%2$s"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:111 tmispell.sgml.tmp:209
+msgid "key"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:111 tmispell.sgml.tmp:209
+msgid "value"
+msgstr ""
+
+# %1$s: <variablelist>
+#: tmispell.man.sgml.tmp:115 tmispell.sgml.tmp:213
+msgid "Currently the options are: %1$s"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:120 tmispell.sgml.tmp:218
+msgid "ispell"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:121 tmispell.sgml.tmp:219
+msgid ""
+"The location of the real Ispell executable to be called as a fall-back. Note "
+"that the full path to the program should be given. This option must always "
+"be specified."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:128 tmispell.sgml.tmp:226
+msgid "tex-command-filter"
+msgstr ""
+
+# %1$s: <replaceable>
+# %2$s: <replaceable>
+#: tmispell.man.sgml.tmp:130 tmispell.sgml.tmp:228
+msgid ""
+"A list of TeX commands and their parameter lists to use when filtering TeX "
+"input. The syntax is &quot;%1$s %2$s, ...&quot;, where &quot;oOpP&quot; is a "
+"string of characters denoting the type of command's parameters. Uppercase "
+"letter means that a parameter should be spell checked, lowercase that it "
+"should not. 'O' and 'o' denote optional parameters, 'P' and 'p' normal "
+"parameters."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:133 tmispell.sgml.tmp:231
+msgid "cmdname"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:133 tmispell.sgml.tmp:231
+msgid "oOpP"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:144 tmispell.sgml.tmp:242
+msgid "tex-environment-filter"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:145 tmispell.sgml.tmp:243
+msgid "A list of environments to skip when filtering TeX input."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:150 tmispell.sgml.tmp:248
+msgid "sgml-attributes-to-check"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:151 tmispell.sgml.tmp:249
+msgid "A list of SGML or HTML tag attributes to spell check."
+msgstr ""
+
+# %1$s: <orderedlist>
+#: tmispell.man.sgml.tmp:157 tmispell.sgml.tmp:255
+msgid ""
+"A dictionary specification consists of 7 strings on the same line, separated "
+"by whitespace and possibly enclosed in double or single quotes. Backslashes "
+"can be used to quote characters inside the quotes. The meanings of the "
+"strings are: %1$s"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:165 tmispell.sgml.tmp:263
+msgid ""
+"The name by which the dictionary is known, similar to the name of an Ispell "
+"hash file name without the extension &quot;.hash&quot;. This must be "
+"specified."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:172 tmispell.sgml.tmp:270
+msgid "The file name of the library file to load. This must be specified."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:178 tmispell.sgml.tmp:276
+msgid ""
+"The file name of the dictionary file that the library uses. This must be "
+"specified."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:184 tmispell.sgml.tmp:282
+msgid ""
+"The input encoding this module uses. E.g. latin9. This must be specified."
+msgstr ""
+
+# %1$s: <varname>
+#: tmispell.man.sgml.tmp:190 tmispell.sgml.tmp:288
+msgid ""
+"The value of the locale variable %1$s that should be used with this module. "
+"This determines the default set of characters that are considered to belong "
+"to a word. If empty or not given, the value of a suitable environment "
+"variable is used."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:191 tmispell.sgml.tmp:289
+msgid "LC_CTYPE"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:199 tmispell.sgml.tmp:297
+msgid ""
+"The set of additional word characters not specified by the locale. If not "
+"given, no additional word characters are assumed."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:206 tmispell.sgml.tmp:304
+msgid ""
+"The set of word boundary characters. They are considered to be a part of a "
+"word only when occurring inside one. If not given, no boundary characters "
+"are assumed."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:222
+msgid "EXAMPLES"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:226 tmispell.sgml.tmp:317
+msgid "A configuration file example"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:228 tmispell.sgml.tmp:319
+msgid ""
+"ispell=/usr/bin/ispell.real\n"
+"\n"
+"suomi \"/usr/local/OpenOffice.org1.0/program/libsoikko.so\" \"/usr/local/"
+"OpenOffice.org1.0/share/dict/soikko-sp.fi_FI.dic\" \"latin9\" \"fi_FI@euro\" "
+"\".\" \"-':\"\n"
+"\n"
+"tex-command-filter=\"begin po, end p, usepackage op, newcommand poOP\"\n"
+"tex-environment-filter=\"equation $ eqnarray displaymath math\""
+msgstr ""
+
+#: tmispell.man.sgml.tmp:235 tmispell.sgml.tmp:326
+msgid ""
+"The first line of the configuration file just specifies the location of the "
+"fallback ispell program to use"
+msgstr ""
+
+# %1$s: <acronym>
+#: tmispell.man.sgml.tmp:238 tmispell.sgml.tmp:329
+msgid ""
+"The second line adds a module for Finnish, identified by the name &quot;"
+"suomi&quot;, which uses the given library file associated with a dictionary "
+"file. The input encoding to use is iso-8859-15 %1$s &quot;latin9&quot;. Only "
+"the letters specified by the locale &quot;fi_FI@euro&quot; and period are "
+"considered as word characters, and the boundary characters are &quot;-"
+"&quot;, &quot;'&quot; and &quot;:&quot;."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:242 tmispell.sgml.tmp:333
+msgid "aka"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:247 tmispell.sgml.tmp:338
+msgid ""
+"So every time when Tmispell is invoked with &quot;-d suomi&quot; or &quot;-"
+"d /usr/lib/ispell/suomi.hash&quot; as arguments, the Soikko module is used "
+"for spell checking. Otherwise the Ispell program is started instead."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:254 tmispell.sgml.tmp:345
+msgid ""
+"The fifth line specifies that in TeX filter mode the parameters to commands "
+"begin{}, end{} and usepackage{} should not be spell checked, whereas the "
+"second optional and second obligatory parameters to newcommand should."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:261 tmispell.sgml.tmp:352
+msgid ""
+"The sixth line specifies that in TeX filter mode no math environment should "
+"be spell checked."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:270
+msgid "SEE ALSO"
+msgstr ""
+
+#: tmispell.man.sgml.tmp:271
+msgid "ispell(1)"
+msgstr ""
+
+# %1$s: <ulink>
+#: tmispell.man.sgml.tmp:272
+msgid "%1$s, by Pasi Ryhänen."
+msgstr ""
+
+#: tmispell.man.sgml.tmp:278
+msgid "AUTHOR"
+msgstr ""
+
+# %1$s: <email>
+#: tmispell.man.sgml.tmp:279
+msgid "Pauli Virtanen %1$s"
+msgstr ""
+
+#: tmispell.sgml.tmp:16
+msgid "Tmispell version 0.2.3"
+msgstr ""
+
+#: tmispell.sgml.tmp:21
+msgid "What Tmispell is?"
+msgstr ""
+
+#: tmispell.sgml.tmp:46
+msgid "Usage"
+msgstr ""
+
+# %1$s: <screen>
+#: tmispell.sgml.tmp:47
+msgid ""
+"Currently Tmispell has an interactive text-mode user interface that can be "
+"used for spell checking text. It can be started by typing %1$s When a "
+"misspelled word is encountered, you will be asked what to do. The usage of "
+"the interface should fairly obvious, but you can get help about keys by "
+"pressing '?'."
+msgstr ""
+
+# %1$s: <replaceable>
+#: tmispell.sgml.tmp:51
+msgid "tmispell -dsuomi %1$s"
+msgstr ""
+
+#: tmispell.sgml.tmp:51
+msgid "file.txt"
+msgstr ""
+
+# %1$s: <option>
+# %2$s: <option>
+# %3$s: <option>
+#: tmispell.sgml.tmp:56
+msgid ""
+"If you would like to use the filters, put one of the options '%1$s', '%2$s' "
+"and '%3$s' (TeX, nroff and Sgml, respectively) in front of the file name to "
+"spell check. For more information about options, see the ispell(1) manual "
+"page."
+msgstr ""
+
+#: tmispell.sgml.tmp:58
+msgid "-t"
+msgstr ""
+
+#: tmispell.sgml.tmp:58
+msgid "-n"
+msgstr ""
+
+#: tmispell.sgml.tmp:59
+msgid "-h"
+msgstr ""
+
+#: tmispell.sgml.tmp:66
+msgid "Installation"
+msgstr ""
+
+#: tmispell.sgml.tmp:67
+msgid ""
+"These instructions tell how to build and install Tmispell from scratch. "
+"There are also prebuilt packages, which you likely want to use instead of "
+"doing installation the hard way."
+msgstr ""
+
+#: tmispell.sgml.tmp:74
+msgid "Compile and install Tmispell:"
+msgstr ""
+
+#: tmispell.sgml.tmp:76
+msgid "./configure"
+msgstr ""
+
+#: tmispell.sgml.tmp:77
+msgid "make"
+msgstr ""
+
+#: tmispell.sgml.tmp:82
+msgid "make install"
+msgstr ""
+
+# %1$s: <command>
+#: tmispell.sgml.tmp:81
+msgid ""
+"The %1$s just copies the tmispell executable and manual page to suitable "
+"places."
+msgstr ""
+
+#: tmispell.sgml.tmp:87
+msgid "Download and install Soikko (see http://www.iki.fi/~pry/soikko/)."
+msgstr ""
+
+# %1$s: <filename>
+#: tmispell.sgml.tmp:92
+msgid ""
+"Create the configuration file and place it to the place where Tmispell looks "
+"for it. There is also an example configuration file %1$s, which should be "
+"used as a template. (See &quot;The configuration file format&quot; below.) "
+"Check that the path names in spell checker entries point to correct places."
+msgstr ""
+
+#: tmispell.sgml.tmp:95
+msgid "tmispell.conf.example"
+msgstr ""
+
+# %1$s: <screen>
+#: tmispell.sgml.tmp:102
+msgid ""
+"To make other programs use Tmispell instead of Ispell, first move aside the "
+"original Ispell executable, and then create a link from &quot;tmispell&quot; "
+"to &quot;ispell&quot;. For example: %1$s Remember to change the &quot;"
+"ispell=...&quot; line in configuration file to point to the real Ispell "
+"executable."
+msgstr ""
+
+#: tmispell.sgml.tmp:107
+msgid "mv /usr/bin/ispell /usr/bin/ispell.real"
+msgstr ""
+
+#: tmispell.sgml.tmp:108
+msgid "ln -s /usr/local/bin/tmispell /usr/bin/ispell"
+msgstr ""
+
+# %1$s: <screen>
+#: tmispell.sgml.tmp:113
+msgid ""
+"Other programs must also know that a Finnish spell checking is possible, so "
+"run the following command to create fake dictionary files: %1$s Note that "
+"the path might also be &quot;/usr/share/ispell&quot; or something similar, "
+"depending on your system."
+msgstr ""
+
+#: tmispell.sgml.tmp:118
+msgid "touch /usr/lib/ispell/suomi.{hash,aff}"
+msgstr ""
+
+# %1$s: <screen>
+# %2$s: <screen>
+#: tmispell.sgml.tmp:125
+msgid ""
+"To check that Tmispell works properly, type the following command: %1$s If "
+"you had specified a dictionary with identifier &quot;suomi&quot; in the "
+"configuration file, then you should see a line similar to this: %2$s Now you "
+"can type words to spell check. For more information about this command mode, "
+"refer to the ispell(1) manual."
+msgstr ""
+
+#: tmispell.sgml.tmp:129
+msgid "ispell -dsuomi -a"
+msgstr ""
+
+#: tmispell.sgml.tmp:134
+msgid "@(#) International Ispell Version 3.1.20 compatible tmispell 0.1.1"
+msgstr ""
+
+#: tmispell.sgml.tmp:143
+msgid "Program-specific information"
+msgstr ""
+
+#: tmispell.sgml.tmp:147
+msgid "Emacs (both Ispell and Flyspell modes)"
+msgstr ""
+
+# %1$s: <filename>
+# %2$s: <screen>
+# %3$s: <screen>
+#: tmispell.sgml.tmp:148
+msgid ""
+"Note that you might have to add something like the following to your %1$s "
+"configuration file, since Ispell support in Emacs does not know about "
+"Finnish dictionary by default: %2$s Depending on your configuration, the "
+"ispell-local-dictionary-alist could also be ispell-dictionary-alist. You can "
+"change the active dictionary with the command &quot;M-x ispell-change-"
+"dictionary&quot;. If you like to have Finnish as the default dictionary, add "
+"also: %3$s If you still encounter problems (e.g. with TeX files), try "
+"turning the multi byte character support of Emacs off."
+msgstr ""
+
+#: tmispell.sgml.tmp:150
+msgid "~/.emacs"
+msgstr ""
+
+#: tmispell.sgml.tmp:154
+msgid ""
+"(setq ispell-local-dictionary-alist\n"
+"      (append ispell-local-dictionary-alist\n"
+"       '((\"suomi\"\n"
+"          \"[%%.0-9A-Za-z\\247\\300-\\326\\330-\\366\\370-\\377-]\"\n"
+"          \"[^.%%0-9A-Za-z\\247\\300-\\326\\330-\\366\\370-\\377-]\"\n"
+"          \"[':]\" nil nil nil iso-8859-1))))"
+msgstr ""
+
+#: tmispell.sgml.tmp:169
+msgid "(setq ispell-dictionary &quot;suomi&quot;)"
+msgstr ""
+
+#: tmispell.sgml.tmp:176
+msgid "Pspell (Sylpheed, Balsa and many more)"
+msgstr ""
+
+# %1$s: <filename>
+# %2$s: <screen>
+#: tmispell.sgml.tmp:177
+msgid ""
+"Although Pspell is being replaced by Aspell, some programs still use it. To "
+"use Tmispell with it, you need to have pspell-ispell module for Pspell "
+"installed, and a file %1$s with the following line in it: %2$s"
+msgstr ""
+
+#: tmispell.sgml.tmp:181
+msgid "/usr/share/pspell/fi-ispell.pwli"
+msgstr ""
+
+#: tmispell.sgml.tmp:183
+msgid "/usr/lib/ispell/suomi.hash iso8859-15"
+msgstr ""
+
+#: tmispell.sgml.tmp:188
+msgid "Other programs (most KDE applications, LyX, ...)"
+msgstr ""
+
+#: tmispell.sgml.tmp:189
+msgid ""
+"When the fake dictionary files (see Installation) exist, Finnish should "
+"appear in the dictionary list in these programs."
+msgstr ""
+
+#: tmispell.sgml.tmp:199
+msgid "The configuration file format"
+msgstr ""
+
+#: tmispell.sgml.tmp:363
+msgid "Known issues"
+msgstr ""
+
+#: tmispell.sgml.tmp:366
+msgid "Missing features"
+msgstr ""
+
+#: tmispell.sgml.tmp:369
+msgid ""
+"Implement entity encoding and decoding in SGML filter. To do this "
+"reasonably, some changes are likely required in filter architecture."
+msgstr ""
+
+#: tmispell.sgml.tmp:373
+msgid ""
+"Support for multibyte (UTF-8, UTF-16, etc.) encodings. Might go together "
+"with encode decoding etc."
+msgstr ""
+
+#: tmispell.sgml.tmp:381
+msgid "Other things to do"
+msgstr ""
+
+#: tmispell.sgml.tmp:384
+msgid ""
+"Investigate how Aspell support could be implemented. Need for a Soikko-"
+"patched Aspell?"
+msgstr ""
+
+#: tmispell.sgml.tmp:388
+msgid "Think about Ispell extended characters (whatever they are)."
+msgstr ""

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook V4.2//EN" "/usr/share/sgml/docbook/dtd/4.2/docbook.dtd" [
+<!-- Fill in your name for FIRSTNAME and SURNAME. --><!ENTITY dhfirstname "<firstname>Pauli</firstname>">
+<!ENTITY dhsurname "<surname>Virtanen</surname>">
+<!-- Please adjust the date whenever revising the manpage. --><!ENTITY dhdate "<date>august  26, 2002</date>">
+<!-- SECTION should be 1-8, maybe w/ subsection other parameters are
+       allowed: see man(7), man(1). --><!ENTITY dhsection "<manvolnum>1</manvolnum>">
+<!ENTITY dhemail "<email>pauli.virtanen@hut.fi</email>">
+<!ENTITY dhusername "Pauli Virtanen">
+<!ENTITY dhucpackage "<refentrytitle>TMISPELL</refentrytitle>">
+<!ENTITY tmispell-description SYSTEM "tmispell.description.ent">
+<!ENTITY tmispell-configfile SYSTEM "tmispell.configfile.ent">
+<!ENTITY tmispell-configfile-example SYSTEM "tmispell.configfile-example.ent">
+]>
+<refentry>
+  <refentryinfo>
+    <address><email>pauli.virtanen@hut.fi</email></address>
+    <author><firstname>Pauli</firstname> <surname>Virtanen</surname></author>
+    <copyright>
+      <year>2002-2003</year>
+      <holder>Pauli Virtanen</holder>
+    </copyright>
+    <date>26. elokuuta 2002</date>
+  </refentryinfo>
+  
+  <refmeta><refentrytitle>TMISPELL</refentrytitle> <manvolnum>1</manvolnum></refmeta>
+
+  <refnamediv>
+    <refname>tmispell</refname>
+    <refpurpose>Ispell-yhteensopiva käyttöliittymä Soikko-oikolukumoduulille.</refpurpose>
+  </refnamediv>
+  
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>tmispell</command>
+      <arg><option>-F</option> <replaceable>asetustiedosto</replaceable></arg>
+      <arg><replaceable>Ispell-valitsimet</replaceable></arg>
+      <arg choice="opt" rep="repeat"><replaceable>tiedostot</replaceable></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>KUVAUS</title>
+    
+
+  <para>Tmispell on Ispell-yhteensopiva käyttöliittymä oikolukumoduuleille. Varsinaisen oikoluvun suomea varten hoitaa korkealaatuinen oikolukumoduuli <ulink url="http://www.iki.fi/~pry/soikko/">Soikko</ulink>, jonka on tehnyt Pasi Ryhänen.</para>
+  <para>Tmispell on hyödyllinen, koska monet ohjelmat (esim. postiohjelmat sekä tekstinkäsittelyohjelmat) käyttävät Ispelliä oikolukemiseen. Koska Tmispell on myös Ispell-yhteensopiva, nämä ohjelmat voivat käyttää sitä ilman että mitään tarvitsee muuttaa.</para>
+  <para>Lisäksi Tmispell osaa käynnistää alkuperäisen Ispellin, kun jollekin kielelle ei ole moduulia. Tämän vuoksi Tmispell sopii sellaisenaan Ispellin korvikkeeksi.</para>
+
+  </refsect1>
+
+  <refsect1>
+    <title>VALITSIMET</title>
+    <para>Tmispell ymmärtää seuraavat valitsimet:</para>
+    <variablelist>
+      <varlistentry>
+	<term><option>-F <replaceable>asetustiedosto</replaceable></option></term>
+	<listitem>
+	  <para>Lue asetustiedosto <replaceable>asetustiedosto</replaceable> oletusarvoisen tiedoston <filename>@CONFIG_FILE@</filename> sijaan.</para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term><option><replaceable>Ispell-valitsimet</replaceable></option></term>
+	<listitem>
+	  <para>Tmispellin pitäisi ymmärtää kaikki Ispellin ymmärtämät valitsimet. Lisätietoja saa manuaalisivulta ispell(1).</para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1>
+    <title>TIEDOSTOT</title>
+    
+    <variablelist>
+      <varlistentry>
+	<term><filename>@CONFIG_FILE@</filename></term>
+	<listitem>
+	  <para>Tmispellin asetustiedosto.</para>
+	  
+
+  <para>Asetustiedosto sisältää oikolukumoduulimerkintöjä sekä asetuksia. "#" on kommenttimerkki: kaikki teksti rivillä sen jälkeen jää huomiotta.</para>
+
+  <para>Asetusten muoto on yksinkertainen: <screen><replaceable>avain</replaceable>=<replaceable>arvo</replaceable></screen> Huomaa, että arvomerkkijono voi olla usean rivin mittainen, jos se on lainausmerkkien välissä.</para>
+  <para>Mahdolliset asetukset ovat: <variablelist>
+      <varlistentry>
+	<term>ispell</term> 
+	<listitem><para>Varalla käytettävän oikean Ispell-ohjelmatiedoston sijainti. Huomaa, että koko polku tiedostoon täytyy antaa. Tämä asetus täytyy aina määritellä.</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>tex-command-filter</term> 
+	<listitem>
+	  <para>Luettelo TeX-komennoista ja parametreista, joita TeX-suodatin käsittelee erityisesti. Syntaksi on "<replaceable>komento</replaceable> <replaceable>oOpP</replaceable>, ...", jossa "oOpP" on merkkijono, jonka merkit tarkoittavat komennon erityyppisiä parametreja. Iso kirjain tarkoittaa, että parametri tulisi oikolukea, ja pieni, että sitä ei tulisi oikolukea. "O" ja "o" merkitsevät valinnaista ja "P" ja "p" tavallista (pakollista) parametria.</para>
+	</listitem>
+      </varlistentry>
+      
+      <varlistentry>
+	<term>tex-environment-filter</term> 
+	<listitem><para>Luettelo ympäristöistä, joiden oikoluvun TeX-suodatin estää.</para></listitem>
+      </varlistentry>
+
+      <varlistentry>
+	<term>sgml-attributes-to-check</term>
+	<listitem><para>Luettelo SGML- tai HTML-määreistä, jotka tulisi oikolukea.</para></listitem>
+      </varlistentry>
+    </variablelist></para>
+
+  <para>Sanastomääritelmässä on 7 merkkijonoa samalla rivillä välein eroteltuina, ja tarvittaessa lainausmerkeissä. Kenoviivaa voi käyttää merkkien suojaamiseen lainausmerkkien sisällä. Merkkijonojen merkitykset ovat: <orderedlist continuation="restarts">
+      <listitem>
+	<para>Nimi, jolla sanasto tunnetaan; vastaa Ispellin hash-tiedoston nimeä ilman ".hash"-päätettä. Pakollinen.</para>
+      </listitem>
+      <listitem>
+	<para>Ladattavan kirjastotiedoston nimi. Pakollinen.</para>
+      </listitem>
+      <listitem>
+	<para>Kirjastotiedoston käyttämä sanasto. Pakollinen.</para>
+      </listitem>
+      <listitem>
+	<para>Moduulin syötteen merkistö, esimerkiksi latin9. Pakollinen.</para>
+      </listitem>
+      <listitem>
+	<para>Maa-asetustomuuttujan <varname>LC_CTYPE</varname> arvo, jota käytetään tämän moduulin kanssa. Se määrittelee oletusarvoisesti merkit, jotka kuuluvat sanoihin. Jos tyhjä tai puuttuu, niin sopivan ympäristömuuttujan arvo on käytössä.</para>
+      </listitem>
+      <listitem>
+	<para>Joukko lisämerkkejä, jotka voivat kuulua sanoihin. Jos tyhjä tai puuttuu, niin vain maa-asetuston määrittelemät merkit kuuluvat sanoihin.</para>
+      </listitem>
+      <listitem>
+	<para>Välimerkit. Nämä merkit kuuluvat sanaan, vain jos ovat sen sisällä. Jos tyhjä tai puuttuu, välimerkkejä ei oleteta.</para>
+      </listitem>
+    </orderedlist></para>
+
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+
+  <refsect1>
+    <title>ESIMERKIT</title>
+    
+
+  <example>
+    <title>Asetustiedostoesimerkki</title>
+    
+    <screen><![CDATA[ispell=/usr/bin/ispell.real
+
+suomi "/usr/local/OpenOffice.org1.0/program/libsoikko.so" "/usr/local/OpenOffice.org1.0/share/dict/soikko-sp.fi_FI.dic" "latin9" "fi_FI@euro" "." "-':"
+
+tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
+tex-environment-filter="equation $ eqnarray displaymath math"]]></screen>
+    
+    <para>Asetustiedoston ensimmäinen rivi määrittelee tässä varalla olevan ispell-ohjelman.</para>
+
+    <para>Toinen rivi lisää suomea varten moduulin, jonka tunnisteeksi tulee "suomi" ja joka käyttää annettua kirjastotiedostoa annetun sanastotiedoston kanssa. Syötteen merkistö on iso-8859-15 <acronym>eli</acronym> "latin9". Vain maa-asetuston "fi_FI@euro" määrittelemät merkit ja piste lasketaan sanoihin kuuluviksi, ja välimerkeiksi käyvät "-", ", "'" ja ":".</para>
+
+    <para>Joka kerta siis kun Tmispell käynnistetään valitsimin "-d suomi" tai "-d /usr/lib/ispell/suomi.hash", niin Soikko-moduuli hoitaa oikoluvun. Muissa tapauksissa tavallinen Ispell käynnistyy.</para>
+
+    <para>Viides rivi määrittelee, että TeX-suodatin estää komentojen begin{}, end{} ja usepackage{} parametrien oikoluvun, muttei komennon newcommand toisen valinnaisen ja pakollisen parametrin oikolukua.</para>
+
+    <para>Kuudes rivi määrittelee, että TeX-tilassa matematiikkaympäristöjä ei oikolueta.</para>
+  </example>
+
+  </refsect1>
+
+  <refsect1>
+    <title>KATSO MYÖS</title>
+    <para>ispell(1)</para>
+    <para>Pasi Ryhäsen <ulink url="http://www.iki.fi/~pry/soikko/">Soikko</ulink></para>
+  </refsect1>
+
+  <refsect1>
+    <title>TEKIJÄ</title>
+    <para>Pauli Virtanen <email>pauli.virtanen@hut.fi</email></para>
+  </refsect1>
+</refentry>
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: sgml
+sgml-omittag:t
+sgml-shorttag:t
+sgml-minimize-attributes:nil
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-indent-data:t
+sgml-parent-document:nil
+sgml-default-dtd-file:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

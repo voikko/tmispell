@@ -1,0 +1,29 @@
+NEWS - a list of user-visible changes between releases of Tmispell.
+
+New in 0.2.3 - 2003-05-19:
+* Compilation fixes for RH9.
+
+New in 0.2.2 - 2003-05-15:
+* More compatibility and bugfixes.
+
+New in 0.2.1 - 2003-05-13:
+* Compilation fixes for certain versions of Ncurses. Minor bugfixes.
+
+New in 0.2 - 2003-05-12:
+* Text mode user interface.
+* TeX filtering (also some support for SGML and *roff).
+* Improvements in documentation in addition to a Finnish translation.
+* Localisable user interface (English and Finnish translations).
+
+New in 0.1.2 - 2002-10-07:
+* Additions and fixes to documentation.
+* Implemented some minor very rarely used missing features.
+* More Ispell-like personal dictionary behaviour.
+* RPM spec file contributed by Marko Myllynen.
+* Fixed problems with g++-3.2
+
+New in 0.1.1 - 2002-09-20:
+* A better configuration file example.
+
+New in 0.1 - 2002-09-18:
+* First public release.

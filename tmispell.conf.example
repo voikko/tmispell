@@ -1,0 +1,64 @@
+### The ispell program to use
+ispell = /usr/bin/ispell.real
+
+
+### TeX filtering:
+
+# Command filter. Syntax is:
+#     <command_name> <parameters>, ...
+# where <parameters> is a string of letters 'o', 'O', 'p' and 'P' which have
+# meanings
+#     'o': an optional parameter not to be spell checked
+#     'O': an optional parameter to be spell checked
+#     'p': an obligatory parameter not to be spell checked
+#     'P': an obligatory parameter to be spell checked
+tex-command-filter = "
+  addtocounter pp, addtolength pp, alpha p, arabic p, fnsymbol p, roman p,
+  stepcounter p, setcounter pp, usecounter p, value p, newcounter po,
+  refstepcounter p,
+
+  label p, pageref p, ref p,
+
+  newcommand poOP, renewcommand poOP, newenvironment poOPP,
+  renewenvironment poOPP, newtheorem poPo, newfont pp, 
+  floatname pP,
+
+  documentclass op, usepackage op,
+
+  begin po, end p,
+
+  setlength pp, addtolength pp, settowidth pp, settodepth pp, settoheight pp,
+
+  enlargethispage p, hyphenation p,
+
+  pagenumbering p, pagestyle p,
+
+  addvspace p, framebox ooP, hspace p, vspace p, makebox ooP, parbox ooopP,
+  raisebox pooP, rule opp, sbox pO, savebox pooP, usebox p,
+
+  include p, includeonly p, input p,
+
+  addcontentsline ppP, addtocontents pP,
+
+  fontencoding p, fontfamily p, fontseries p, fontshape p, fontsize pp,
+  usefont pppp,
+
+  documentstyle op, cite p, nocite p, psfig p, selectlanguage p,
+  includegraphics op, bibitem op,
+
+  geometry p,"
+
+# TeX environments to skip.
+tex-environment-filter = "equation $ eqnarray displaymath picture 
+                          thebibliography math"
+
+### SGML filtering
+sgml-attributes-to-check = "alt"
+
+### Spell checker entries
+# <identifier> <library> <dictionary> <encoding> <locale> <word_c> <boundary_c>
+suomi	"/usr/lib/libvoikko.so.1"	"/dev/null" "UTF-8"	"fi_FI@euro" "." "-':"
+finnish	"/usr/lib/libvoikko.so.1"	"/dev/null" "UTF-8"	"fi_FI@euro" "." "-':"
+
+# Note that for Finnish you might also need the second entry "finnish",
+# in case some program uses it.

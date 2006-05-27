@@ -1,0 +1,238 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-03-22 23:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/charset.cc:56
+#, c-format
+msgid "Error initializing character set conversion: %s"
+msgstr ""
+
+#: src/charset.cc:170
+#, c-format
+msgid "Conversion of '%s' to character set '%s' failed: %s"
+msgstr ""
+
+#: src/config_file.cc:133
+msgid "\\ at the end of a string"
+msgstr ""
+
+#: src/config_file.cc:143
+msgid "Unterminated quoted string"
+msgstr ""
+
+#: src/config_file.cc:181
+#, c-format
+msgid "Unable to open configuration file %s"
+msgstr ""
+
+#: src/config_file.cc:211
+#, c-format
+msgid "Parse error in file \"%s\" on line %d, column %d: %s"
+msgstr ""
+
+#: src/config_file.cc:215
+#, c-format
+msgid "Parse error in file \"%s\" on line %d: %s"
+msgstr ""
+
+#: src/config_file.cc:218
+#, c-format
+msgid "Parse error in file \"%s\": %s"
+msgstr ""
+
+#: src/config_file.cc:240
+msgid "Incomplete spell checker entry"
+msgstr ""
+
+#: src/options.cc:63
+#, c-format
+msgid ""
+"Usage: %s [options] [file]...\n"
+"Options: [FMNLVlfsaAtnhgbxBCPmSdpwWTv]\n"
+"\n"
+" -F <file>  Use given file as the configuration file.\n"
+"\n"
+"The following flags are same for ispell:\n"
+" -v[v]      Print version number and exit.\n"
+" -M         One-line mini menu at the bottom of the screen.\n"
+" -N         No mini menu at the bottom of the screen.\n"
+" -L <num>   Number of context lines.\n"
+" -V         Use \"cat -v\" style for characters not in the 7-bit ANSI\n"
+"            character set.\n"
+" -l         Only output a list of misspelled words.\n"
+" -f <file>  Specify the output file.\n"
+" -s         Issue SIGTSTP at every end of line.\n"
+" -a         Read commands.\n"
+" -A         Read commands and enable a command to include a file.\n"
+" -e[e1234]  Expand affixes.\n"
+" -c         Compress affixes.\n"
+" -D         Dump affix tables.\n"
+" -t         The input is in TeX format.\n"
+" -n         The input is in [nt]roff format.\n"
+" -h         The input is in sgml format.\n"
+" -b         Create backup files.\n"
+" -x         Do not create backup files.\n"
+" -B         Do not allow run-together words.\n"
+" -C         Allow run-together words.\n"
+" -P         Do not generate extra root/affix combinations.\n"
+" -m         Allow root/affix combinations that are not in dictionary.\n"
+" -S         Sort the list of guesses by probable correctness.\n"
+" -d <dict>  Specify an alternate dictionary file.\n"
+" -p <file>  Specify an alternate personal dictionary.\n"
+" -w <chars> Specify additional characters that can be part of a word.\n"
+" -W <len>   Consider words shorter than this always correct.\n"
+" -T <fmt>   Assume a given formatter type for all files.\n"
+" -r <cset>  Specify the character set of the input.\n"
+msgstr ""
+
+#: src/options.cc:225
+#, c-format
+msgid "Missing argument for option %s"
+msgstr ""
+
+#: src/options.cc:397
+#, c-format
+msgid "Unknown option %s"
+msgstr ""
+
+#: src/personal_dictionary.cc:24
+#, c-format
+msgid "Unable to open file %s for reading a dictionary."
+msgstr ""
+
+#: src/personal_dictionary.cc:40
+#, c-format
+msgid "Unable to open file %s for writing a dictionary."
+msgstr ""
+
+#: src/spell.cc:36
+#, c-format
+msgid "Unable to locate symbol %s in library"
+msgstr ""
+
+#: src/spell.cc:57
+msgid "Unable to open library"
+msgstr ""
+
+#: src/spell.cc:66
+#, c-format
+msgid "Library version %d not supported"
+msgstr ""
+
+#: src/spell.cc:87
+msgid "Initializing spell checker failed"
+msgstr ""
+
+#: src/spell.cc:133
+#, c-format
+msgid "Unable to open dictionary file %s"
+msgstr ""
+
+#: src/spell.cc:148
+#, c-format
+msgid "Unable to set encoding to %s"
+msgstr ""
+
+#: src/spell.cc:165
+#, c-format
+msgid "Could not set options to %s"
+msgstr ""
+
+#: src/spell.cc:213
+msgid "Could not get suggestions"
+msgstr ""
+
+#: src/tmispell.cc:72
+#, c-format
+msgid "An Ispell program was not given in the configuration file %s"
+msgstr ""
+
+#: src/tmispell.cc:230
+#, c-format
+msgid "Unable to write to file %s"
+msgstr ""
+
+#: src/ui/cursesui.cc:99
+#, c-format
+msgid "File: %s"
+msgstr ""
+
+#: src/ui/cursesui.cc:181
+msgid ""
+"[SP] <number> R)epl A)ccept I)nsert L)ookup U)ncap Q)uit e(X)it or ? for help"
+msgstr ""
+
+#: src/ui/cursesui.cc:208
+msgid ""
+"Whenever an unrecognized word is found, it is printed on\n"
+"a line on the screen. If there are suggested corrections\n"
+"they are listed with a number next to each one. You have\n"
+"the option of replacing the word completely, or choosing\n"
+"one of the suggested words. Alternatively, you can ignore\n"
+"this word, ignore all its occurrences or add it in the\n"
+"personal dictionary.\n"
+"\n"
+"Commands are:\n"
+" r       Replace the misspelled word completely.\n"
+" space   Accept the word this time only.\n"
+" a       Accept the word for the rest of this session.\n"
+" i       Accept the word, and put it in your personal dictionary.\n"
+" u       Accept and add lowercase version to personal dictionary.\n"
+" 0-9     Replace with one of the suggested words.\n"
+" x       Write the rest of this file, ignoring misspellings,\n"
+"         and start next file.\n"
+" q       Quit immediately.  Asks for confirmation.\n"
+"         Leaves file unchanged.\n"
+" ^Z      Suspend program.\n"
+" ?       Show this help screen.\n"
+msgstr ""
+
+#. * @}
+#. ***************************************************************************
+#. * @name Behaviour
+#. ** @{
+#. *
+#. * Yes or no keys
+#: src/ui/cursesui.cc:273
+msgid "yn"
+msgstr ""
+
+#. * Control keys: Add Insert Uncap Quit eXit Replace
+#: src/ui/cursesui.cc:276
+msgid "aiuqxr"
+msgstr ""
+
+#: src/ui/cursesui.cc:345
+msgid "Are you sure you want to throw away your changes? (y/n): "
+msgstr ""
+
+#: src/ui/cursesui.cc:359
+msgid "Replace with: "
+msgstr ""
+
+#: src/ui/cursesui.cc:367
+msgid "-- Press any key to continue --"
+msgstr ""
+
+#: src/ui/cursesui.cc:397
+#, c-format
+msgid "Unable to open file %s"
+msgstr ""
+
+#: src/ui/cursesui.cc:405
+msgid "Unable to open temporary file"
+msgstr ""

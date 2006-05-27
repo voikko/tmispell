@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+
+  <sect1>
+    <title>Known issues</title>
+    
+    <sect2>
+      <title>Missing features</title>
+      <itemizedlist>
+
+	<listitem><para>Implement entity encoding and decoding in SGML
+	    filter. To do this reasonably, some changes are likely
+	    required in filter architecture.</para></listitem>
+	
+	<listitem><para>Support for multibyte (UTF-8, UTF-16, etc.)
+	    encodings. Might go together with encode decoding
+	    etc.</para></listitem>
+
+      </itemizedlist>
+    </sect2>
+
+    <sect2>
+      <title>Other things to do</title>
+
+      <itemizedlist>
+	<listitem><para>Investigate how Aspell support could be
+	    implemented. Need for a Soikko-patched
+	    Aspell?</para></listitem>
+
+	<listitem><para>Think about Ispell extended characters
+	    (whatever they are).</para></listitem>
+	
+      </itemizedlist>
+    </sect2>
+  </sect1>
+
