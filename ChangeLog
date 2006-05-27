@@ -1,5 +1,9 @@
 2006-05-27 Harri Pitkänen <hatapitk@iki.fi>
 
+	* Automake fixes, disable Finnish documentation
+
+2006-05-27 Harri Pitkänen <hatapitk@iki.fi>
+
 	* Adapted to use Voikko instead of Soikko
 
 2005-10-22 19:30 +0000 [r2879-2881]  pauli <pauli@localhost>

@@ -1,15 +1,12 @@
-
-MAINTAINERCLEANFILES =  Makefile.in .deps config.hh config.hh.in stamp-h.in
-
 INCLUDES=$(GLIB_CFLAGS) -Iglibmm
 
-USTRING_SOURCES = \
-	glibmm/convert.cc \
-	glibmm/exception.cc \
-	glibmm/error.cc \
-	glibmm/unicode.cc \
-	glibmm/ustring.cc \
-	glibmm/utility.cc
+USTRING_SOURCES = glibmm/convert.h glibmm/error.h glibmm/exception.h glibmm/unicode.h \
+                  glibmm/ustring.h glibmm/utility.h glibmm/convert.cc glibmm/error.cc \
+                  glibmm/exception.cc glibmm/glibmmconfig.h glibmm/unicode.cc glibmm/ustring.cc \
+                  glibmm/private/convert_p.h glibmm/private/unicode_p.h
+
+
+MAINTAINERCLEANFILES =  Makefile.in .deps config.hh config.hh.in stamp-h.in
 
 bin_PROGRAMS = tmispell
 tmispell_LDADD = @INTLLIBS@ $(GLIB_LIBS)

@@ -3,7 +3,6 @@ MAINTAINERCLEANFILES =  Makefile.in doc.pot \
 	tmispell.en.sgml tmispell.man.en.sgml
 
 
-EXTRA_DIST = fi.po
 SGMLS=\
 	tmispell.configfile-example.ent	\
 	tmispell.configfile.ent		\
@@ -12,9 +11,9 @@ SGMLS=\
 	tmispell.sgml			\
 	tmispell.todo.ent
 
-EXTRA_DIST += $(SGMLS) $(patsubst %.sgml,%.fi.sgml,$(filter %.sgml,$(SGMLS)))
+EXTRA_DIST = $(SGMLS)
 
-LANGS=en fi
+LANGS=en
 
 translate:
 	@for L in $(LANGS); do \
@@ -41,7 +40,7 @@ translate:
 	msgcat -o doc.pot *.sgml.pot 2> /dev/null
 	rm -f *.sgml.pot
 
-generate: translate
+generate:
 	@for L in $(LANGS); do \
 		echo "Generating manual page ($$L)"; \
 		docbook-to-man tmispell.man.$$L.sgml > ../tmispell.$$L.1.in; \
