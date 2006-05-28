@@ -1,3 +1,7 @@
+2006-05-28 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Make libenchant plugin compile on Debian Sarge
+
 2006-05-27 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Automake fixes, disable Finnish documentation

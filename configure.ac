@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.52)
 
 dnl ## Package information
-AC_INIT(tmispell-voikko, 0.4.1)
+AC_INIT(tmispell-voikko, 0.4.2)
 AC_CONFIG_SRCDIR(src/tmispell.cc)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AM_CONFIG_HEADER(src/config.hh)
@@ -20,7 +20,8 @@ MICRO_VERSION=`expr $PACKAGE_VERSION : '.*\..*\.\(.*\)'`
 dnl     Set this too
 MAJOR_VERSION_PLUS_MINOR_VERSION=`expr $MAJOR_VERSION + $MINOR_VERSION`
 dnl Version info for libraries = CURRENT:REVISION:AGE
-VERSION_INFO=$MAJOR_VERSION_PLUS_MINOR_VERSION:$MICRO_VERSION:$MINOR_VERSION
+#VERSION_INFO=$MAJOR_VERSION_PLUS_MINOR_VERSION:$MICRO_VERSION:$MINOR_VERSION
+VERSION_INFO=1:0:0
 
 AC_SUBST(VERSION_INFO)
 AC_SUBST(MAJOR_VERSION)
@@ -110,8 +111,21 @@ AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "$PACKAGE_LOCALE_DIR",
                 [Package locale directory])
 
 dnl ## Enchant
+AH_TEMPLATE(HAVE_ENCHANT, [Have enchant >= 1.0])
+AH_TEMPLATE(HAVE_ENCHANT_1_1_6, [Have enchant >= 1.1.6])
 HAVE_ENCHANT=""
-PKG_CHECK_MODULES(ENCHANT, enchant >= 1.0, HAVE_ENCHANT="true")
+PKG_CHECK_MODULES(ENCHANT, enchant >= 1.1.6, [
+  AC_DEFINE(HAVE_ENCHANT_1_1_6, 1)
+  AC_DEFINE(HAVE_ENCHANT, 1)
+  HAVE_ENCHANT="true"
+  ],
+  [
+  PKG_CHECK_MODULES(ENCHANT, enchant >= 1.0, [
+    AC_DEFINE(HAVE_ENCHANT, 1)
+    HAVE_ENCHANT="true"
+  ])
+  ]
+)
 AM_CONDITIONAL(HAVE_ENCHANT, test x$HAVE_ENCHANT = xtrue)
 
 dnl ## Debug

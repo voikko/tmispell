@@ -278,7 +278,9 @@ extern "C" {
 		provider->dictionary_exists = voikko_provider_dictionary_exists;
 		provider->identify = voikko_provider_identify;
 		provider->describe = voikko_provider_describe;
+#ifdef HAVE_ENCHANT_1_1_6
 		provider->free_string_list = voikko_provider_free_string_list;
+#endif
 		
 		return provider;
 	}
