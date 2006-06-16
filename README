@@ -1,3 +1,17 @@
+This is NOT an original version of Tmispell from Pauli Virtanen. It is based
+on an unreleased snapshot from Pauli, but has since been modified to use Voikko
+instead of Soikko to do the spellchecking. This makes the entire program free and
+redistributable under the GPL.
+
+This version supports the UTF-8 character set and has a working libenchant plugin.
+Some documentation (particularly Finnish translations) have been removed because
+they were outdated and the build system for translations did not work.
+Other than that, there are not much differences from the original version, so the
+original README presented below is still mostly valid.
+
+The modifications and the above notice are written by Harri Pitkänen <hatapitk@iki.fi>.
+
+
                              Tmispell version 0.2.3
 
   Pauli Virtanen <pauli.virtanen@hut.fi>
@@ -8,7 +22,7 @@ What Tmispell is?
 
    Tmispell is an Ispell compatible front-end for spell checking modules. To
    do the actual spell checking, for Finnish it uses the high-quality spell
-   checking module [1]Soikko, which is made by Pasi Ryh�nen.
+   checking module [1]Soikko, which is made by Pasi Ryhänen.
 
    What makes Tmispell quite useful is that many programs (e.g. mail clients
    and document processors) use Ispell for spell checking. Since Tmispell is
