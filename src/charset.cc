@@ -46,9 +46,9 @@ public:
 	~CharsetConverterPimpl();
 
 	/// Convert from external encoding to internal UTF-8
-	Glib::ustring CharsetConverterPimpl::from(std::string str);
+	Glib::ustring from(std::string str);
 	/// Convert internal UTF-8 to external encoding
-	std::string CharsetConverterPimpl::to(Glib::ustring str);
+	std::string to(Glib::ustring str);
 
 private:
 	/// The name of the character set

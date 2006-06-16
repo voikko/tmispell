@@ -1,4 +1,9 @@
-2006-05-28 Harri Pitkänen <hatapitk@iki.fi>
+2006-06-16 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fix build failure with GCC 4.1 due to extra qualifications
+	* Increase version number to 0.4.3
+
+2006-06-16 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add GPL headers to source files that were written by Pauli
 	  but did not have the licence header (Pauli has stated that
