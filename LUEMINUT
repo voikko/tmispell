@@ -1,103 +1,107 @@
-                             Tmispell, versio 0.2.3
+                             Tmispell, versio 0.4.3
 
-  Pauli Virtanen <pauli.virtanen@hut.fi>
+  Pauli Virtanen <pauli.virtanen@hut.fi> (alkuper√§inen Tmispell)
+  Harri Pitk√§nen <hatapitk@iki.fi> (muutokset Voikkoa varten)
 
    --------------------------------------------------------------------------
 
-Mik‰ Tmispell on?
+Mik√§ Tmispell on?
 
-   Tmispell on Ispell-yhteensopiva k‰yttˆliittym‰ oikolukumoduuleille.
-   Varsinaisen oikoluvun suomea varten hoitaa korkealaatuinen oikolukumoduuli
-   [1]Soikko, jonka on tehnyt Pasi Ryh‰nen.
+   Tmispell on Ispell-yhteensopiva k√§ytt√∂liittym√§ oikolukumoduuleille.
+   Varsinaisen oikoluvun suomen kielt√§ varten hoitaa oikolukuj√§rjestelm√§
+   nimelt√§ Voikko[1].
 
-   Tmispell on hyˆdyllinen, koska monet ohjelmat (esim. postiohjelmat sek‰
-   tekstink‰sittelyohjelmat) k‰ytt‰v‰t Ispelli‰ oikolukemiseen. Koska
-   Tmispell on myˆs Ispell-yhteensopiva, n‰m‰ ohjelmat voivat k‰ytt‰‰ sit‰
-   ilman ett‰ mit‰‰n tarvitsee muuttaa.
+   Tmispell on hy√∂dyllinen, koska monet ohjelmat (esim. postiohjelmat
+   sek√§ tekstink√§sittelyohjelmat) k√§ytt√§v√§t Ispelli√§ oikolukemiseen.
+   Koska Tmispell on my√∂s Ispell-yhteensopiva, n√§m√§ ohjelmat voivat
+   k√§ytt√§√§ sit√§ ilman, ett√§ mit√§√§n tarvitsee muuttaa.
 
-   Lis‰ksi Tmispell osaa k‰ynnist‰‰ alkuper‰isen Ispellin, kun jollekin
-   kielelle ei ole moduulia. T‰m‰n vuoksi Tmispell sopii sellaisenaan
+   Lis√§ksi Tmispell osaa k√§ynnist√§√§ alkuper√§isen Ispellin, kun halutulle
+   kielelle ei ole moduulia. T√§m√§n vuoksi Tmispell sopii sellaisenaan
    Ispellin korvikkeeksi.
 
-K‰yttˆ
+K√§ytt√∂
 
-   T‰ll‰ hetkell‰ Tmispelliss‰ on tekstik‰yttˆliittym‰, jota voi k‰ytt‰‰
-   tekstien oikolukemiseen. Sen voi k‰ynnist‰‰ kirjoittamalla
+   T√§ll√§ hetkell√§ Tmispelliss√§ on tekstik√§ytt√∂liittym√§, jota voi k√§ytt√§√§
+   tekstien oikolukemiseen. Sen voi k√§ynnist√§√§ kirjoittamalla
 
  tmispell -dsuomi tiedosto.txt
 
-   Kun v‰‰rin kirjoitettu sana lˆytyy, kysyy ohjelma mit‰ tehd‰.
-   K‰yttˆliittym‰n toiminnan pit‰isi olla melko itsest‰‰nselv‰‰, mutta
-   luettelon k‰ytett‰vist‰ n‰pp‰imist‰ saa kirjoittamalla "?".
+   Kun v√§√§rin kirjoitettu sana l√∂ytyy, kysyy ohjelma, mit√§ tehd√§.
+   K√§ytt√∂liittym√§n toiminnan pit√§isi olla melko itsest√§√§nselv√§√§, mutta
+   luettelon k√§ytett√§vist√§ n√§pp√§imist√§ saa kirjoittamalla "?".
 
-   Jos haluat k‰ytt‰‰ suodattimia, kirjoita yksi valitsimista '-t', '-n' tai
-   '-h' (vastaavat muotoja TeX, nroff ja sgml) oikoluettavan tiedoston nimen
-   eteen. Lis‰tietoja valitsimista on Ispellin manuaalisivulla ispell(1).
+   Jos haluat k√§ytt√§√§ suodattimia, kirjoita yksi valitsimista '-t', '-n'
+   tai '-h' (vastaavat muotoja TeX, nroff ja sgml) oikoluettavan
+   tiedoston nimen eteen. Lis√§tietoja valitsimista on Ispellin
+   manuaalisivulla ispell(1).
 
 Asennus
 
-   N‰m‰ ohjeet kertovat, miten Tmispell k‰‰nnet‰‰n ja asennetaan
-   l‰hdekoodipaketista. Olemassa on myˆs valmiita paketteja, joita kannattaa
-   k‰ytt‰‰, jos ei halua tehd‰ asioita vaikeasti.
+   N√§m√§ ohjeet kertovat, miten Tmispell k√§√§nnet√§√§n ja asennetaan
+   l√§hdekoodipaketista. Olemassa on my√∂s valmiita asennuspaketteja eri
+   Linux-jakeluille. Niit√§ kannattaa k√§ytt√§√§, jos ei halua tehd√§ asioita
+   vaikeasti.
 
-    1. Tmispellin k‰‰nt‰minen ja asennus:
+    1. Tmispellin k√§√§nt√§minen ja asennus:
 
            ./configure
            make
            make install
 
 
-       make install vain kopioi Tmispell-ohjelman ja manuaalisivun sopiviin
-       paikkoihin.
+       "make install" vain kopioi Tmispell-ohjelman ja manuaalisivun
+       sopiviin paikkoihin.
 
-    2. Hae ja asenna Soikko (ks. http://www.iki.fi/~pry/soikko/).
+    2. Hae ja asenna Voikko[1].
 
-    3. Luo asetustiedosto, ja sijoita se sinne, mist‰ Tmispell sen lˆyt‰‰.
-       Mallina on esimerkkitiedosto tmispell.conf.example. (Katso
-       "Asetustiedoston muoto" alempana.) Tarkista, ett‰ tiedostojen polut
-       oikolukumoduuliriveill‰ ovat oikein.
+    3. Luo asetustiedosto, ja sijoita se sinne, mist√§ Tmispell sen
+       l√∂yt√§√§. Mallina on esimerkkitiedosto tmispell.conf.example.
+       (Katso "Asetustiedoston muoto" alempana.) Tarkista, ett√§
+       tiedostojen polut oikolukumoduuliriveill√§ ovat oikein.
 
-    4. Saadaksesi muut ohjelmat k‰ytt‰m‰‰n Tmispelli‰ Ispellin sijaan, siirr‰
-       ensin alkuper‰inen Ispell-ohjelmatiedosto syrj‰‰n, ja luo linkki
-       "ispell", joka osoittaa tmispelliin. Esimerkiksi siis:
+    4. Saadaksesi muut ohjelmat k√§ytt√§m√§√§n Tmispelli√§ Ispellin sijaan,
+       siirr√§ ensin alkuper√§inen Ispell-ohjelmatiedosto syrj√§√§n, ja luo
+       linkki "ispell", joka osoittaa tmispelliin, esimerkiksi n√§in:
 
              mv /usr/bin/ispell /usr/bin/ispell.real
              ln -s /usr/local/bin/tmispell /usr/bin/ispell
 
 
        Muista muuttaa "ispell=..."-rivi asetustiedostossa osoittamaan
-       alkuper‰iseen Ispell-ohjelmaan.
+       alkuper√§iseen Ispell-ohjelmaan.
 
-       Muiden ohjelmien t‰ytyy tiet‰‰, ett‰ suomen oikoluku on mahdollista,
-       joten aja seuraava komento luodaksesi tarvittavat "sanastotiedostot":
+       Muiden ohjelmien t√§ytyy tiet√§√§, ett√§ suomen oikoluku on
+       mahdollista, joten aja seuraava komento luodaksesi tarvittavat
+       "sanastotiedostot":
 
              touch /usr/lib/ispell/suomi.{hash,aff}
 
 
-       Huomaa, ett‰ tiedostojen polku voisi olla myˆs "/usr/share/ispell" tai
-       jotakin vastaavaa j‰rjestelm‰st‰si riippuen.
+       Huomaa, ett√§ tiedostojen polku voisi olla my√∂s
+       "/usr/share/ispell" tai jotakin vastaavaa j√§rjestelm√§st√§si
+       riippuen.
 
-    5. Tarkistaaksesi, ett‰ Tmispell toimii kunnolla, kirjoita seuraava
+    5. Tarkistaaksesi, ett√§ Tmispell toimii kunnolla, kirjoita seuraava
        komento:
 
              ispell -dsuomi -a
 
+       Jos m√§√§rittelit sanaston nimelt√§ "suomi" asetustiedostossa, niin
+       seuraavanlaisen rivin pit√§isi n√§ky√§:
 
-       Jos m‰‰rittelit sanaston nimelt‰ "suomi" asetustiedostossa, niin
-       seuraavanlaisen rivin pit‰isi n‰ky‰:
+ @(#) International Ispell Version 3.1.20 compatible tmispell-voikko 0.4.3
 
- @(#) International Ispell Version 3.1.20 compatible tmispell 0.1.1
-
-       Nyt voit kirjoittaa sanoja oikoluettavaksi. Lis‰tietoja t‰st‰
+       Nyt voit kirjoittaa sanoja oikoluettavaksi. Lis√§tietoja t√§st√§
        komentotilasta saa manuaalisivulta ispell(1).
 
 Ohjelmakohtaisia ohjeita
 
-     o Emacs (sek‰ Ispell- ett‰ Flyspell-tilat)
+     o Emacs (sek√§ Ispell- ett√§ Flyspell-tilat)
 
-       Note that you might have to add something like the following to your
-       ~/.emacs configuration file, since Ispell support in Emacs does not
-       know about Finnish dictionary by default:
+       Koska Emacsin Ispell-tuki ei itsest√§√§n tied√§ suomen kielen
+       sanaston olemassaolosta mit√§√§n, t√§ytyy Emacsin asetustiedostoon
+       (~/.emacs) lis√§t√§ seuraavanlaiset asetukset:
 
  (setq ispell-local-dictionary-alist
        (append ispell-local-dictionary-alist
@@ -106,141 +110,140 @@ Ohjelmakohtaisia ohjeita
            "[^.%0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
            "[':]" nil nil nil iso-8859-1))))
 
-       Depending on your configuration, the ispell-local-dictionary-alist
-       could also be ispell-dictionary-alist. You can change the active
-       dictionary with the command "M-x ispell-change-dictionary". If you
-       like to have Finnish as the default dictionary, add also:
+       Asetuksista riippuen ispell-local-dictionary-alist voi olla my√∂s
+       ispell-dictionary-alist. K√§yt√∂ss√§ olevaa sanastoa voi muuttaa
+       komennolla "M-x ispell-change-dictionary". Jos haluat suomen
+       kielen olevan oletussanasto, lis√§√§ asetustiedostoon my√∂s rivi:
 
  (setq ispell-dictionary "suomi")
 
-       If you still encounter problems (e.g. with TeX files), try turning the
-       multi byte character support of Emacs off.
-
      o Pspell (Sylpheed, Balsa ja monet muut)
 
-       Vaikka Pspelli‰ ollaankin korvaamassa Aspellill‰, jotkin ohjelmat
-       k‰ytt‰v‰t sit‰ viel‰. Tmispelli‰ voi k‰ytt‰‰ Pspellin kanssa, jos
-       Pspellin pspell-ispell-moduuli on asennettu, ja on olemassa tiedosto
-       /usr/share/pspell/fi-ispell.pwli, jossa on seuraava rivi:
+       Vaikka Pspelli√§ ollaankin korvaamassa Aspellill√§, jotkin ohjelmat
+       k√§ytt√§v√§t sit√§ viel√§. Tmispelli√§ voi k√§ytt√§√§ Pspellin kanssa, jos
+       Pspellin pspell-ispell-moduuli on asennettu, ja on olemassa
+       tiedosto /usr/share/pspell/fi-ispell.pwli, jossa on seuraava
+       rivi:
 
- /usr/lib/ispell/suomi.hash iso8859-15
+ /usr/lib/ispell/suomi.hash utf-8
 
-     o Muut ohjelmat (useimmat KDE-ohjelmat, LyX, ...)
+     o Muut ohjelmat (useimmat KDE-ohjelmat, LyX ym.)
 
-       Kun "sanastotiedostot" ovat olemassa (katso asennus), suomen pit‰isi
-       n‰ky‰ yhten‰ kielivaihtoehtona n‰iss‰ ohjelmissa.
+       Kun "sanastotiedostot" ovat olemassa (katso asennus), suomen
+       pit√§isi n√§ky√§ yhten√§ kielivaihtoehtona n√§iss√§ ohjelmissa.
 
 Asetustiedoston muoto
 
-   Asetustiedosto sis‰lt‰‰ oikolukumoduulimerkintˆj‰ sek‰ asetuksia. "#" on
-   kommenttimerkki: kaikki teksti rivill‰ sen j‰lkeen j‰‰ huomiotta.
+   Asetustiedosto sis√§lt√§√§ oikolukumoduulimerkint√∂j√§ sek√§ asetuksia. "#"
+   on kommenttimerkki: kaikki teksti rivill√§ sen j√§lkeen j√§√§ huomiotta.
 
    Asetusten muoto on yksinkertainen:
 
  avain=arvo
 
-   Huomaa, ett‰ arvomerkkijono voi olla usean rivin mittainen, jos se on
-   lainausmerkkien v‰liss‰.
+   Huomaa, ett√§ arvomerkkijono voi olla usean rivin mittainen, jos se on
+   lainausmerkkien v√§liss√§.
 
    Mahdolliset asetukset ovat:
 
    ispell
 
-           Varalla k‰ytett‰v‰n oikean Ispell-ohjelmatiedoston sijainti.
-           Huomaa, ett‰ koko polku tiedostoon t‰ytyy antaa. T‰m‰ asetus
-           t‰ytyy aina m‰‰ritell‰.
+	   Varalla k√§ytett√§v√§n oikean Ispell-ohjelmatiedoston sijainti.
+	   Huomaa, ett√§ koko polku tiedostoon t√§ytyy antaa. T√§m√§ asetus
+	   t√§ytyy aina m√§√§ritell√§.
 
    tex-command-filter
 
-           Luettelo TeX-komennoista ja parametreista, joita TeX-suodatin
-           k‰sittelee erityisesti. Syntaksi on "komento oOpP, ...", jossa
-           "oOpP" on merkkijono, jonka merkit tarkoittavat komennon
-           erityyppisi‰ parametreja. Iso kirjain tarkoittaa, ett‰ parametri
-           tulisi oikolukea, ja pieni, ett‰ sit‰ ei tulisi oikolukea. "O" ja
-           "o" merkitsev‰t valinnaista ja "P" ja "p" tavallista (pakollista)
-           parametria.
+	   Luettelo TeX-komennoista ja parametreista, joita TeX-suodatin
+	   k√§sittelee erityisesti. Syntaksi on "komento oOpP, ...",
+	   jossa "oOpP" on merkkijono, jonka merkit tarkoittavat
+	   komennon erityyppisi√§ parametreja. Iso kirjain tarkoittaa,
+	   ett√§ parametri tulisi oikolukea, ja pieni, ett√§ sit√§ ei
+	   tulisi oikolukea. "O" ja "o" merkitsev√§t valinnaista ja "P"
+	   ja "p" tavallista (pakollista) parametria.
 
    tex-environment-filter
 
-           Luettelo ymp‰ristˆist‰, joiden oikoluvun TeX-suodatin est‰‰.
+	   Luettelo ymp√§rist√∂ist√§, joiden oikoluvun TeX-suodatin est√§√§.
 
    sgml-attributes-to-check
 
-           Luettelo SGML- tai HTML-m‰‰reist‰, jotka tulisi oikolukea.
+	   Luettelo SGML- tai HTML-m√§√§reist√§, jotka tulisi oikolukea.
 
-   Sanastom‰‰ritelm‰ss‰ on 7 merkkijonoa samalla rivill‰ v‰lein eroteltuina,
-   ja tarvittaessa lainausmerkeiss‰. Kenoviivaa voi k‰ytt‰‰ merkkien
-   suojaamiseen lainausmerkkien sis‰ll‰. Merkkijonojen merkitykset ovat:
+   Sanastom√§√§ritelm√§ss√§ on 7 merkkijonoa samalla rivill√§ v√§lein
+   eroteltuina, ja tarvittaessa lainausmerkeiss√§. Kenoviivaa voi k√§ytt√§√§
+   merkkien suojaamiseen lainausmerkkien sis√§ll√§. Merkkijonojen
+   merkitykset ovat:
 
-    1. Nimi, jolla sanasto tunnetaan; vastaa Ispellin hash-tiedoston nime‰
-       ilman ".hash"-p‰‰tett‰. Pakollinen.
+    1. Nimi, jolla sanasto tunnetaan; vastaa Ispellin hash-tiedoston
+       nime√§ ilman ".hash"-p√§√§tett√§. Pakollinen.
 
     2. Ladattavan kirjastotiedoston nimi. Pakollinen.
 
-    3. Kirjastotiedoston k‰ytt‰m‰ sanasto. Pakollinen.
+    3. Kirjastotiedoston k√§ytt√§m√§ sanasto. Pakollinen.
 
-    4. Moduulin syˆtteen merkistˆ, esimerkiksi latin9. Pakollinen.
+    4. Moduulin sy√∂tteen merkist√∂koodaus, esimerkiksi UTF-8. Pakollinen.
 
-    5. Maa-asetustomuuttujan LC_CTYPE arvo, jota k‰ytet‰‰n t‰m‰n moduulin
-       kanssa. Se m‰‰rittelee oletusarvoisesti merkit, jotka kuuluvat
-       sanoihin. Jos tyhj‰ tai puuttuu, niin sopivan ymp‰ristˆmuuttujan arvo
-       on k‰ytˆss‰.
+    5. Maa-asetusmuuttujan LC_CTYPE arvo, jota k√§ytet√§√§n t√§m√§n moduulin
+       kanssa. Se m√§√§rittelee oletusarvoisesti merkit, jotka kuuluvat
+       sanoihin. Jos tyhj√§ tai puuttuu, niin sopivan ymp√§rist√∂muuttujan
+       arvo on k√§yt√∂ss√§.
 
-    6. Joukko lis‰merkkej‰, jotka voivat kuulua sanoihin. Jos tyhj‰ tai
-       puuttuu, niin vain maa-asetuston m‰‰rittelem‰t merkit kuuluvat
+    6. Joukko lis√§merkkej√§, jotka voivat kuulua sanoihin. Jos tyhj√§ tai
+       puuttuu, niin vain maa-asetuston m√§√§rittelem√§t merkit kuuluvat
        sanoihin.
 
-    7. V‰limerkit. N‰m‰ merkit kuuluvat sanaan, vain jos ovat sen sis‰ll‰.
-       Jos tyhj‰ tai puuttuu, v‰limerkkej‰ ei oleteta.
+    7. V√§limerkit. N√§m√§ merkit kuuluvat sanaan, vain jos ovat sen
+       sis√§ll√§. Jos tyhj√§ tai puuttuu, v√§limerkkej√§ ei oleteta.
 
    Esimerkki 1. Asetustiedostoesimerkki
 
  ispell=/usr/bin/ispell.real
 
- suomi "/usr/local/OpenOffice.org1.0/program/libsoikko.so" "/usr/local/OpenOffice.org1.0/share/dict/soikko-sp.fi_FI.dic" "latin9" "fi_FI@euro" "." "-':"
+ suomi "/usr/local/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI@euro" "." "-':"
+
 
  tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
  tex-environment-filter="equation $ eqnarray displaymath math"
 
-   Asetustiedoston ensimm‰inen rivi m‰‰rittelee t‰ss‰ varalla olevan
+   Asetustiedoston ensimm√§inen rivi m√§√§rittelee t√§ss√§ varalla olevan
    ispell-ohjelman.
 
-   Toinen rivi lis‰‰ suomea varten moduulin, jonka tunnisteeksi tulee "suomi"
-   ja joka k‰ytt‰‰ annettua kirjastotiedostoa annetun sanastotiedoston
-   kanssa. Syˆtteen merkistˆ on iso-8859-15 eli "latin9". Vain maa-asetuston
-   "fi_FI@euro" m‰‰rittelem‰t merkit ja piste lasketaan sanoihin kuuluviksi,
-   ja v‰limerkeiksi k‰yv‰t "-", ", "'" ja ":".
+   Toinen rivi lis√§√§ suomea varten moduulin, jonka tunnisteeksi tulee
+   "suomi" ja joka k√§ytt√§√§ annettua kirjastotiedostoa annetun
+   sanastotiedoston kanssa. Sy√∂tteen merkist√∂koodaus on UTF-8. Vain
+   maa-asetuston "fi_FI@euro" m√§√§rittelem√§t merkit ja piste lasketaan
+   sanoihin kuuluviksi, ja v√§limerkeiksi k√§yv√§t "-", ", "'" ja ":".
 
-   Joka kerta siis kun Tmispell k‰ynnistet‰‰n valitsimin "-d suomi" tai "-d
-   /usr/lib/ispell/suomi.hash", niin Soikko-moduuli hoitaa oikoluvun. Muissa
-   tapauksissa tavallinen Ispell k‰ynnistyy.
+   Joka kerta siis kun Tmispell k√§ynnistet√§√§n valitsimin "-d suomi" tai
+   "-d /usr/lib/ispell/suomi.hash", niin Voikko-oikolukuj√§rjestelm√§
+   hoitaa oikoluvun. Muissa tapauksissa tavallinen Ispell k√§ynnistyy.
 
-   Viides rivi m‰‰rittelee, ett‰ TeX-suodatin est‰‰ komentojen begin{}, end{}
-   ja usepackage{} parametrien oikoluvun, muttei komennon newcommand toisen
-   valinnaisen ja pakollisen parametrin oikolukua.
+   Viides rivi m√§√§rittelee, ett√§ TeX-suodatin est√§√§ komentojen begin{},
+   end{} ja usepackage{} parametrien oikoluvun, muttei komennon
+   newcommand toisen valinnaisen ja pakollisen parametrin oikolukua.
 
-   Kuudes rivi m‰‰rittelee, ett‰ TeX-tilassa matematiikkaymp‰ristˆj‰ ei
+   Kuudes rivi m√§√§rittelee, ett√§ TeX-tilassa matematiikkaymp√§rist√∂j√§ ei
    oikolueta.
 
 Tunnetut ongelmat
 
   Puuttuvat ominaisuudet
 
-     o SGML-suodattimen tulisi osata purkaa ja koodata entiteettej‰. Jotta
-       t‰m‰n voisi tehd‰ j‰rkev‰sti, tarvittaneen muutoksia
+     o SGML-suodattimen tulisi osata purkaa ja koodata entiteettej√§.
+       Jotta t√§m√§n voisi tehd√§ j√§rkev√§sti, tarvittaneen muutoksia
        suodatinarkkitehtuuriin.
 
-     o Monitavumerkistˆjen (UTF-8, UTF-16, ...) tuki puuttuu. Voisi liitty‰
-       entiteettien koodaamiseen ja purkamiseen jne.
+  Muuta teht√§v√§√§
 
-  Muuta teht‰v‰‰
+     o Mieti, miten Aspell-tuki pit√§isi toteuttaa. Onko Voikkoa
+       k√§ytt√§v√§lle Aspell-yhteensopivalle ohjelmalle tarvetta?
 
-     o Mieti, miten Aspell-tuki pit‰isi toteuttaa. Onko Soikko-p‰ts‰tylle
-       Aspellille tarvetta?
+     o Mieti Ispellin "extended charactereja" (mit√§ lienev√§tk√§√§n).
 
-     o Mieti Ispellin "extended charactereja" (mit‰ lienev‰tk‰‰n).
+L√§hteet
 
-References
+   1. http://www.hunspell-fi.org/
 
-   Visible links
-   1. http://www.iki.fi/~pry/soikko/
+
+vim: tw=72
