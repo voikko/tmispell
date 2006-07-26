@@ -12,4 +12,6 @@ else
 ENCHANT_DIR =
 endif
 
-SUBDIRS = src $(ENCHANT_DIR) doc po
+dist_man_MANS = doc/tmispell.1 doc/tmispell.conf.5
+
+SUBDIRS = src $(ENCHANT_DIR) po

@@ -1,3 +1,7 @@
+2006-07-26 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fix the build system for new documentation
+
 2006-07-26 Teemu Likonen <tlikonen@iki.fi>
 
 	* Update README, LUEMINUT and manual pages.
