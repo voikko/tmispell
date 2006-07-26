@@ -1,7 +1,7 @@
                              Tmispell
 
-  Pauli Virtanen <pauli.virtanen@hut.fi> (alkuperäinen Tmispell)
-  Harri Pitkänen <hatapitk@iki.fi> (muutokset Voikkoa varten)
+  Pauli Virtanen <pauli.virtanen@hut.fi>	(alkuperäinen Tmispell)
+  Harri Pitkänen <hatapitk@iki.fi>		(muutokset Voikkoa varten)
 
    --------------------------------------------------------------------------
 
@@ -11,14 +11,13 @@ Mikä Tmispell on?
    Varsinaisen oikoluvun suomen kieltä varten hoitaa oikolukujärjestelmä
    nimeltä Voikko[1].
 
-   Tmispell on hyödyllinen, koska monet ohjelmat (esim. postiohjelmat
-   sekä tekstinkäsittelyohjelmat) käyttävät Ispelliä oikolukemiseen.
-   Koska Tmispell on myös Ispell-yhteensopiva, nämä ohjelmat voivat
-   käyttää sitä ilman, että mitään tarvitsee muuttaa.
-
-   Lisäksi Tmispell osaa käynnistää alkuperäisen Ispellin, kun halutulle
-   kielelle ei ole moduulia. Tämän vuoksi Tmispell sopii sellaisenaan
-   Ispellin korvikkeeksi.
+   Sama ilmaistuna hieman toisin: Tmispell on läpinäkyvä kuori
+   Ispellille. Monet ohjelmat (esim. sähköpostiohjelmat ja
+   tekstinkäsittelyohjelmat) käyttävät Ispelliä tekstin oikolukemiseen.
+   Koska Tmispell matkii Ispelliä, nämä ohjelmat käyttävät
+   automaattisesti Tmispelliä (ja siten Voikkoa) ilman, että mitään
+   tarvitsee muuttaa. Lisäksi Tmispell osaa käynnistää alkuperäisen
+   Ispellin, jos halutulle kielelle ei ole tukea Tmispellissä.
 
 Käyttö
 

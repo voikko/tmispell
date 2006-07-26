@@ -5,7 +5,7 @@
 .SH NAME
 
 .PP
-tmispell \- ispell front-end which uses Voikko for spellchecking
+tmispell \- ispell wrapper which uses Voikko for spellchecking
 
 .SH SYNOPSIS
 
@@ -22,7 +22,7 @@ tmispell \- ispell front-end which uses Voikko for spellchecking
 .B Tmispell
 is an
 .BR ispell (1)
-front-end which uses Voikko spellchecking system to do the actual
+wrapper which uses Voikko spellchecking system to do the actual
 spellchecking for Finnish language.
 
 .PP
@@ -31,21 +31,20 @@ What makes
 very useful is that many programs (e.g. mail clients and word
 processors) use Ispell for spellchecking. Since
 .B Tmispell
-is a transparent front-end for Ispell, other programs that would use
+is a transparent wrapper for Ispell, other programs that would use
 Ispell can use Tmispell (and therefore Voikko) without any changes
 needed. Additionally,
 .B Tmispell
 is able to launch the real Ispell if there is no
 .B Tmispell
-module for the selected language. Thus
-.B Tmispell
-can be used as a drop-in replacement for Ispell.
+module for the selected language. The real Ispell is not necessary
+needed, though.
 
 .SH OPTIONS
 
 .TP
 .BI \-F " config_file"
-Read the configuration file
+Use the configuration file
 .I config_file
 instead of the default
 .IR /etc/tmispell.conf .

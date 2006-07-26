@@ -1,24 +1,22 @@
                              Tmispell
 
-  Pauli Virtanen <pauli.virtanen@hut.fi> (original Tmispell)
-  Harri Pitkänen <hatapitk@iki.fi> (modifications for Voikko)
+  Pauli Virtanen <pauli.virtanen@hut.fi>	(original Tmispell)
+  Harri Pitkänen <hatapitk@iki.fi>		(modifications for Voikko)
 
    --------------------------------------------------------------------------
 
 What Tmispell is?
 
    Tmispell is an Ispell compatible front-end for spell checking
-   modules. To do the actual spell checking, for Finnish it uses the
-   spell checking system Voikko[1].
-
-   What makes Tmispell quite useful is that many programs (e.g. mail
-   clients and document processors) use Ispell for spell checking. Since
-   Tmispell is compatible with Ispell, these programs can use it without
-   any changes needed.
-
-   Additionally Tmispell can launch Ispell if there is no module for the
-   selected language. Thus it can be used as a drop-in replacement for
-   Ispell.
+   modules. To do the actual spell checking for Finnish language it uses
+   the spell checking system Voikko[1].
+   
+   To put this another way: Tmispell is a transparent wrapper around
+   Ispell. Many programs (e.g. mail clients and document processors) use
+   Ispell for spellchecking. Since Tmispell imitates Ispell, these
+   programs use automatically Tmispell (and therefore Voikko) without
+   any changes needed. Additionally Tmispell can launch the real Ispell
+   if there is no module for the selected language.
 
 Usage
 

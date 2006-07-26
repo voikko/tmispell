@@ -13,19 +13,21 @@ This manual page describes the configuration file for
 
 .TP
 .I /etc/tmispell.conf
-The configuration file that contains spellchecker entries and options. The
-\*(lq#\*(rq is a comment character and everything on a line after it is
-ignored.
+The configuration file that contains spellchecker entries and options. 
 
 .PP
 .B "Syntax of options"
 
 .RS
+
+.PP
 .IR option = value
 
-(Note that the
+.PP
+The
 .I value
-string, if enclosed between quotes, may span multiple lines.)
+string, if enclosed between quotes, may span multiple lines. \*(lq#\*(rq
+is a comment character and everything on a line after it is ignored.
 .RE
 
 .PP
@@ -74,35 +76,35 @@ whitespace (i.e. space or tab) and possibly enclosed in double (") or single
 quotes. The meanings of the strings are:
 
 .RS 3
-.IP 1. 4
+.IP "1." 4
 The name by which the dictionary is known, similar to the name of an
 Ispell hash file name without the extension
 .RI \*(lq .hash \*(rq.
 This is mandatory.
 
-.IP 2. 4
+.IP "2." 4
 The file name of the library file to load. This is mandatory.
 
-.IP 3. 4
+.IP "3." 4
 The file name of the dictionary file that the library uses. This is
 mandatory.
 
-.IP 4. 4
+.IP "4." 4
 The input encoding this module uses, for example UTF-8. This is
 mandatory.
 
-.IP 5. 4
+.IP "5." 4
 The value of the locale variable
 .B LC_CTYPE
 that should be used with this module. This determines the default set of
 characters that are considered to belong to a word. If empty or not
 given, the value of a suitable environment variable is used.
 
-.IP 6. 4
+.IP "6." 4
 The set of additional word characters not specified by the locale. If
 not given, no additional word characters are assumed.
 
-.IP 7. 4
+.IP "7." 4
 The set of word boundary characters. They are considered to be a part of
 a word only when occurring inside one. If not given, no boundary
 characters are assumed.
