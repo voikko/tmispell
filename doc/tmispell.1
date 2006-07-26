@@ -1,0 +1,89 @@
+\" vim: tw=72
+
+.TH "TMISPELL" "1" "2006-07-26"
+
+.SH "NAME"
+
+.PP
+tmispell \- an Ispell compatible front-end for the spellchecking system
+Voikko
+
+.SH "SYNOPSIS"
+
+.PP
+.B tmispell
+.RB [ \-F
+.IR config_file ]
+.RI [ Ispell_options ]
+.RI [ file " ...]"
+
+.SH "DESCRIPTION"
+
+.PP
+.B Tmispell
+is an
+.BR ispell (1)
+compatible front-end for spellchecking modules. The actual spellchecking
+for Finnish language is done with
+.B Voikko
+spellchecking system.
+
+.PP
+What makes
+.B Tmispell
+very useful is that many programs (mail clients and word processors for
+example) use Ispell for spellchecking. Since
+.B Tmispell
+is a transparent front-end for Ispell, other programs that would use
+Ispell can use Tmispell (and therefore
+.BR Voikko )
+without any changes needed. Additionally
+.B Tmispell
+is able to launch Ispell if there is no module for the selected
+language. Thus
+.B Tmispell
+can be used as a drop-in replacement for Ispell.
+
+.SH "OPTIONS"
+
+.PP
+Tmispell understands the following options:
+
+.TP 10
+.BI \-F " config_file"
+Read the configuration file
+.I config_file
+instead of the default
+.IR /etc/tmispell.conf .
+
+.TP 10
+.I Ispell_options
+Tmispell should understand all the options that Ispell does. For more
+information about, see
+.BR ispell (1).
+
+.SH "FILES"
+
+.TP 10
+.I /etc/tmispell.conf
+The default configuration file for
+.BR Tmispell .
+For more information, see
+.BR tmispell (5).
+
+.SH "SEE ALSO"
+
+.PP
+.BR tmispell (5),
+.BR ispell (1)
+
+.PP
+Voikko homepage: http://www.hunspell-fi.org/
+
+.SH "AUTHORS"
+The original
+.B Tmispell
+was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>.
+Modifications and integration with
+.B Voikko
+spellchecking system by Harri Pitkänen <hatapitk@iki.fi>.

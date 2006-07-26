@@ -1,95 +1,39 @@
 \" vim: tw=72
 
-.TH "TMISPELL" "1" "2006-07-26"
+.TH "TMISPELL" "5" "2006-07-26"
 
-.SH "NAME"
+.SH NAME
+tmispell \- Configuration file for Tmispell
 
-tmispell \- an
-.BR ispell (1)
-compatible front-end for the spellchecking system Voikko.
+.SH DESCRIPTION
+This manual page describes the configuration file for
+.BR tmispell (1).
 
-.SH "SYNOPSIS"
-
-.PP
-.B tmispell
-.RB [ \-F
-.IR config_file ]
-.RI [ Ispell_options ]
-.RI [ file " ...]"
-
-.SH "DESCRIPTION"
+.SH FILES
 
 .PP
-.B Tmispell
-is an
-.BR ispell (1)
-compatible front-end for spell checking modules. The actual
-spellchecking for Finnish is done with the spellchecking system
-.IR Voikko .
-
-.PP
-What makes
-.B Tmispell
-very useful is that many programs (mail clients and word
-processors for example) use
-.BR ispell (1)
-for spellchecking. Since
-.B Tmispell
-is a transparent front-end for
-.BR ispell (1),
-other programs that would use Ispell can use Tmispell without any
-changes needed. Additionally
-.B Tmispell
-is able to launch
-.BR ispell (1)
-if there is no module for the selected language. Thus
-.B Tmispell
-can be used as a drop-in replacement for
-.BR ispell (1).
-
-.SH "OPTIONS"
-
-.PP
-Tmispell understands the following options:
-
-.TP 10
-.BI \-F " config_file"
-Read the configuration file
-.I config_file
-instead of the default
-.IR /etc/tmispell.conf .
-
-.TP 10
-.I Ispell_options
-Tmispell should understand all the options that Ispell does. For more
-information about them, see
-.BR ispell (1).
-
-.SH "FILES"
-
-.TP 10
+.TP
 .I /etc/tmispell.conf
-The default configuration file for Tmispell.
-
-.PP
-The configuration file contains spellchecker entries and options. The
+The configuration file that contains spellchecker entries and options. The
 \*(lq#\*(rq is a comment character and everything on a line after it is
 ignored.
 
 .PP
-Syntax for options is simple:
+.B "Syntax for options"
 
-.RS 10
-.IR key = value
+.RS
+.IR option = value
+
+.PP
+(Note that the
+.I value
+string, if enclosed between quotes, may span multiple lines.)
 .RE
 
 .PP
-Note that the
-.I value
-string, if enclosed between quotes, may span multiple lines.
+.B "Options"
 
-.PP
-Currently the options are:
+.RS
 
 .IP "ispell" 10
 The location of the real Ispell executable to be called as a fall-back.
@@ -121,17 +65,16 @@ A list of environments to skip when filtering TeX input.
 A list of SGML or HTML tag attributes to spellcheck.
 
 .PP
-A dictionary specification consists of 7 strings on the same line,
-separated by whitespace (i.e. space or tab) and possibly enclosed in
-double (") or single (\(aq) quotes. Backslashes (\e) can be used to
-escape quote characters inside the quotes. The meanings of the strings
-are:
+Dictionary specification consists of seven strings on the same line, separated by
+whitespace (i.e. space or tab) and possibly enclosed in double (") or single
+(\(aq) quotes. Backslash (\e) can be used to escape quote characters inside
+quotes. The meanings of the strings are:
 
-.RS
+.RS 6
 .IP "1." 4
 The name by which the dictionary is known, similar to the name of an
-.BR ispell (1)
-hash file name without the extension \*(lq.hash\*(rq. This must be specified.
+Ispell hash file name without the extension \*(lq.hash\*(rq. This must
+be specified.
 
 .IP "2." 4
 The file name of the library file to load. This must be specified.
@@ -161,11 +104,12 @@ a word only when occurring inside one. If not given, no boundary
 characters are assumed.
 
 .RE
+.RE
 
 .SH "EXAMPLES"
 
 .PP
-.B A configuration file example
+.B Example configuration file
 
 .RS
 .PP
@@ -180,22 +124,24 @@ tex-environment-filter="equation $ eqnarray displaymath math"
 
 .PP
 The first line specifies the location of the fall-back ispell program to
-use
+use.
 
 .PP
-The second line defines a module for Finnish, identified by the name
-\*(lqsuomi\*(rq, which uses the given library file associated with
-a dictionary file. The input encoding to use is UTF-8. Only the letters
-specified by the locale fi_FI.UTF-8 as well as a period (.) and a dash
-(\-) are considered as word characters. Boundary characters are
-\*(lq\(aq\*(rq, \*(lq'\*(rq (U+2019) and \*(lq:\*(rq.
+The second line defines spellchecking settings for Finnish language. Language is
+identified by the name \*(lqsuomi\*(rq and it uses /usr/lib/libvoikko.so.1 library
+for spellchecking. Separate dictionary file is not needed with
+.B Voikko
+so it is set to /dev/null. The input encoding to use is UTF-8. Only the letters
+specified by the locale fi_FI.UTF-8 as well as period (.) and dash (\-) are
+considered as word characters. Boundary characters are: ASCII apostrophe
+(\(aq), Unicode's apostrophe (') and colon (:).
 
 .PP
-So every time when
+Every time
 .B Tmispell
-is invoked with \*(lq\-d suomi\*(rq or \*(lq\-d
-/usr/lib/ispell/suomi.hash\*(rq as arguments, the Voikko spellchecking
-system is used for spellchecking. Otherwise the
+is invoked with \*(lq\-d suomi\*(rq or \*(lq\-d /usr/lib/ispell/suomi.hash\*(rq
+as arguments, the Voikko spellchecking system (/usr/lib/libvoikko.so.1) is used
+for spellchecking. Otherwise the real
 .BR ispell (1)
 is started.
 
@@ -212,15 +158,16 @@ should be spellchecked.
 .SH "SEE ALSO"
 
 .PP
+.BR tmispell (1),
 .BR ispell (1)
 
 .PP
 Voikko homepage: http://www.hunspell-fi.org/
 
 .SH "AUTHORS"
-.PP
-Pauli Virtanen <pauli.virtanen@hut.fi> (The original
-.BR Tmispell )
-.PP
-Harri Pitkänen <hatapitk@iki.fi> (Modifications and integration with
-Voikko)
+The original
+.B Tmispell
+was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>.
+Modifications and integration with
+.B Voikko
+spellchecking system by Harri Pitkänen <hatapitk@iki.fi>.
