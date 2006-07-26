@@ -1,7 +1,7 @@
                              Tmispell version 0.4.3
 
-  Pauli Virtanen <pauli.virtanen@hut.fi> (Original Tmispell)
-  Harri Pitkänen <hatapitk@iki.fi> (Modifications for Voikko)
+  Pauli Virtanen <pauli.virtanen@hut.fi> (original Tmispell)
+  Harri Pitkänen <hatapitk@iki.fi> (modifications for Voikko)
 
    --------------------------------------------------------------------------
 
@@ -96,7 +96,7 @@ Installation
        Now you can type words to spell check. For more information about
        this command mode, refer to the ispell(1) manual.
 
-Program-specific information
+Program specific information
 
      o Emacs (both Ispell and Flyspell modes)
 
@@ -135,105 +135,6 @@ Program-specific information
 
        When the fake dictionary files (see Installation) exist, Finnish
        should appear in the dictionary list in these programs.
-
-The configuration file format
-
-   The configuration file contains spell checker entries and options. "#" is
-   a comment character: everything on a line after it is ignored.
-
-   Syntax for options is simple:
-
- key=value
-
-   Note that the value string, if enclosed between quotes, may span multiple
-   lines.
-
-   Currently the options are:
-
-   ispell
-
-	   The location of the real Ispell executable to be called as
-	   a fall-back. Note that the full path to the program should be
-	   given. This option must always be specified.
-
-   tex-command-filter
-
-	   A list of TeX commands and their parameter lists to use when
-	   filtering TeX input. The syntax is "cmdname oOpP, ...", where
-	   "oOpP" is a string of characters denoting the type of
-	   command's parameters. Uppercase letter means that a parameter
-	   should be spell checked, lowercase that it should not. 'O'
-	   and 'o' denote optional parameters, 'P' and 'p' normal
-	   parameters.
-
-   tex-environment-filter
-
-	   A list of environments to skip when filtering TeX input.
-
-   sgml-attributes-to-check
-
-	   A list of SGML or HTML tag attributes to spell check.
-
-   A dictionary specification consists of 7 strings on the same line,
-   separated by whitespace and possibly enclosed in double or single quotes.
-   Backslashes can be used to quote characters inside the quotes. The
-   meanings of the strings are:
-
-    1. The name by which the dictionary is known, similar to the name of
-       an Ispell hash file name without the extension ".hash". This must
-       be specified.
-
-    2. The file name of the library file to load. This must be
-       specified.
-
-    3. The file name of the dictionary file that the library uses. This
-       must be specified.
-
-    4. The input encoding this module uses. E.g. UTF-8. This must be
-       specified.
-
-    5. The value of the locale variable LC_CTYPE that should be used
-       with this module. This determines the default set of characters
-       that are considered to belong to a word. If empty or not given,
-       the value of a suitable environment variable is used.
-
-    6. The set of additional word characters not specified by the
-       locale. If not given, no additional word characters are assumed.
-
-    7. The set of word boundary characters. They are considered to be
-       a part of a word only when occurring inside one. If not given, no
-       boundary characters are assumed.
-
-   Example 1. A configuration file example
-
- ispell=/usr/bin/ispell.real
-
- suomi "/usr/local/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI@euro" "." "-':"
-
- tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
- tex-environment-filter="equation $ eqnarray displaymath math"
-
-   The first line of the configuration file just specifies the location
-   of the fallback ispell program to use
-
-   The second line adds a module for Finnish, identified by the name
-   "suomi", which uses the given library file associated with
-   a dictionary file. The input encoding to use is UTF-8. Only the
-   letters specified by the locale "fi_FI@euro" and period are
-   considered as word characters, and the boundary characters are "-",
-   "'" and ":".
-
-   So every time when Tmispell is invoked with "-d suomi" or "-d
-   /usr/lib/ispell/suomi.hash" as arguments, the Voikko module is used
-   for spell checking. Otherwise the Ispell program is started instead.
-
-   The fifth line specifies that in TeX filter mode the parameters to
-   commands begin{}, end{} and usepackage{} should not be spell checked,
-   whereas the second optional and second obligatory parameters to
-   newcommand should.
-
-   The sixth line specifies that in TeX filter mode no math environment
-   should be spell checked.
 
 Known issues
 
