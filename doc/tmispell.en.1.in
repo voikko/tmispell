@@ -1,177 +1,226 @@
-.TH "TMISPELL" "1" 
-.SH "NAME" 
-tmispell \(em       An Ispell compatible front end for the spell checking module Soikko. 
- 
-.SH "SYNOPSIS" 
-.PP 
-\fBtmispell\fR [\fB-F\fP \fIconfigfile\fR]  [\fIIspell options\fR]  [\fIfiles\fR \&...]  
-.SH "DESCRIPTION" 
-.PP 
-Tmispell is an Ispell compatible front-end for spell checking 
-modules. To do the actual spell checking, for Finnish it uses the 
-high-quality spell checking module  
-\fISoikko (link to URL http://www.iki.fi/~pry/soikko/) \fR, which 
-is made by Pasi Ryh‰nen. 
- 
-.PP 
-What makes Tmispell quite useful is that many programs (e.g. mail 
-clients and document processors) use Ispell for spell 
-checking. Since Tmispell is compatible with Ispell, these programs 
-can use it without any changes needed. 
- 
-.PP 
-Additionally Tmispell can launch Ispell if there is no module for 
-the selected language. Thus it can be used as a drop-in 
-replacement for Ispell. 
- 
-.SH "OPTIONS" 
-.PP 
-Tmispell understands the following options: 
-.IP "\fB-F \fIconfigfile\fR\fP" 10 
-Read the configuration file 
-\fIconfigfile\fR instead of the 
-default configuration file \fB@CONFIG_FILE@\fP. 
- 
-.IP "\fB\fIIspell options\fR\fP" 10 
-Tmispell should understand all options that Ispell 
-does. For more information about them, see ispell(1). 
-.SH "FILES" 
-.IP "\fB@CONFIG_FILE@\fP" 10 
-The configuration file for Tmispell. 
- 
-.IP "" 10 
-The configuration file contains spell checker entries and options. 
-"#" is a comment character: everything on a line after it is ignored. 
- 
-.IP "" 10 
-Syntax for options is simple: 
- 
-.PP 
-.nf 
-\fIkey\fR=\fIvalue\fR 
-.fi 
-Note that the value string, if enclosed between quotes, may span 
-multiple lines. 
- 
-.IP "" 10 
-Currently the options are: 
- 
- 
-.RS 
-.IP "ispell" 10 
-The location of the real Ispell executable to 
-be called as a fall-back. Note that the full path to the 
-program should be given. This option must always be 
-specified. 
-.IP "tex-command-filter" 10 
-A list of TeX commands and their parameter lists to use when 
-filtering TeX input. The syntax is 
-"\fIcmdname\fR \fIoOpP\fR, ...",  
-where "oOpP" is a string of characters denoting the type 
-of command's parameters. Uppercase letter means that 
-a parameter should be spell checked, lowercase that it 
-should not. 'O' and 'o' denote optional parameters, 
-'P' and 'p' normal parameters. 
- 
-.IP "tex-environment-filter" 10 
-A list of environments to skip when filtering 
-TeX input. 
-.IP "sgml-attributes-to-check" 10 
-A list of SGML or HTML tag attributes to spell 
-check. 
-.RE 
- 
-.IP "" 10 
-A dictionary specification consists of 7 strings on the same line, 
-separated by whitespace and possibly enclosed in double or 
-single quotes. Backslashes can be used to quote characters 
-inside the quotes. The meanings of the strings are: 
- 
- 
-.RS 
-.IP "   0." 6 
-The name by which the dictionary is known, 
-similar to the name of an Ispell hash file name without the 
-extension ".hash". This must be specified. 
- 
-.IP "   1." 6 
-The file name of the library file to load. This must 
-be specified. 
- 
-.IP "   2." 6 
-The file name of the dictionary file that the library 
-uses. This must be specified. 
- 
-.IP "   3." 6 
-The input encoding this module uses. E.g. latin9. This 
-must be specified. 
- 
-.IP "   4." 6 
-The value of the locale variable \fBLC_CTYPE\fP that 
-should be used with this module. This determines the default set of 
-characters that are considered to belong to a word. If empty or not 
-given, the value of a suitable environment variable is 
-used. 
- 
-.IP "   5." 6 
-The set of additional word characters not specified by 
-the locale. If not given, no additional word 
-characters are assumed. 
- 
-.IP "   6." 6 
-The set of word boundary characters. They are 
-considered to be a part of a word only when occurring 
-inside one. If not given, no boundary characters are 
-assumed. 
- 
-.RE 
- 
-.SH "EXAMPLES" 
-.PP 
-\fBA configuration file example\fR 
-.PP 
-.nf 
-ispell=/usr/bin/ispell.real 
- 
-suomi "/usr/local/OpenOffice.org1.0/program/libsoikko.so" "/usr/local/OpenOffice.org1.0/share/dict/soikko-sp.fi_FI.dic" "latin9" "fi_FI@euro" "." "\-':" 
- 
-tex-command-filter="begin po, end p, usepackage op, newcommand poOP" 
-tex-environment-filter="equation $ eqnarray displaymath math" 
-.fi 
-.PP 
-The first line of the configuration file just specifies the location 
-of the fallback ispell program to use 
-.PP 
-The second line adds a module for Finnish, identified by the 
-name "suomi", which uses the given library file associated with a 
-dictionary file. The input encoding to use is iso-8859-15 
-aka "latin9". Only the letters specified by the 
-locale "fi_FI@euro" and period are considered as word characters, 
-and the boundary characters are "\-", "'" and ":". 
- 
-.PP 
-So every time when Tmispell is invoked with "\-d suomi" or 
-"\-d /usr/lib/ispell/suomi.hash" as arguments, the Soikko 
-module is used for spell checking. Otherwise the Ispell 
-program is started instead. 
- 
-.PP 
-The fifth line specifies that in TeX filter mode the parameters 
-to commands begin{}, end{} and usepackage{} should not be spell 
-checked, whereas the second optional and second obligatory 
-parameters to newcommand should. 
- 
-.PP 
-The sixth line specifies that in TeX filter mode no math environment 
-should be spell checked. 
- 
-.SH "SEE ALSO" 
-.PP 
-ispell(1) 
-.PP 
-\fISoikko (link to URL http://www.iki.fi/~pry/soikko/) \fR, by Pasi Ryh‰nen. 
- 
-.SH "AUTHOR" 
-.PP 
-Pauli Virtanen pauli.virtanen@hut.fi 
-.\" created by instant / docbook-to-man, Sun 23 Oct 2005, 17:59 
+\" vim: tw=72
+
+.TH "TMISPELL" "1" "2006-07-26"
+
+.SH "NAME"
+
+tmispell \- an
+.BR ispell (1)
+compatible front-end for the spellchecking system Voikko.
+
+.SH "SYNOPSIS"
+
+.PP
+.B tmispell
+.RB [ \-F
+.IR config_file ]
+.RI [ Ispell_options ]
+.RI [ file " ...]"
+
+.SH "DESCRIPTION"
+
+.PP
+.B Tmispell
+is an
+.BR ispell (1)
+compatible front-end for spell checking modules. The actual
+spellchecking for Finnish is done with the spellchecking system
+.IR Voikko .
+
+.PP
+What makes
+.B Tmispell
+very useful is that many programs (mail clients and word
+processors for example) use
+.BR ispell (1)
+for spellchecking. Since
+.B Tmispell
+is a transparent front-end for
+.BR ispell (1),
+other programs that would use Ispell can use Tmispell without any
+changes needed. Additionally
+.B Tmispell
+is able to launch
+.BR ispell (1)
+if there is no module for the selected language. Thus
+.B Tmispell
+can be used as a drop-in replacement for
+.BR ispell (1).
+
+.SH "OPTIONS"
+
+.PP
+Tmispell understands the following options:
+
+.TP 10
+.BI \-F " config_file"
+Read the configuration file
+.I config_file
+instead of the default
+.IR /etc/tmispell.conf .
+
+.TP 10
+.I Ispell_options
+Tmispell should understand all the options that Ispell does. For more
+information about them, see
+.BR ispell (1).
+
+.SH "FILES"
+
+.TP 10
+.I /etc/tmispell.conf
+The default configuration file for Tmispell.
+
+.PP
+The configuration file contains spellchecker entries and options. The
+\*(lq#\*(rq is a comment character and everything on a line after it is
+ignored.
+
+.PP
+Syntax for options is simple:
+
+.RS 10
+.IR key = value
+.RE
+
+.PP
+Note that the
+.I value
+string, if enclosed between quotes, may span multiple lines.
+
+.PP
+Currently the options are:
+
+.IP "ispell" 10
+The location of the real Ispell executable to be called as a fall-back.
+Note that the full path to the program must be given. This option must
+always be specified.
+
+.IP "tex-command-filter" 10
+A list of TeX commands and their parameter lists to use when
+filtering TeX input. The syntax is
+.RB \*(lq "cmdname oOpP" ", ...\*(rq,"
+where
+.B oOpP
+is a string of characters denoting the type of command's parameters.
+Uppercase letter means that a parameter should be spellchecked,
+lowercase that it should not.
+.B O
+and
+.B o
+denote optional parameters, 
+.B P
+and
+.B p
+normal parameters.
+
+.IP "tex-environment-filter" 10
+A list of environments to skip when filtering TeX input.
+
+.IP "sgml-attributes-to-check" 10
+A list of SGML or HTML tag attributes to spellcheck.
+
+.PP
+A dictionary specification consists of 7 strings on the same line,
+separated by whitespace (i.e. space or tab) and possibly enclosed in
+double (") or single (\(aq) quotes. Backslashes (\e) can be used to
+escape quote characters inside the quotes. The meanings of the strings
+are:
+
+.RS
+.IP "1." 4
+The name by which the dictionary is known, similar to the name of an
+.BR ispell (1)
+hash file name without the extension \*(lq.hash\*(rq. This must be specified.
+
+.IP "2." 4
+The file name of the library file to load. This must be specified.
+
+.IP "3." 4
+The file name of the dictionary file that the library uses. This must be
+specified.
+
+.IP "4." 4
+The input encoding this module uses, for example UTF-8. This must be
+specified.
+
+.IP "5." 4
+The value of the locale variable
+.B LC_CTYPE
+that should be used with this module. This determines the default set of
+characters that are considered to belong to a word. If empty or not
+given, the value of a suitable environment variable is used.
+
+.IP "6." 4
+The set of additional word characters not specified by the locale. If
+not given, no additional word characters are assumed.
+
+.IP "7." 4
+The set of word boundary characters. They are considered to be a part of
+a word only when occurring inside one. If not given, no boundary
+characters are assumed.
+
+.RE
+
+.SH "EXAMPLES"
+
+.PP
+.B A configuration file example
+
+.RS
+.PP
+ispell=/usr/bin/ispell.real
+.br
+suomi "/usr/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI.UTF-8" ".-" "\(aq':"
+.br
+tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
+.br
+tex-environment-filter="equation $ eqnarray displaymath math"
+.RE
+
+.PP
+The first line specifies the location of the fall-back ispell program to
+use
+
+.PP
+The second line defines a module for Finnish, identified by the name
+\*(lqsuomi\*(rq, which uses the given library file associated with
+a dictionary file. The input encoding to use is UTF-8. Only the letters
+specified by the locale fi_FI.UTF-8 as well as a period (.) and a dash
+(\-) are considered as word characters. Boundary characters are
+\*(lq\(aq\*(rq, \*(lq'\*(rq (U+2019) and \*(lq:\*(rq.
+
+.PP
+So every time when
+.B Tmispell
+is invoked with \*(lq\-d suomi\*(rq or \*(lq\-d
+/usr/lib/ispell/suomi.hash\*(rq as arguments, the Voikko spellchecking
+system is used for spellchecking. Otherwise the
+.BR ispell (1)
+is started.
+
+.PP
+The third line specifies that in TeX filter mode the parameters to
+commands begin{}, end{} and usepackage{} should not be spellchecked,
+whereas the second optional and second obligatory parameters to
+\*(lqnewcommand\*(rq should.
+
+.PP
+The fourth line specifies that in TeX filter mode no math environment
+should be spellchecked.
+
+.SH "SEE ALSO"
+
+.PP
+.BR ispell (1)
+
+.PP
+Voikko homepage: http://www.hunspell-fi.org/
+
+.SH "AUTHORS"
+.PP
+Pauli Virtanen <pauli.virtanen@hut.fi> (The original
+.BR Tmispell )
+.PP
+Harri Pitk√§nen <hatapitk@iki.fi> (Modifications and integration with
+Voikko)
