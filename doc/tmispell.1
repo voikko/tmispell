@@ -2,69 +2,63 @@
 
 .TH "TMISPELL" "1" "2006-07-26"
 
-.SH "NAME"
+.SH NAME
 
 .PP
-tmispell \- an Ispell compatible front-end for the spellchecking system
-Voikko
+tmispell \- ispell front-end which uses Voikko for spellchecking
 
-.SH "SYNOPSIS"
+.SH SYNOPSIS
 
 .PP
 .B tmispell
 .RB [ \-F
 .IR config_file ]
-.RI [ Ispell_options ]
+.RI [ ispell_options ]
 .RI [ file " ...]"
 
-.SH "DESCRIPTION"
+.SH DESCRIPTION
 
 .PP
 .B Tmispell
 is an
 .BR ispell (1)
-compatible front-end for spellchecking modules. The actual spellchecking
-for Finnish language is done with
-.B Voikko
-spellchecking system.
+front-end which uses Voikko spellchecking system to do the actual
+spellchecking for Finnish language.
 
 .PP
 What makes
 .B Tmispell
-very useful is that many programs (mail clients and word processors for
-example) use Ispell for spellchecking. Since
+very useful is that many programs (e.g. mail clients and word
+processors) use Ispell for spellchecking. Since
 .B Tmispell
 is a transparent front-end for Ispell, other programs that would use
-Ispell can use Tmispell (and therefore
-.BR Voikko )
-without any changes needed. Additionally
+Ispell can use Tmispell (and therefore Voikko) without any changes
+needed. Additionally,
 .B Tmispell
-is able to launch Ispell if there is no module for the selected
-language. Thus
+is able to launch the real Ispell if there is no
+.B Tmispell
+module for the selected language. Thus
 .B Tmispell
 can be used as a drop-in replacement for Ispell.
 
-.SH "OPTIONS"
+.SH OPTIONS
 
-.PP
-Tmispell understands the following options:
-
-.TP 10
+.TP
 .BI \-F " config_file"
 Read the configuration file
 .I config_file
 instead of the default
 .IR /etc/tmispell.conf .
 
-.TP 10
-.I Ispell_options
+.TP
+.I ispell_options
 Tmispell should understand all the options that Ispell does. For more
-information about, see
+information about Ispell's options, see
 .BR ispell (1).
 
-.SH "FILES"
+.SH FILES
 
-.TP 10
+.TP
 .I /etc/tmispell.conf
 The default configuration file for
 .BR Tmispell .
@@ -80,10 +74,9 @@ For more information, see
 .PP
 Voikko homepage: http://www.hunspell-fi.org/
 
-.SH "AUTHORS"
+.SH AUTHORS
 The original
 .B Tmispell
 was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>. Modifications
-and integration with
-.B Voikko
-spellchecking system by Harri Pitk\(:anen <hatapitk@iki.fi>.
+and integration with Voikko spellchecking system by Harri Pitk\(:anen
+<hatapitk@iki.fi>.
