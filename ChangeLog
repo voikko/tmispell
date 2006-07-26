@@ -1,3 +1,10 @@
+2006-07-26 Teemu Likonen <tlikonen@iki.fi>
+
+	* Update README, LUEMINUT and manual pages.
+
+	* Remove html pages. They didn't contain anything that is not in the
+	  manual pages.
+
 2006-06-16 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix build failure with GCC 4.1 due to extra qualifications
