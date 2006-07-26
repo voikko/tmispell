@@ -57,8 +57,8 @@ sgml-attributes-to-check = "alt"
 
 ### Spell checker entries
 # <identifier> <library> <dictionary> <encoding> <locale> <word_c> <boundary_c>
-suomi	"/usr/lib/libvoikko.so.1"	"/dev/null" "UTF-8"	"fi_FI@euro" "." "-':"
-finnish	"/usr/lib/libvoikko.so.1"	"/dev/null" "UTF-8"	"fi_FI@euro" "." "-':"
+suomi	"/usr/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI@euro" ".-" "'’:"
+finnish	"/usr/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI@euro" ".-" "'’:"
 
 # Note that for Finnish you might also need the second entry "finnish",
 # in case some program uses it.
