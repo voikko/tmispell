@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.52)
 
 dnl ## Package information
-AC_INIT(tmispell-voikko, 0.4.3)
+AC_INIT(tmispell-voikko, 0.5.0)
 AC_CONFIG_SRCDIR(src/tmispell.cc)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AM_CONFIG_HEADER(src/config.hh)
@@ -147,10 +147,6 @@ AC_OUTPUT([
 Makefile
 src/Makefile
 enchant/Makefile
-doc/Makefile
-doc/sgml/Makefile
-doc/tmispell.1
-doc/tmispell.fi.1
 po/Makefile.in
 ])
 

@@ -13,15 +13,9 @@ cp /usr/share/misc/config.guess .
 cp /usr/share/gettext/config.rpath .
 
 
-## Generate documentation
-make -C doc/sgml -f Makefile.am generate
-cp -f doc/tmispell.en.txt README
-cp -f doc/tmispell.fi.txt LUEMINUT
-ln -fs tmispell.en.1.in doc/tmispell.1.in
-
 ## Gettext.
 find src -name '*.cc' -o -name '*.hh' | sort > po/POTFILES.in
-glib-gettextize -f
+glib-gettextize -c -f
 
 ## Autoconf+etc.
 libtoolize --force --copy
