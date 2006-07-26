@@ -13,10 +13,10 @@ This manual page describes the configuration file for
 
 .TP
 .I /etc/tmispell.conf
-The configuration file that contains spellchecker entries and options. 
+The configuration file that contains spellchecker entries and options.
 
 .PP
-.B "Syntax of options"
+.B "Syntax of configuration file"
 
 .RS
 
@@ -38,8 +38,8 @@ is a comment character and everything on a line after it is ignored.
 
 .TP
 .I ispell
-The location of the real Ispell executable to be called as a fall-back.
-The full path to the Ispell executable must be given. This option is
+The location of the Ispell executable to be called as a fall-back. The
+full path to the Ispell executable must be given. This option is
 mandatory.
 
 .TP
@@ -55,7 +55,7 @@ lowercase that it should not.
 .B O
 and
 .B o
-denote optional parameters, 
+denote optional parameters,
 .B P
 and
 .B p
@@ -71,7 +71,7 @@ A list of SGML or HTML tag attributes to spellcheck.
 
 .PP
 Dictionary specification consists of seven strings on the same line, separated by
-whitespace (i.e. space or tab) and possibly enclosed in double (") or single
+a whitespace (i.e. space or tab) and possibly enclosed in double (") or single
 (\(aq) quotes. Backslash (\e) can be used to escape quote characters inside
 quotes. The meanings of the strings are:
 
@@ -79,7 +79,7 @@ quotes. The meanings of the strings are:
 .IP "1." 4
 The name by which the dictionary is known, similar to the name of an
 Ispell hash file name without the extension
-.RI \*(lq .hash \*(rq.
+.IR .hash .
 This is mandatory.
 
 .IP "2." 4
@@ -90,8 +90,7 @@ The file name of the dictionary file that the library uses. This is
 mandatory.
 
 .IP "4." 4
-The input encoding this module uses, for example UTF-8. This is
-mandatory.
+The input encoding this module uses (e.g. UTF-8). This is mandatory.
 
 .IP "5." 4
 The value of the locale variable
@@ -120,7 +119,7 @@ characters are assumed.
 .RS
 ispell=/usr/bin/ispell.real
 .br
-suomi "/usr/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI.UTF-8" ".-" "\(aq':"
+suomi "/usr/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI.UTF-8" ".-" "\(aq:"
 .br
 tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
 .br
@@ -138,8 +137,8 @@ Language is identified by the name \*(lqsuomi\*(rq and it uses
 library for spellchecking. Separate dictionary file is not needed with
 Voikko so it is set to /dev/null. The input encoding to use is UTF-8.
 Only the letters specified by the locale fi_FI.UTF-8 as well as period
-(.) and dash (\-) are considered as word characters. Boundary characters
-are: ASCII apostrophe (\(aq), Unicode's apostrophe (') and colon (:).
+(.) and dash (-) are considered as word characters. Boundary characters
+are ASCII apostrophe (\(aq) and colon (:).
 
 .PP
 Every time
