@@ -1,10 +1,6 @@
-\" vim: tw=72
-
 .TH "TMISPELL" "1" "2006-07-26"
 
 .SH NAME
-
-.PP
 tmispell \- ispell wrapper which uses Voikko for spellchecking
 
 .SH SYNOPSIS
@@ -31,15 +27,29 @@ What makes
 very useful is that many programs (e.g. email clients and word
 processors) use Ispell for spellchecking. Since
 .B Tmispell
-is a transparent wrapper for Ispell, other programs, that normally use
-Ispell, will automatically use Tmispell (and therefore Voikko) without
-any changes needed. Additionally,
+is a transparent wrapper for Ispell, other programs, that would normally
+use Ispell, will automatically use
 .B Tmispell
-is able to launch the real Ispell if there is no
+(and therefore Voikko) without any changes needed. Additionally,
 .B Tmispell
-module for the selected language. It is not necessary to have the real
-Ispell installed, though. Tmispell works fine without it, but Finnish is
-the only language supported then.
+is able to launch the real Ispell if
+.B Tmispell
+does not support the selected language. It is not necessary to have the
+real Ispell installed, though. Tmispell works fine without it, but
+currently Finnish is the only supported language then.
+
+.PP
+.B Tmispell
+can be used from command line exactly like Ispell. If
+.B Tmispell
+is correctly installed, the command \*(lqispell\*(rq actually starts
+.BR Tmispell .
+It can be used to spellcheck any text
+.IR file (s)
+given as command line parameter. If a text file is given,
+.B Tmispell
+starts in interactive mode. Press \*(lq?\*(rq to get help on available
+commands in interactive mode.
 
 .SH OPTIONS
 
@@ -77,6 +87,8 @@ Voikko homepage: http://www.hunspell-fi.org/
 .SH AUTHORS
 The original
 .B Tmispell
-was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>. Modifications
-and integration with Voikko spellchecking system by Harri Pitk\(:anen
-<hatapitk@iki.fi>.
+was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>
+.br
+Modifications and integration with Voikko spellchecking system by Harri
+Pitk\(:anen <hatapitk@iki.fi>
+\" vim: tw=72
