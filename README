@@ -107,9 +107,10 @@ Program specific information
         '(("suomi"
            "[%.0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
            "[^.%0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
-           "[':]" nil nil nil iso-8859-1))))
+           "[':]" nil nil nil utf-8))))
 
-       Depending on your configuration, the
+       You should change utf-8 to iso-8859-1 or iso-8859-15 if you do
+       not use the UTF-8 encoding. Depending on your configuration, the
        ispell-local-dictionary-alist could also be
        ispell-dictionary-alist. You can change the active dictionary
        with the command "M-x ispell-change-dictionary". If you like to

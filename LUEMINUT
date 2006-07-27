@@ -107,8 +107,10 @@ Ohjelmakohtaisia ohjeita
         '(("suomi"
            "[%.0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
            "[^.%0-9A-Za-z\247\300-\326\330-\366\370-\377-]"
-           "[':]" nil nil nil iso-8859-1))))
+           "[':]" nil nil nil utf-8))))
 
+       Vaihda utf-8 iso-8859-1:ksi tai iso-8859-15:ksi jos käytät
+       muuta merkistökoodausta kuin UTF-8.
        Asetuksista riippuen ispell-local-dictionary-alist voi olla myös
        ispell-dictionary-alist. Käytössä olevaa sanastoa voi muuttaa
        komennolla "M-x ispell-change-dictionary". Jos haluat suomen
