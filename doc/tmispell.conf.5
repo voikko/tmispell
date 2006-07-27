@@ -11,7 +11,7 @@ This manual page describes the configuration file for
 
 .TP
 .I /etc/tmispell.conf
-The configuration file that contains spellchecker entries and options.
+The configuration file that contains spell-checker entries and options.
 
 .PP
 .B "Syntax of configuration file"
@@ -48,7 +48,7 @@ filtering TeX input. The syntax is
 where
 .B oOpP
 is a string of characters denoting the type of command's parameters.
-Uppercase letter means that a parameter should be spellchecked,
+Uppercase letter means that a parameter should be spell-checked,
 lowercase that it should not.
 .B O
 and
@@ -65,10 +65,10 @@ A list of environments to skip when filtering TeX input.
 
 .TP
 .I sgml-attributes-to-check
-A list of SGML or HTML tag attributes to spellcheck.
+A list of SGML or HTML tag attributes to spell-check.
 
 .PP
-Spellchecker module specification consists of seven strings on the same
+The spell-checker module specification consists of seven strings on the same
 line, separated by whitespace(s) (i.e. space or tab) and possibly
 enclosed in double (") or single (\(aq) quotes. Backslash (\e) can be
 used to escape quote characters inside quotes. The meanings of the
@@ -130,10 +130,10 @@ The first line specifies the location of the fall-back ispell program to
 use.
 
 .PP
-The second line defines spellchecking settings for Finnish language.
+The second line defines spell-checking settings for Finnish language.
 Language is identified by the name \*(lqsuomi\*(rq and it uses
 .I /usr/lib/libvoikko.so.1
-library for spellchecking. Separate dictionary file is not needed with
+library for spell-checking. Separate dictionary file is not needed with
 Voikko so it is set to /dev/null. The input encoding to use is UTF-8.
 Only the letters specified by the locale fi_FI.UTF-8 as well as period
 (.) and dash (-) are considered as word characters. Boundary characters
@@ -144,26 +144,26 @@ Every time
 .B Tmispell
 is invoked with \*(lq\-d suomi\*(rq or \*(lq\-d
 .IR /usr/lib/ispell/suomi.hash \*(rq
-as arguments, the Voikko spellchecking system
+as arguments, the Voikko spell-checking system
 .RI ( /usr/lib/libvoikko.so.1 )
-is used for spellchecking. Otherwise the real Ispell is started.
+is used for spell-checking. Otherwise the real Ispell is started.
 
 .PP
 The third line specifies that in TeX filter mode the parameters to
-commands begin{}, end{} and usepackage{} should not be spellchecked,
+commands begin{}, end{} and usepackage{} should not be spell-checked,
 whereas the second optional and second obligatory parameters to
 \*(lqnewcommand\*(rq should.
 
 .PP
 The fourth line specifies that in TeX filter mode no math environment
-should be spellchecked.
+should be spell-checked.
 
 .SH AUTHORS
 The original
 .B Tmispell
 was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>
 .br
-Modifications and integration with Voikko spellchecking system by Harri
+Modifications and integration with Voikko spell-checking system by Harri
 Pitk\(:anen <hatapitk@iki.fi>
 
 .SH "SEE ALSO"

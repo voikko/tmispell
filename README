@@ -7,13 +7,13 @@
 
 What Tmispell is?
 
-   Tmispell is an Ispell compatible front-end for spell checking
-   modules. To do the actual spell checking for Finnish language it uses
-   the spell checking system Voikko[1].
+   Tmispell is an Ispell compatible front-end for spell-checking
+   modules. To do the actual spell-checking for Finnish language it uses
+   the spell-checking system Voikko[1].
    
    To put this another way: Tmispell is a transparent wrapper around
    Ispell. Many programs (e.g. mail clients and document processors) use
-   Ispell for spellchecking. Since Tmispell imitates Ispell, these
+   Ispell for spell-checking. Since Tmispell imitates Ispell, these
    programs use automatically Tmispell (and therefore Voikko) without
    any changes needed. Additionally Tmispell can launch the real Ispell
    if there is no module for the selected language.
@@ -21,7 +21,7 @@ What Tmispell is?
 Usage
 
    Currently Tmispell has an interactive text-mode user interface that
-   can be used for spell checking text. It can be started by typing
+   can be used for spell-checking text. It can be started by typing
 
  tmispell -dsuomi file.txt
 
@@ -31,7 +31,7 @@ Usage
 
    If you would like to use the filters, put one of the options '-t',
    '-n' and '-h' (TeX, nroff and Sgml, respectively) in front of the
-   file name to spell check. For more information about options, see the
+   file name to spell-check. For more information about options, see the
    ispell(1) manual page.
 
 Installation
@@ -57,7 +57,7 @@ Installation
        Tmispell looks for it. There is also an example configuration
        file tmispell.conf.example, which should be used as a template.
        (See "The configuration file format" below.) Check that the path
-       names in spell checker entries point to correct places.
+       names in spell-checker entries point to correct places.
 
     4. To make other programs use Tmispell instead of Ispell, first move
        aside the original Ispell executable, and then create a link from
@@ -70,7 +70,7 @@ Installation
        Remember to change the "ispell=..." line in configuration file to
        point to the real Ispell executable.
 
-       Other programs must also know that a Finnish spell checking is
+       Other programs must also know that a Finnish spell-checking is
        possible, so run the following command to create fake dictionary
        files:
 
@@ -91,7 +91,7 @@ Installation
 
  @(#) International Ispell Version 3.1.20 compatible tmispell-voikko 0.4.3
 
-       Now you can type words to spell check. For more information about
+       Now you can type words to spell-check. For more information about
        this command mode, refer to the ispell(1) manual.
 
 Program specific information
