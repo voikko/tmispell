@@ -1,26 +1,20 @@
-.TH "TMISPELL" "1" "2006-07-26"
-
+.TH "TMISPELL" "1" "2006-07-30"
 .SH NAME
 tmispell \- ispell wrapper which uses Voikko for spell-checking
-
 .SH SYNOPSIS
-
 .PP
 .B tmispell
-.RB [ \-F
+.RB [ -F
 .IR config_file ]
 .RI [ ispell_options ]
 .RI [ file " ...]"
-
 .SH DESCRIPTION
-
 .PP
 .B Tmispell
 is an
 .BR ispell (1)
 wrapper which uses Voikko spell-checking system to do the actual
 spell-checking for Finnish language.
-
 .PP
 What makes
 .B Tmispell
@@ -37,50 +31,41 @@ is able to launch the real Ispell if
 does not support the selected language. It is not necessary to have the
 real Ispell installed, though. Tmispell works fine without it, but
 currently Finnish is the only supported language then.
-
 .PP
 .B Tmispell
 can be used from command line exactly like Ispell. If
 .B Tmispell
-is correctly installed, the command \*(lqispell\*(rq actually starts
+is correctly installed, the command \(lqispell\(rq actually starts
 .BR Tmispell .
 It can be used to spell-check any text
 .IR file (s)
 given as command line parameter. If a text file is given,
 .B Tmispell
-starts in interactive mode. Press \*(lq?\*(rq to get help on available
+starts in interactive mode. Press \(lq?\(rq to get help on available
 commands in interactive mode.
-
 .SH OPTIONS
-
 .TP
-.BI \-F " config_file"
+.BI -F " config_file"
 Use the configuration file
 .I config_file
 instead of the default
 .IR /etc/tmispell.conf .
-
 .TP
 .I ispell_options
 Tmispell should understand all the options that Ispell does. For more
 information about Ispell's options, see
 .BR ispell (1).
-
 .SH FILES
-
 .TP
 .I /etc/tmispell.conf
 The default configuration file for
 .BR Tmispell .
 For more information, see
 .BR tmispell.conf (5).
-
 .SH BUGS
-
 .PP
 In interactive mode UTF-8 multibyte characters are not handled
 correctly.
-
 .SH AUTHORS
 The original
 .B Tmispell
@@ -88,14 +73,10 @@ was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>
 .br
 Modifications and integration with Voikko spell-checking system by Harri
 Pitk\(:anen <hatapitk@iki.fi>
-
 .SH "SEE ALSO"
-
 .PP
 .BR tmispell.conf (5),
 .BR ispell (1)
-
 .PP
 Voikko homepage: http://www.hunspell-fi.org/
-
 \" vim: tw=72
