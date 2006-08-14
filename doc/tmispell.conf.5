@@ -31,9 +31,11 @@ mandatory.
 .I tex-command-filter
 A list of TeX commands and their parameter lists to use when
 filtering TeX input. The syntax is
+.nh
 .RB \(lq "cmdname oOpP" ", ...\(rq,"
 where
 .B oOpP
+.hy
 is a string of characters denoting the type of command's parameters.
 Uppercase letter means that a parameter should be spell-checked,
 lowercase that it should not.
@@ -72,7 +74,9 @@ mandatory.
 The input encoding this module uses (e.g. UTF-8). This is mandatory.
 .IP "5." 4
 The value of the locale variable
+.nh
 .B LC_CTYPE
+.hy
 that should be used with this module. This determines the default set of
 characters that are considered to belong to a word. If empty or not
 given, the value of a suitable environment variable is used.
@@ -86,8 +90,8 @@ characters are assumed.
 .RE
 .RE
 .SH EXAMPLES
-.PP
 .B Example configuration file
+.nh
 .RS
 ispell=/usr/bin/ispell.real
 .br
@@ -97,45 +101,75 @@ tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
 .br
 tex-environment-filter="equation $ eqnarray displaymath math"
 .RE
+.hy
 .PP
 The first line specifies the location of the fall-back ispell program to
 use.
 .PP
 The second line defines spell-checking settings for Finnish language.
-Language is identified by the name \(lqsuomi\(rq and it uses
+Language is identified by the name
+.nh
+\(lqsuomi\(rq
+.hy
+and it uses
+.nh
 .I /usr/lib/libvoikko.so.1
+.hy
 library for spell-checking. Separate dictionary file is not needed with
-Voikko so it is set to /dev/null. The input encoding to use is UTF-8.
-Only the letters specified by the locale fi_FI.UTF-8 as well as period
-(.) and dash (-) are considered as word characters. Boundary characters
-are ASCII apostrophe (\(aq) and colon (:).
+Voikko so it is set to
+.nh
+/dev/null.
+.hy
+The input encoding to use is UTF-8. Only the letters specified by the
+locale
+.nh
+fi_FI.UTF-8
+.hy
+as well as period (.) and dash (-) are considered as word characters.
+Boundary characters are ASCII apostrophe (\(aq) and colon (:).
 .PP
 Every time
 .B Tmispell
-is invoked with \(lq-d suomi\(rq or \(lq-d
+is invoked with
+.nh
+\(lq-d suomi\(rq or \(lq-d
 .IR /usr/lib/ispell/suomi.hash \(rq
+.hy
 as arguments, the Voikko spell-checking system
+.nh
 .RI ( /usr/lib/libvoikko.so.1 )
+.hy
 is used for spell-checking. Otherwise the real Ispell is started.
 .PP
 The third line specifies that in TeX filter mode the parameters to
-commands begin{}, end{} and usepackage{} should not be spell-checked,
-whereas the second optional and second obligatory parameters to
-\(lqnewcommand\(rq should.
+commands
+.nh
+begin{}, end{} and usepackage{}
+.hy
+should not be spell-checked, whereas the second optional and second
+obligatory parameters to
+.nh
+\(lqnewcommand\(rq
+.hy
+should.
 .PP
 The fourth line specifies that in TeX filter mode no math environment
 should be spell-checked.
 .SH AUTHORS
 The original
 .B Tmispell
-was programmed by Pauli Virtanen <pauli.virtanen@hut.fi>
+was programmed by
+.nh
+Pauli Virtanen <pauli.virtanen@hut.fi>
+.hy
 .br
-Modifications and integration with Voikko spell-checking system by Harri
-Pitk\(:anen <hatapitk@iki.fi>
+Modifications and integration with Voikko spell-checking system by
+.nh
+Harri Pitk\(:anen <hatapitk@iki.fi>
 .SH "SEE ALSO"
-.PP
 .BR tmispell (1),
 .BR ispell (1)
 .PP
 Voikko homepage: http://www.hunspell-fi.org/
+.hy
 \" vim: tw=72
