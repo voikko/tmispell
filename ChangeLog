@@ -1,5 +1,9 @@
 2006-08-15 Harri Pitkänen <hatapitk@iki.fi>
 
+	* Decouple libenchant plugin from the rest of tmispell code.
+
+2006-08-15 Harri Pitkänen <hatapitk@iki.fi>
+
         * Start replacing the old dlopen/dlsym based dynamic linking
 	  mechanism required by binary only Soikko with ordinary compile
 	  time dynamic linking. This version works and removes a lot

@@ -24,93 +24,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <string>
-#include <vector>
-
 #include <enchant.h>
 #include <enchant-provider.h>
 
 #include <glib.h>
 
-#include "config.hh"
-#include "spell.hh"
-#include "config_file.hh"
-#include "tmerror.hh"
-
-#include "glibmm/ustring.h"
+#include <libvoikko/voikko.h>
 
 ENCHANT_PLUGIN_DECLARE("Voikko")
 
-/*****************************************************************************/
-/** Helper functions
- ** @{ */
-
-/// Test whether a file exists
-static std::string exstf(std::string const& fn)
-{
-	if (::g_file_test(fn.c_str(), ::G_FILE_TEST_EXISTS))
-		return fn;
-	else
-		return std::string();
-}
-
-/**
- * Resolve the library and dictionary files to use, for Finnish only.
- * 1. First try Enchant registry.
- * 2. Then try Tmispell config file.
- */
-static void
-voikko_checker_get_files(std::string& library, std::string& dictionary)
-{
-	char *lib = NULL;
-	char *dict = NULL;
-
-	library.clear();
-	dictionary.clear();
-
-	/* Try to get from Enchant registry */
-	
-	lib = ::enchant_get_registry_value("Voikko", "Library");
-	if (lib) library = exstf(lib);
-	::g_free(lib);
-	
-	dict = ::enchant_get_registry_value("Voikko", "Dictionary");
-	if (dict) dictionary = exstf(dict);
-	::g_free(dict);
-
-	/* Try to get from Tmispell config files */
-
-	static char* cfgfiles[] = {
-		CONFIG_FILE,
-		NULL
-	};
-	
-	static char* langnames[] = {
-		"suomi",
-		"finnish",
-		NULL
-	};
-	
-	int i, j;
-	for (i = 0; cfgfiles[i] != NULL; ++i) {
-		if (!dictionary.empty() && !library.empty()) break;
-		try {
-			ConfigFile conf(cfgfiles[i]);
-			for (j = 0; langnames[j] != NULL; ++j) {
-				char* l = langnames[j];
-				if (!conf.has(l)) continue;
-				const SpellcheckerEntry &e = conf.get(l);
-				
-				if (library.empty())
-					library = exstf(e.get_library());
-				if (dictionary.empty())
-					dictionary = exstf(e.get_dictionary());
-			}
-		} catch (...) {
-			/* noop: fail silently */
-		}
-	}
-}
+int voikko_handle;
 
 /**
  * Check the spelling of the given word.
@@ -118,14 +41,11 @@ voikko_checker_get_files(std::string& library, std::string& dictionary)
 static int
 voikko_dict_check (EnchantDict * me, const char *const word, size_t len)
 {
-	Spellchecker *manager;
 	bool ok;
 
 	if (word == NULL || len == 0) return 0;
 
-	manager = reinterpret_cast<Spellchecker *>(me->user_data);
-
-	ok = manager->check_word(word);
+	ok = voikko_spell_cstr(voikko_handle, word);
 	
 	return ok ? 0 : 1;
 }
@@ -137,55 +57,13 @@ static char **
 voikko_dict_suggest (EnchantDict * me, const char *const word,
 		     size_t len, size_t * out_n_suggs)
 {
-	Spellchecker *manager;
-	std::vector<Glib::ustring> suggestions;
-
-	char **sugg_arr = NULL;
-
+	char **sugg_arr;
 	if (word == NULL || len == 0) return NULL;
-	
-	manager = reinterpret_cast<Spellchecker *>(me->user_data);
-	manager->get_suggestions(word, suggestions);
-
-	*out_n_suggs = suggestions.size();
-	
-	if (!suggestions.empty())
-	{
-		sugg_arr = g_new0(char*, suggestions.size() + 1);
-
-		unsigned int i;
-		for (i = 0; i < suggestions.size(); ++i) {
-			sugg_arr[i] = strdup(suggestions[i].c_str());
-		}
-	}
+	sugg_arr = voikko_suggest_cstr(voikko_handle, word);
+	if (sugg_arr == NULL) return NULL;
+	for (*out_n_suggs = 0; sugg_arr[*out_n_suggs] != NULL; (*out_n_suggs)++);
 	return sugg_arr;
 }
-
-/**
- * Initialize a spellchecker instance.
- */
-static Spellchecker *
-voikko_request_manager(struct str_enchant_provider * me)
-{
-	Spellchecker * manager = NULL;
-	try {
-		std::string lib, dict;
-		voikko_checker_get_files(lib, dict);
-#ifdef DEBUG
-		fprintf(stderr, "Creating manager %s %s\n", lib.c_str(),
-			dict.c_str());
-#endif
-		/* Enchant always uses utf-8 encoding internally */
-		manager = new Spellchecker(lib, dict, "utf-8");
-	} catch (Error const& err) {
-		enchant_provider_set_error(me, err.what());
-		manager = NULL;
-	}
-
-	return manager;
-}
-
-/** @} */
 
 
 /*****************************************************************************/
@@ -215,22 +93,15 @@ static EnchantDict *
 voikko_provider_request_dict (EnchantProvider * me, const char *const tag)
 {
 	EnchantDict *dict = NULL;
-	Spellchecker *manager = NULL;
-
-#ifdef DEBUG
-	fprintf(stderr, "Asking for tag %s\n", tag);
-#endif
+	const char * voikko_error;
 	
 	if (!voikko_provider_dictionary_exists(me, tag))
 		return NULL;
-	
-	manager = voikko_request_manager(me);
 
-	if (!manager) 
-		return NULL;
+	voikko_error = voikko_init(&voikko_handle, "fi_FI", 0);
+	if (voikko_error) return NULL;
 
 	dict = g_new0(EnchantDict, 1);
-	dict->user_data = manager;
 	dict->check = voikko_dict_check;
 	dict->suggest = voikko_dict_suggest;
 	/* don't use personal, session - let higher level implement that */
@@ -241,9 +112,7 @@ voikko_provider_request_dict (EnchantProvider * me, const char *const tag)
 static void
 voikko_provider_dispose_dict (EnchantProvider * me, EnchantDict * dict)
 {
-	Spellchecker *manager
-		= reinterpret_cast<Spellchecker *>(dict->user_data);
-	delete manager;
+	voikko_terminate(voikko_handle);
 	::g_free (dict);
 }
 
@@ -286,4 +155,3 @@ extern "C" {
 	}
 }
 
-/** @} */
