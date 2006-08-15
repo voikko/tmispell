@@ -27,18 +27,13 @@
 
 #include <string>
 #include <vector>
-#include "voikko.hxx"
+#include <libvoikko/voikko.h>
 
 #include "glibmm/ustring.h"
 #include "glibmm/unicode.h"
 
 #include "charset.hh"
 
-typedef const char * (*initvoikko_t)(int *, const char *, int);
-typedef int (*setsopt_t)(int, int, const char *);
-typedef int (*setbopt_t)(int, int, int);
-typedef int (*spell_t)(int, const char *);
-typedef char ** (*suggest_t)(int, const char *);
 
 /**
  * The spelling checker.
@@ -78,23 +73,8 @@ public:
 		{ get_suggestions(Glib::ustring(begin, end), suggestions); }
 
 private:
-	/// The dynamically loadable library handle
-	void*			dl_handle_;
 
 	int			voikkohandle;
-
-	/// The initialization function of the loaded library
-	initvoikko_t		init_func_;
-
-	/// The spell checking function of the loaded library
-	spell_t	check_func_;
-
-	/// The suggestion generation function of the loaded library
-	suggest_t	suggest_func_;
-
-	/// The option setting functions of the loaded library
-	setsopt_t	string_option_func_;
-	setbopt_t	boolean_option_func_;
 
 	/// Is the loaded library properly initialized
 	bool			initialized_;

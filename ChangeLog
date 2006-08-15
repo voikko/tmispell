@@ -1,3 +1,10 @@
+2006-08-15 Harri Pitkänen <hatapitk@iki.fi>
+
+        * Start replacing the old dlopen/dlsym based dynamic linking
+	  mechanism required by binary only Soikko with ordinary compile
+	  time dynamic linking. This version works and removes a lot
+	  of unnecessary code, but more changes should follow.
+
 2006-07-26 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix the build system for new documentation

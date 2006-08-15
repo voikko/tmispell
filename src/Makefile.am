@@ -10,6 +10,7 @@ MAINTAINERCLEANFILES =  Makefile.in .deps config.hh config.hh.in stamp-h.in
 
 bin_PROGRAMS = tmispell
 tmispell_LDADD = @INTLLIBS@ $(GLIB_LIBS)
+tmispell_LDFLAGS = -lvoikko
 tmispell_SOURCES =	\
 	charset.hh	\
 	charset.cc	\
@@ -41,7 +42,6 @@ tmispell_SOURCES =	\
 	tmispell.hh	\
 	spell.cc	\
 	spell.hh	\
-	voikko.hxx \
 	$(USTRING_SOURCES)
 
 #### Debug

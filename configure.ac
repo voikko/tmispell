@@ -63,6 +63,9 @@ AC_CHECK_HEADER([regex.h],,
 AC_CHECK_HEADER([curses.h],,
 	[AC_MSG_ERROR([This program requires curses.h to work.
 		       Do you have Ncurses installed?])])
+AC_CHECK_HEADER([libvoikko/voikko.h],,
+	[AC_MSG_ERROR([This program requires voikko.h to work.
+	               Do you have libvoikko installed?])])
 
 dnl ## Required libraries
 AC_SEARCH_LIBS(dlopen, dl, ,

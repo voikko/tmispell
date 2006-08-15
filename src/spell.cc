@@ -40,23 +40,6 @@ using std::vector;
 
 
 /**
- * Load a symbol from the given library handle.
- */
-static void* dl_symbol(void* handle, char const* name)
-{
-	void* symbol;
-	
-	symbol = dlsym(handle, name);
-	
-	if (symbol == 0) {
-		throw Error(_("Unable to locate symbol %s in library"),
-			    name);
-	}
-	
-	return symbol;
-}
-
-/**
  * Opens the given spell check library and loads the given dictionary.
  * Encoding is set to latin9 by default.
  */
@@ -66,37 +49,19 @@ Spellchecker::Spellchecker(std::string const& library,
 	: initialized_(false)
 {
 	try {
-		dl_handle_ = dlopen(library.c_str(), RTLD_NOW);
-
-		if (dl_handle_ == 0) {
-			throw Error(_("Unable to open library"));
-		}
 		
-		init_func_ = (initvoikko_t)dl_symbol(
-			dl_handle_, "voikko_init");
-		check_func_ = (spell_t)dl_symbol(
-			dl_handle_, "voikko_spell_cstr");
-		suggest_func_ =	(suggest_t)dl_symbol(
-			dl_handle_,  "voikko_suggest_cstr");
-		string_option_func_ = (setsopt_t)dl_symbol(
-			dl_handle_, "voikko_set_string_option");
-		boolean_option_func_ = (setbopt_t)dl_symbol(
-			dl_handle_, "voikko_set_bool_option");
-		const char* error = init_func_(&voikkohandle, "fi_FI", 0);
+		const char* error = voikko_init(&voikkohandle, "fi_FI", 0);
 		if (error != 0) 
-			throw Error(_("Initializing spell checker failed"));
-		boolean_option_func_(voikkohandle, VOIKKO_OPT_IGNORE_DOT, 1);
-		boolean_option_func_(voikkohandle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
-		boolean_option_func_(voikkohandle, VOIKKO_OPT_IGNORE_UPPERCASE, 1);
+			throw Error();
+		voikko_set_bool_option(voikkohandle, VOIKKO_OPT_IGNORE_DOT, 1);
+		voikko_set_bool_option(voikkohandle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
+		voikko_set_bool_option(voikkohandle, VOIKKO_OPT_IGNORE_UPPERCASE, 1);
 		initialized_ = true;
 		open_dictionary(dictionary);
 		set_encoding(encoding);
 	} catch (Error const& err) {
-		if (dl_handle_ != 0) dlclose(dl_handle_);
-		dl_handle_ = 0;
 		initialized_ = false;
-		throw Error("Error loading library %s: %s",
-			    library.c_str(), err.what());
+		throw Error(_("Error initialising libvoikko"));
 	}
 
 	conv_ = new CharsetConverter("UTF-8");
@@ -107,7 +72,7 @@ Spellchecker::Spellchecker(std::string const& library,
  */
 Spellchecker::~Spellchecker()
 {
-	dlclose(dl_handle_);
+	voikko_terminate(voikkohandle);
 	delete conv_;
 	initialized_ = false;
 }
@@ -134,7 +99,7 @@ void Spellchecker::open_dictionary(string const& dictionary_path)
 void Spellchecker::set_encoding(string const& encoding)
 {
 	int status;
-	status = string_option_func_(voikkohandle, VOIKKO_OPT_ENCODING, encoding.c_str());
+	status = voikko_set_string_option(voikkohandle, VOIKKO_OPT_ENCODING, encoding.c_str());
 	encoding_ = encoding;
 	
 	if (!status)
