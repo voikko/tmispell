@@ -114,21 +114,26 @@ AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "$PACKAGE_LOCALE_DIR",
                 [Package locale directory])
 
 dnl ## Enchant
+AC_ARG_ENABLE(enchant, AC_HELP_STRING([--disable-enchant],
+	[disable building of the libenchant provider plugin]),
+	[enchant=${enableval}], [enchant=yes])
 AH_TEMPLATE(HAVE_ENCHANT, [Have enchant >= 1.0])
 AH_TEMPLATE(HAVE_ENCHANT_1_1_6, [Have enchant >= 1.1.6])
 HAVE_ENCHANT=""
-PKG_CHECK_MODULES(ENCHANT, enchant >= 1.1.6, [
-  AC_DEFINE(HAVE_ENCHANT_1_1_6, 1)
-  AC_DEFINE(HAVE_ENCHANT, 1)
-  HAVE_ENCHANT="true"
-  ],
-  [
-  PKG_CHECK_MODULES(ENCHANT, enchant >= 1.0, [
-    AC_DEFINE(HAVE_ENCHANT, 1)
-    HAVE_ENCHANT="true"
-  ])
-  ]
-)
+if test x$enchant = xyes; then
+	PKG_CHECK_MODULES(ENCHANT, enchant >= 1.1.6, [
+	  AC_DEFINE(HAVE_ENCHANT_1_1_6, 1)
+	  AC_DEFINE(HAVE_ENCHANT, 1)
+	  HAVE_ENCHANT="true"
+	  ],
+	  [
+	  PKG_CHECK_MODULES(ENCHANT, enchant >= 1.0, [
+	    AC_DEFINE(HAVE_ENCHANT, 1)
+	    HAVE_ENCHANT="true"
+	  ])
+	  ]
+	)
+fi
 AM_CONDITIONAL(HAVE_ENCHANT, test x$HAVE_ENCHANT = xtrue)
 
 dnl ## Debug
