@@ -1,4 +1,4 @@
-INCLUDES=$(GLIB_CFLAGS) -Iglibmm
+INCLUDES=$(GLIB_CFLAGS) -Iglibmm $(CFLAGS)
 
 USTRING_SOURCES = glibmm/convert.h glibmm/error.h glibmm/exception.h glibmm/unicode.h \
                   glibmm/ustring.h glibmm/utility.h glibmm/convert.cc glibmm/error.cc \

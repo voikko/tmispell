@@ -52,7 +52,7 @@ Spellchecker::Spellchecker(std::string const& library,
 		
 		const char* error = voikko_init(&voikkohandle, "fi_FI", 0);
 		if (error != 0) 
-			throw Error();
+			throw Error(_("Error initialising libvoikko"));
 		voikko_set_bool_option(voikkohandle, VOIKKO_OPT_IGNORE_DOT, 1);
 		voikko_set_bool_option(voikkohandle, VOIKKO_OPT_IGNORE_NUMBERS, 1);
 		voikko_set_bool_option(voikkohandle, VOIKKO_OPT_IGNORE_UPPERCASE, 1);
@@ -119,7 +119,7 @@ bool Spellchecker::check_word(Glib::ustring const& word)
 	std::string lword = conv_->to(word);
 
 
-	status = check_func_(voikkohandle, lword.c_str());
+	status = voikko_spell_cstr(voikkohandle, lword.c_str());
 	if (status) return true;
 	else return false;
 }
@@ -136,7 +136,7 @@ void Spellchecker::get_suggestions(Glib::ustring const& word,
 	int word_count;
 
 	std::string lword = conv_->to(word);
-	vsuggestions = suggest_func_(voikkohandle, lword.c_str());
+	vsuggestions = voikko_suggest_cstr(voikkohandle, lword.c_str());
 	
 	word_count = 0;
 	if (vsuggestions != 0) while (vsuggestions[word_count] != 0) word_count++;
