@@ -53,7 +53,7 @@
  * Initialize and parse the command line parameters to options.
  */
 IspellAlike::IspellAlike(int argc, char* const* argv) 
-	: options_(argc, argv), sp_(0), out_(0), user_conv_(0)
+	: options_(argc, argv), sp_(0), user_conv_(0), out_(0)
 {
 }
 

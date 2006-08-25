@@ -1,64 +1,67 @@
+# translation of fi.po to
 # Tmispell Finnish translation.
 # Copyright (C) 2003  Pauli Virtanen
 # This file is distributed under the same license as the Tmispell package.
-# Pauli Virtanen <pauli.virtanen@hut.fi>, 2003.
 #
+# Pauli Virtanen <pauli.virtanen@hut.fi>, 2003.
+# Harri Pitkänen <hatapitk@iki.fi>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: tmispell 0.2\n"
+"Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-22 23:59+0200\n"
-"PO-Revision-Date: 2004-11-05 23:21+0200\n"
-"Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
-"Language-Team: Finnish <fi@li.org>\n"
+"POT-Creation-Date: 2006-08-25 22:02+0300\n"
+"PO-Revision-Date: 2006-08-25 22:03+0300\n"
+"Last-Translator: Harri Pitkänen <hatapitk@iki.fi>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
 
-#: src/charset.cc:56
+#: src/charset.cc:73
 #, c-format
 msgid "Error initializing character set conversion: %s"
-msgstr ""
+msgstr "Virhe merkistömuunnoksen alustuksessa: %s"
 
-#: src/charset.cc:170
+#: src/charset.cc:187
 #, c-format
 msgid "Conversion of '%s' to character set '%s' failed: %s"
-msgstr ""
+msgstr "'%s':n muunnos merkistöön '%s' epäonnistui: %s"
 
-#: src/config_file.cc:133
+#: src/config_file.cc:150
 msgid "\\ at the end of a string"
 msgstr "\\ merkkijonon lopussa"
 
-#: src/config_file.cc:143
+#: src/config_file.cc:160
 msgid "Unterminated quoted string"
 msgstr "Päättämätön lainausmerkillinen merkkijono"
 
-#: src/config_file.cc:181
+#: src/config_file.cc:198
 #, c-format
 msgid "Unable to open configuration file %s"
 msgstr "Asetustiedoston %s avaaminen epäonnistui"
 
-#: src/config_file.cc:211
+#: src/config_file.cc:228
 #, c-format
 msgid "Parse error in file \"%s\" on line %d, column %d: %s"
-msgstr ""
+msgstr "Jäsennysvirhe tiedostossa \"%s\" rivillä %d, sarakkeessa %d: %s"
 
-#: src/config_file.cc:215
-#, fuzzy, c-format
+#: src/config_file.cc:232
+#, c-format
 msgid "Parse error in file \"%s\" on line %d: %s"
-msgstr "%s asetustiedostossa %s rivillä %d"
+msgstr "Jäsennysvirhe tiedostossa %s rivillä %d: %s"
 
-#: src/config_file.cc:218
+#: src/config_file.cc:235
 #, c-format
 msgid "Parse error in file \"%s\": %s"
-msgstr ""
+msgstr "Jäsennysvirhe tiedostossa \"%s\": %s"
 
-#: src/config_file.cc:240
+#: src/config_file.cc:257
 msgid "Incomplete spell checker entry"
 msgstr "Vaillinainen oikolukuohjelman merkintä"
 
-#: src/options.cc:63
-#, fuzzy, c-format
+#: src/options.cc:80
+#, c-format
 msgid ""
 "Usage: %s [options] [file]...\n"
 "Options: [FMNLVlfsaAtnhgbxBCPmSdpwWTv]\n"
@@ -132,88 +135,57 @@ msgstr ""
 " -w <merk.> Määrittele lisää sanoihin kuuluvia merkkejä.\n"
 " -W <n>     Oleta, että tätä lyhyemmät sanat ovat aina oikein.\n"
 " -T <muoto> Oleta, että kaikki tiedostot ovat tässä muodossa.\n"
-"            (Muodot: plain, nroff, tex, sgml, debian)\n"
 " -r <merk.> Määrittele syötteen merkistö.\n"
 
-#: src/options.cc:225
+#: src/options.cc:242
 #, c-format
 msgid "Missing argument for option %s"
 msgstr "Valitsimelle %s ei annettu parametria"
 
-#: src/options.cc:397
+#: src/options.cc:414
 #, c-format
 msgid "Unknown option %s"
 msgstr "Tuntematon valitsin %s"
 
-#: src/personal_dictionary.cc:24
+#: src/personal_dictionary.cc:41
 #, c-format
 msgid "Unable to open file %s for reading a dictionary."
 msgstr "Tiedostoa %s ei voi avata sanaston lukemista varten."
 
-#: src/personal_dictionary.cc:40
+#: src/personal_dictionary.cc:57
 #, c-format
 msgid "Unable to open file %s for writing a dictionary."
 msgstr "Tiedostoa %s ei voi avata sanaston kirjoittamista varten."
 
-#: src/spell.cc:36
-#, c-format
-msgid "Unable to locate symbol %s in library"
-msgstr "Symbolia %s ei löydy kirjastosta"
+#: src/spell.cc:55 src/spell.cc:64
+msgid "Error initialising libvoikko"
+msgstr "Virhe alustettaessa libvoikkoa"
 
-#: src/spell.cc:57
-msgid "Unable to open library"
-msgstr "Kirjastoa ei voi avata"
-
-#: src/spell.cc:66
-#, c-format
-msgid "Library version %d not supported"
-msgstr "Kirjastoversio %d ei ole tuettu"
-
-#: src/spell.cc:87
-msgid "Initializing spell checker failed"
-msgstr "Oikolukumoduulin alustus epäonnistui"
-
-#: src/spell.cc:133
-#, c-format
-msgid "Unable to open dictionary file %s"
-msgstr "Sanastotiedoston %s avaaminen epäonnistui"
-
-#: src/spell.cc:148
+#: src/spell.cc:106
 #, c-format
 msgid "Unable to set encoding to %s"
 msgstr "Merkistön %s valitseminen epäonnistui"
 
-#: src/spell.cc:165
-#, c-format
-msgid "Could not set options to %s"
-msgstr "Lisäasetusten %s asettaminen epäonnistui"
-
-#: src/spell.cc:213
-msgid "Could not get suggestions"
-msgstr "Korjausehdotuksien saanti epäonnistui"
-
-#: src/tmispell.cc:72
+#: src/tmispell.cc:89
 #, c-format
 msgid "An Ispell program was not given in the configuration file %s"
 msgstr "Ispell-ohjelmaa ei ole annettu asetustiedostossa %s"
 
-#: src/tmispell.cc:230
+#: src/tmispell.cc:245
 #, c-format
 msgid "Unable to write to file %s"
 msgstr "Tiedostoon %s ei voi kirjoittaa"
 
-#: src/ui/cursesui.cc:99
+#: src/ui/cursesui.cc:116
 #, c-format
 msgid "File: %s"
 msgstr "Tiedosto: %s"
 
-#: src/ui/cursesui.cc:181
-msgid ""
-"[SP] <number> R)epl A)ccept I)nsert L)ookup U)ncap Q)uit e(X)it or ? for help"
-msgstr ""
-"[VÄLI] <0-9> Korvaa[r] Hyväksy[a] Lisää[i] Pienenä[u] Lopeta[x] Poistu[q]"
+#: src/ui/cursesui.cc:198
+msgid "[SP] <number> R)epl A)ccept I)nsert L)ookup U)ncap Q)uit e(X)it or ? for help"
+msgstr "[VÄLI] <0-9> Korvaa[r] Hyväksy[a] Lisää[i] Pienenä[u] Lopeta[x] Poistu[q]"
 
-#: src/ui/cursesui.cc:208
+#: src/ui/cursesui.cc:225
 msgid ""
 "Whenever an unrecognized word is found, it is printed on\n"
 "a line on the screen. If there are suggested corrections\n"
@@ -258,38 +230,24 @@ msgstr ""
 " ^Z      Keskeytä ohjelma.\n"
 " ?       Näytä tämä ohje.\n"
 
-#. * @}
-#. ***************************************************************************
-#. * @name Behaviour
-#. ** @{
-#. *
-#. * Yes or no keys
-#: src/ui/cursesui.cc:273
-msgid "yn"
-msgstr "ke"
-
-#. * Control keys: Add Insert Uncap Quit eXit Replace
-#: src/ui/cursesui.cc:276
-msgid "aiuqxr"
-msgstr "aiuqxr"
-
-#: src/ui/cursesui.cc:345
+#: src/ui/cursesui.cc:362
 msgid "Are you sure you want to throw away your changes? (y/n): "
 msgstr "Haluatko hylätä muutokset? (k/e): "
 
-#: src/ui/cursesui.cc:359
+#: src/ui/cursesui.cc:376
 msgid "Replace with: "
 msgstr "Korvaava: "
 
-#: src/ui/cursesui.cc:367
+#: src/ui/cursesui.cc:384
 msgid "-- Press any key to continue --"
 msgstr "-- Paina näppäintä jatkaaksesi --"
 
-#: src/ui/cursesui.cc:397
+#: src/ui/cursesui.cc:414
 #, c-format
 msgid "Unable to open file %s"
 msgstr "Tiedostoa %s ei voi avata"
 
-#: src/ui/cursesui.cc:405
+#: src/ui/cursesui.cc:422
 msgid "Unable to open temporary file"
 msgstr "Väliaikaistiedostoa ei voi avata"
+

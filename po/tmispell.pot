@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-22 23:59+0200\n"
+"POT-Creation-Date: 2006-08-25 22:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,49 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/charset.cc:56
+#: src/charset.cc:73
 #, c-format
 msgid "Error initializing character set conversion: %s"
 msgstr ""
 
-#: src/charset.cc:170
+#: src/charset.cc:187
 #, c-format
 msgid "Conversion of '%s' to character set '%s' failed: %s"
 msgstr ""
 
-#: src/config_file.cc:133
+#: src/config_file.cc:150
 msgid "\\ at the end of a string"
 msgstr ""
 
-#: src/config_file.cc:143
+#: src/config_file.cc:160
 msgid "Unterminated quoted string"
 msgstr ""
 
-#: src/config_file.cc:181
+#: src/config_file.cc:198
 #, c-format
 msgid "Unable to open configuration file %s"
 msgstr ""
 
-#: src/config_file.cc:211
+#: src/config_file.cc:228
 #, c-format
 msgid "Parse error in file \"%s\" on line %d, column %d: %s"
 msgstr ""
 
-#: src/config_file.cc:215
+#: src/config_file.cc:232
 #, c-format
 msgid "Parse error in file \"%s\" on line %d: %s"
 msgstr ""
 
-#: src/config_file.cc:218
+#: src/config_file.cc:235
 #, c-format
 msgid "Parse error in file \"%s\": %s"
 msgstr ""
 
-#: src/config_file.cc:240
+#: src/config_file.cc:257
 msgid "Incomplete spell checker entry"
 msgstr ""
 
-#: src/options.cc:63
+#: src/options.cc:80
 #, c-format
 msgid ""
 "Usage: %s [options] [file]...\n"
@@ -99,84 +99,56 @@ msgid ""
 " -r <cset>  Specify the character set of the input.\n"
 msgstr ""
 
-#: src/options.cc:225
+#: src/options.cc:242
 #, c-format
 msgid "Missing argument for option %s"
 msgstr ""
 
-#: src/options.cc:397
+#: src/options.cc:414
 #, c-format
 msgid "Unknown option %s"
 msgstr ""
 
-#: src/personal_dictionary.cc:24
+#: src/personal_dictionary.cc:41
 #, c-format
 msgid "Unable to open file %s for reading a dictionary."
 msgstr ""
 
-#: src/personal_dictionary.cc:40
+#: src/personal_dictionary.cc:57
 #, c-format
 msgid "Unable to open file %s for writing a dictionary."
 msgstr ""
 
-#: src/spell.cc:36
-#, c-format
-msgid "Unable to locate symbol %s in library"
+#: src/spell.cc:55 src/spell.cc:64
+msgid "Error initialising libvoikko"
 msgstr ""
 
-#: src/spell.cc:57
-msgid "Unable to open library"
-msgstr ""
-
-#: src/spell.cc:66
-#, c-format
-msgid "Library version %d not supported"
-msgstr ""
-
-#: src/spell.cc:87
-msgid "Initializing spell checker failed"
-msgstr ""
-
-#: src/spell.cc:133
-#, c-format
-msgid "Unable to open dictionary file %s"
-msgstr ""
-
-#: src/spell.cc:148
+#: src/spell.cc:106
 #, c-format
 msgid "Unable to set encoding to %s"
 msgstr ""
 
-#: src/spell.cc:165
-#, c-format
-msgid "Could not set options to %s"
-msgstr ""
-
-#: src/spell.cc:213
-msgid "Could not get suggestions"
-msgstr ""
-
-#: src/tmispell.cc:72
+#: src/tmispell.cc:89
 #, c-format
 msgid "An Ispell program was not given in the configuration file %s"
 msgstr ""
 
-#: src/tmispell.cc:230
+#: src/tmispell.cc:245
 #, c-format
 msgid "Unable to write to file %s"
 msgstr ""
 
-#: src/ui/cursesui.cc:99
+#: src/ui/cursesui.cc:116
 #, c-format
 msgid "File: %s"
 msgstr ""
 
-#: src/ui/cursesui.cc:181
+#: src/ui/cursesui.cc:198
 msgid ""
 "[SP] <number> R)epl A)ccept I)nsert L)ookup U)ncap Q)uit e(X)it or ? for help"
 msgstr ""
 
-#: src/ui/cursesui.cc:208
+#: src/ui/cursesui.cc:225
 msgid ""
 "Whenever an unrecognized word is found, it is printed on\n"
 "a line on the screen. If there are suggested corrections\n"
@@ -201,38 +173,23 @@ msgid ""
 " ?       Show this help screen.\n"
 msgstr ""
 
-#. * @}
-#. ***************************************************************************
-#. * @name Behaviour
-#. ** @{
-#. *
-#. * Yes or no keys
-#: src/ui/cursesui.cc:273
-msgid "yn"
-msgstr ""
-
-#. * Control keys: Add Insert Uncap Quit eXit Replace
-#: src/ui/cursesui.cc:276
-msgid "aiuqxr"
-msgstr ""
-
-#: src/ui/cursesui.cc:345
+#: src/ui/cursesui.cc:362
 msgid "Are you sure you want to throw away your changes? (y/n): "
 msgstr ""
 
-#: src/ui/cursesui.cc:359
+#: src/ui/cursesui.cc:376
 msgid "Replace with: "
 msgstr ""
 
-#: src/ui/cursesui.cc:367
+#: src/ui/cursesui.cc:384
 msgid "-- Press any key to continue --"
 msgstr ""
 
-#: src/ui/cursesui.cc:397
+#: src/ui/cursesui.cc:414
 #, c-format
 msgid "Unable to open file %s"
 msgstr ""
 
-#: src/ui/cursesui.cc:405
+#: src/ui/cursesui.cc:422
 msgid "Unable to open temporary file"
 msgstr ""

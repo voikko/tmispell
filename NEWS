@@ -1,5 +1,11 @@
 NEWS - a list of user-visible changes between releases of Tmispell.
 
+No separate NEWS file has been maintained since the original
+tmispell was forked to produce tmispell-voikko. See ChangeLog for
+information about changes.
+
+Changes in the original versions of Tmispell:
+
 New in 0.2.3 - 2003-05-19:
 * Compilation fixes for RH9.
 
