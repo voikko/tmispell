@@ -1,10 +1,10 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_PREREQ(2.52)
+AC_PREREQ(2.59)
 
 dnl ## Package information
-AC_INIT(tmispell-voikko, 0.5.0)
+AC_INIT([tmispell-voikko],[0.6],[hatapitk@iki.fi])
 AC_CONFIG_SRCDIR(src/tmispell.cc)
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AM_INIT_AUTOMAKE([1.9 foreign])
 AM_CONFIG_HEADER(src/config.hh)
 
 dnl ## Set release number
@@ -99,19 +99,18 @@ AC_DEFINE_UNQUOTED(CONFIG_FILE, "$CONFIG_FILE", [The configuration file])
 AC_SUBST(CONFIG_FILE)
 
 dnl ## Gettext
-ALL_LINGUAS="fi"
-AM_GLIB_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
 
 GETTEXT_PACKAGE=$PACKAGE
 AC_SUBST(GETTEXT_PACKAGE)
 
 if test "x${prefix}" = "xNONE"; then
-  PACKAGE_LOCALE_DIR="${ac_default_prefix}/${DATADIRNAME}/locale"
+  PACKAGE_LOCALE_DIR="${ac_default_prefix}/share/locale"
 else
-  PACKAGE_LOCALE_DIR="${prefix}/${DATADIRNAME}/locale"
+  PACKAGE_LOCALE_DIR="${prefix}/share/locale"
 fi
-AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "$PACKAGE_LOCALE_DIR",
-                [Package locale directory])
+AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, ["$PACKAGE_LOCALE_DIR"], [Package locale directory])
+AC_SUBST(PACKAGE_LOCALE_DIR)
 
 dnl ## Enchant
 AC_ARG_ENABLE(enchant, AC_HELP_STRING([--disable-enchant],
@@ -145,8 +144,8 @@ AC_ARG_ENABLE(debug,
 	  *) AC_MSG_ERROR(bad value ${enableval} for --enable-debug) ;;
 	esac],[debug=false])
 if test x$debug = xtrue; then
-	CFLAGS="-ggdb -O0"
-	CXXFLAGS="-ggdb -O0"
+	CFLAGS="$CFLAGS -ggdb -O0"
+	CXXFLAGS="$CXXFLAGS -ggdb -O0"
 fi
 AM_CONDITIONAL(DEBUG, test x$debug = xtrue)
 

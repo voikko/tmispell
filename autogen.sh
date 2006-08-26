@@ -15,7 +15,8 @@ cp /usr/share/gettext/config.rpath .
 
 ## Gettext.
 find src -name '*.cc' -o -name '*.hh' | sort > po/POTFILES.in
-glib-gettextize -c -f
+cp /usr/share/gettext/po/Makefile.in.in po/
+cp /usr/share/gettext/po/remove-potcdate.sin po/
 
 ## Autoconf+etc.
 libtoolize --force --copy

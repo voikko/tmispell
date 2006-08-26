@@ -1,8 +1,20 @@
+2006-08-26 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fix underquoted definition of GLIBMM_PROG_CXX_SUN
+	* Path options are no longer used in configuration
+	  file, so remove their descriptions from documentation
+	* Make Finnish translation actually work
+	* Increase version number to 0.6
+
 2006-08-25 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Warning fix for -Wall
 	* Note that NEWS is outdated, remove NEWS.fi
 	* Update tmispell.pot and fi.po
+
+2006-08-20 Anssi Hannula
+
+	* Add --disable-enchant option to configure
 
 2006-08-15 Harri Pitkänen <hatapitk@iki.fi>
 

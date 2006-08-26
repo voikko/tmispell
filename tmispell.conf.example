@@ -56,7 +56,7 @@ tex-environment-filter = "equation $ eqnarray displaymath picture
 sgml-attributes-to-check = "alt"
 
 ### Spell checker entries
-# <identifier> <library> <dictionary> <encoding> <locale> <word_c> <boundary_c>
+# <identifier> <unused> <unused> <encoding> <locale> <word_c> <boundary_c>
 suomi   "/dev/null" "/dev/null" "UTF-8" "fi_FI.UTF-8" ".-" "'’:"
 finnish "/dev/null" "/dev/null" "UTF-8" "fi_FI.UTF-8" ".-" "'’:"
 

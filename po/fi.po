@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-08-25 22:02+0300\n"
-"PO-Revision-Date: 2006-08-25 22:03+0300\n"
+"Report-Msgid-Bugs-To: hatapitk@iki.fi\n"
+"POT-Creation-Date: 2006-08-26 20:26+0300\n"
+"PO-Revision-Date: 2006-08-26 20:30+0300\n"
 "Last-Translator: Harri Pitkänen <hatapitk@iki.fi>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -229,6 +229,14 @@ msgstr ""
 "         Jättää tiedoston muuttumattomaksi.\n"
 " ^Z      Keskeytä ohjelma.\n"
 " ?       Näytä tämä ohje.\n"
+
+#: src/ui/cursesui.cc:290
+msgid "yn"
+msgstr "yn"
+
+#: src/ui/cursesui.cc:293
+msgid "aiuqxr"
+msgstr "aiuqxr"
 
 #: src/ui/cursesui.cc:362
 msgid "Are you sure you want to throw away your changes? (y/n): "

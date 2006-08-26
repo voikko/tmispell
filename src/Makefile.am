@@ -9,7 +9,7 @@ USTRING_SOURCES = glibmm/convert.h glibmm/error.h glibmm/exception.h glibmm/unic
 MAINTAINERCLEANFILES =  Makefile.in .deps config.hh config.hh.in stamp-h.in
 
 bin_PROGRAMS = tmispell
-tmispell_LDADD = @INTLLIBS@ $(GLIB_LIBS)
+tmispell_LDADD = @LTLIBINTL@ $(GLIB_LIBS)
 tmispell_LDFLAGS = -lvoikko
 tmispell_SOURCES =	\
 	charset.hh	\
@@ -57,7 +57,7 @@ noinst_PROGRAMS = $(DBG)
 
 ## test-personal-dictionary
 
-test_personal_dictionary_LDADD = @INTLLIBS@ $(GLIB_LIBS) test_personal_dictionary.o
+test_personal_dictionary_LDADD = @LTLIBINTL@ $(GLIB_LIBS) test_personal_dictionary.o
 test_personal_dictionary_SOURCES = \
 	personal_dictionary.hh \
 	common.cc common.hh $(USTRING_SOURCES) 	i18n.hh i18n.cc \
@@ -68,7 +68,7 @@ test_personal_dictionary.o::
 
 ## test-charset
 
-test_charset_LDADD = @INTLLIBS@ $(GLIB_LIBS) test_charset.o
+test_charset_LDADD = @LTLIBINTL@ $(GLIB_LIBS) test_charset.o
 test_charset_SOURCES = \
 	charset.hh tmerror.hh tmerror.cc \
 	common.cc common.hh $(USTRING_SOURCES) 	i18n.hh i18n.cc

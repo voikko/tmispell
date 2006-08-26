@@ -2,9 +2,11 @@ MAINTAINERCLEANFILES =	Makefile.in aclocal.m4 configure missing mkinstalldirs \
 			install-sh INSTALL ABOUT-NLS config.guess config.sub \
 			ChangeLog autom4te.cache depcomp README LUEMINUT
 			po/ChangeLog po/Makefile.in.in po/POTFILES.in \
-			po/tmispell.pot
+			po/tmispell-voikko.pot
 
-EXTRA_DIST=tmispell.conf.example tmispell.spec NEWS.fi LUEMINUT
+EXTRA_DIST=tmispell.conf.example tmispell.spec LUEMINUT
+
+ACLOCAL_AMFLAGS = -I m4
 
 if HAVE_ENCHANT
 ENCHANT_DIR = enchant
