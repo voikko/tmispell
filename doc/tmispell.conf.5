@@ -66,9 +66,11 @@ Ispell hash file name without the extension
 .IR .hash .
 This is mandatory.
 .IP "2." 4
-This option is not used in current version of tmispell-voikko
+This option is not used in current version of
+.BR Tmispell .
 .IP "3." 4
-This option is not used in current version of tmispell-voikko
+This option is not used in current version of
+.BR Tmispell .
 .IP "4." 4
 The input encoding this module uses (e.g. UTF-8). This is mandatory.
 .IP "5." 4
@@ -95,7 +97,7 @@ characters are assumed.
 .RS
 ispell=/usr/bin/ispell.real
 .br
-suomi "/usr/lib/libvoikko.so.1" "/dev/null" "UTF-8" "fi_FI.UTF-8" ".-" "\(aq:"
+suomi "/dev/null" "/dev/null" "UTF-8" "fi_FI.UTF-8" ".-" "\(aq:"
 .br
 tex-command-filter="begin po, end p, usepackage op, newcommand poOP"
 .br
@@ -109,23 +111,16 @@ use.
 The second line defines spell-checking settings for Finnish language.
 Language is identified by the name
 .nh
-\(lqsuomi\(rq
+\(lqsuomi\(rq.
 .hy
-and it uses
-.nh
-.I /usr/lib/libvoikko.so.1
-.hy
-library for spell-checking. Separate dictionary file is not needed with
-Voikko so it is set to
-.nh
-/dev/null.
-.hy
+Following two options are not used in the current version of
+.BR Tmispell .
 The input encoding to use is UTF-8. Only the letters specified by the
 locale
 .nh
 fi_FI.UTF-8
 .hy
-as well as period (.) and dash (-) are considered as word characters.
+as well as period (.) and dash (-) are considered word characters.
 Boundary characters are ASCII apostrophe (\(aq) and colon (:).
 .PP
 Every time
@@ -135,11 +130,8 @@ is invoked with
 \(lq-d suomi\(rq or \(lq-d
 .IR /usr/lib/ispell/suomi.hash \(rq
 .hy
-as arguments, the Voikko spell-checking system
-.nh
-.RI ( /usr/lib/libvoikko.so.1 )
-.hy
-is used for spell-checking. Otherwise the real Ispell is started.
+as arguments, the Voikko spell-checking system is used for
+spell-checking. Otherwise the real Ispell is started.
 .PP
 The third line specifies that in TeX filter mode the parameters to
 commands
