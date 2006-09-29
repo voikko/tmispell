@@ -141,10 +141,11 @@ Tunnetut ongelmat
        Jotta tämän voisi tehdä järkevästi, tarvittaneen muutoksia
        suodatinarkkitehtuuriin.
 
-  Muuta tehtävää
+     o Aspell-tuki puuttuu. Tätä ei ole tällä hetkellä suunnitteilla,
+       suositeltavampaa on pyrkiä korvaamaan Aspell esimerkiksi
+       Enchantilla kohdesovelluksissa.
 
-     o Mieti, miten Aspell-tuki pitäisi toteuttaa. Onko Voikkoa
-       käyttävälle Aspell-yhteensopivalle ohjelmalle tarvetta?
+  Muuta tehtävää
 
      o Mieti Ispellin "extended charactereja" (mitä lienevätkään).
 

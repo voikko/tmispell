@@ -143,10 +143,11 @@ Known issues
        reasonably, some changes are likely required in filter
        architecture.
 
-  Other things to do
+     o There is no support for applications using Aspell. We should ask
+       the maintainers of such applications to start using Enchant
+       instead.
 
-     o Investigate how Aspell support could be implemented. Is there
-       a need for a Voikko-compatible Aspell?
+  Other things to do
 
      o Think about Ispell extended characters (whatever they are).
 

@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.59)
 
 dnl ## Package information
-AC_INIT([tmispell-voikko],[0.6],[hatapitk@iki.fi])
+AC_INIT([tmispell-voikko],[0.6.1],[hatapitk@iki.fi])
 AC_CONFIG_SRCDIR(src/tmispell.cc)
 AM_INIT_AUTOMAKE([1.9 foreign])
 AM_CONFIG_HEADER(src/config.hh)
