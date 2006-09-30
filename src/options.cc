@@ -394,6 +394,14 @@ Options::Options(int argc, char* const* argv)
 			                              // for all files
 			if (strcmp(arg, "plain") == 0)
 				default_filter = plain;
+			else if (strcmp(arg, "latin1") == 0) {
+				default_filter = plain;
+				user_encoding_ = "latin1";
+			}
+			else if (strcmp(arg, "utf8") == 0) {
+				default_filter = plain;
+				user_encoding_ = "utf8";
+			}
 			else if (strcmp(arg, "nroff") == 0)
 				default_filter = nroff;
 			else if (strcmp(arg, "tex") == 0)

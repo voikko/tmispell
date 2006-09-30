@@ -1,3 +1,9 @@
+2006-09-30 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Add support for formatters -Tlatin1 and -Tutf8. These do
+	  not seem to be documented by the ispell manual page, but
+	  KDE uses them anyway.
+
 2006-09-29 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Clarify the plans about aspell support in documentation
