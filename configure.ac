@@ -7,27 +7,6 @@ AC_CONFIG_SRCDIR(src/tmispell.cc)
 AM_INIT_AUTOMAKE([1.9 foreign])
 AM_CONFIG_HEADER(src/config.hh)
 
-dnl ## Set release number
-dnl     4a) Increment when removing or changing interfaces.
-MAJOR_VERSION=`expr $PACKAGE_VERSION : '\(.*\)\..*\..*'`
-dnl     4a) 5) Increment when adding interfaces.
-dnl     6) Set to zero when removing or changing interfaces.
-MINOR_VERSION=`expr $PACKAGE_VERSION : '.*\.\(.*\)\..*'`
-dnl     3) Increment when interfaces not changed at all,
-dnl               only bug fixes or internal changes made.
-dnl     4b) Set to zero when adding, removing or changing interfaces.
-MICRO_VERSION=`expr $PACKAGE_VERSION : '.*\..*\.\(.*\)'`
-dnl     Set this too
-MAJOR_VERSION_PLUS_MINOR_VERSION=`expr $MAJOR_VERSION + $MINOR_VERSION`
-dnl Version info for libraries = CURRENT:REVISION:AGE
-#VERSION_INFO=$MAJOR_VERSION_PLUS_MINOR_VERSION:$MICRO_VERSION:$MINOR_VERSION
-VERSION_INFO=1:0:0
-
-AC_SUBST(VERSION_INFO)
-AC_SUBST(MAJOR_VERSION)
-AC_SUBST(MINOR_VERSION)
-AC_SUBST(MICRO_VERSION)
-
 dnl ## Enable maintainer mode
 AM_MAINTAINER_MODE
 

@@ -1,3 +1,8 @@
+2006-10-18 Harri Pitkänen <hatapitk@iki.fi>
+
+        * Remove misleading and occasionally broken calculation of
+	  version information from configure.ac.
+
 2006-09-30 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add support for formatters -Tlatin1 and -Tutf8. These do
