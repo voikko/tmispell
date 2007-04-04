@@ -21,6 +21,7 @@
  *
  * Parse command line options and assume sensible defaults.
  */
+#include <cstdlib>
 #include <string>
 #include <iostream>
 #include <sstream>

@@ -22,6 +22,7 @@
  *
  * The interface to the spell checking library.
  */
+#include <cstdlib>
 #include <string>
 #include <sstream>
 #include <vector>
