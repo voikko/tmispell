@@ -1,3 +1,11 @@
+2007-05-19 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Merge Enchant provider plugin from Enchant upstream CVS
+	  to get implementation for list_dicts
+	* Check for Enchant version 1.1.6 was not properly used in
+	  the provider plugin, so do not use it anymore. May be
+	  restored later, if there is need for it.
+
 2007-04-04 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Switch to Automake 1.10
