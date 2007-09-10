@@ -1,10 +1,10 @@
 MAINTAINERCLEANFILES =	Makefile.in aclocal.m4 configure missing mkinstalldirs \
 			install-sh INSTALL ABOUT-NLS config.guess config.sub \
-			ChangeLog autom4te.cache depcomp README LUEMINUT
+			ChangeLog autom4te.cache depcomp README README.fi
 			po/ChangeLog po/Makefile.in.in po/POTFILES.in \
 			po/tmispell-voikko.pot
 
-EXTRA_DIST=tmispell.conf.example tmispell.spec LUEMINUT
+EXTRA_DIST=tmispell.conf.example tmispell.spec README.fi
 
 ACLOCAL_AMFLAGS = -I m4
 

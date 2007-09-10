@@ -42,7 +42,9 @@ Asennus
    Linux-jakeluille. Niitä kannattaa käyttää, jos ei halua tehdä asioita
    vaikeasti.
 
-    1. Tmispellin kääntäminen ja asennus:
+    1. Hae ja asenna libvoikko[1] ja sen vaatimat komponentit.
+
+    2. Tmispellin kääntäminen ja asennus:
 
            ./configure
            make
@@ -51,8 +53,6 @@ Asennus
 
        "make install" vain kopioi Tmispell-ohjelman ja manuaalisivun
        sopiviin paikkoihin.
-
-    2. Hae ja asenna Voikko[1].
 
     3. Luo asetustiedosto, ja sijoita se sinne, mistä Tmispell sen
        löytää. Mallina on esimerkkitiedosto tmispell.conf.example.

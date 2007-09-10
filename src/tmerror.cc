@@ -19,7 +19,7 @@
 
 #include "tmerror.hh"
 
-Error::Error(char* const fmt, ...)
+Error::Error(const char* fmt, ...)
 	: std::runtime_error("")
 {
 	char buf[4096];

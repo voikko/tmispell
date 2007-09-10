@@ -29,7 +29,7 @@
 #include "config.hh"
 
 #ifdef ENABLE_NLS
-char* _(char const* str);
+const char* _(char const* str);
 std::string _(std::string const& str);
 #else // ENABLE_NLS
 #define _(str) (str)

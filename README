@@ -41,7 +41,9 @@ Installation
    Linux distributions. Likely you want to use them instead of doing
    installation the hard way.
 
-    1. Compile and install Tmispell:
+    1. Download and install libvoikko[1] and its dependencies.
+
+    2. Compile and install Tmispell:
 
            ./configure
            make
@@ -50,8 +52,6 @@ Installation
 
        The "make install" just copies the tmispell executable and manual
        page to suitable places.
-
-    2. Download and install Voikko[1].
 
     3. Create the configuration file and place it to the place where
        Tmispell looks for it. There is also an example configuration

@@ -30,7 +30,7 @@
 
 #  include <libintl.h>
 
-char* _(char const* str)
+const char* _(char const* str)
 {
 	if (str && str[0] != '\0')
 		return dgettext(PACKAGE, str);

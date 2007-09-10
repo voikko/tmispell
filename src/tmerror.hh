@@ -28,7 +28,7 @@ class Error : public std::runtime_error
 {
 public:
 	/// Throw an error with printfed error message
-	explicit Error(char* const fmt, ...);
+	explicit Error(const char* fmt, ...);
 	explicit Error(std::string const& msg);
 	virtual ~Error() throw() {}
 	/// Return an error description
