@@ -1,3 +1,9 @@
+2007-09-23 Harri Pitkänen <hatapitk@iki.fi>
+
+	* No longer link enchant plugin against ncurses. This
+	  drops support for original curses library, may be restored
+	  later if really needed.
+
 2007-09-10 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Another build fix for upcoming GCC 4.3 and some

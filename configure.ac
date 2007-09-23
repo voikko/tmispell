@@ -46,13 +46,6 @@ AC_CHECK_HEADER([libvoikko/voikko.h],,
 	[AC_MSG_ERROR([This program requires voikko.h to work.
 	               Do you have libvoikko installed?])])
 
-dnl ## Required libraries
-AC_SEARCH_LIBS(dlopen, dl, ,
-	[AC_MSG_ERROR([Unable to locate the library containing dlopen])])
-AC_SEARCH_LIBS(initscr, ncurses curses, ,
-	[AC_MSG_ERROR([Unable to locate the library containing initscr.
-                       Do you have Ncurses installed?])])
-
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.0.0)
 
 dnl ## Config file
