@@ -1,12 +1,13 @@
+.\" vim: ft=groff tw=72
 .TH "TMISPELL.CONF" "5" "2006-07-30"
 .SH NAME
-tmispell.conf \- configuration file for tmispell
+\%tmispell.conf \- configuration file for \%tmispell
 .SH DESCRIPTION
 This manual page describes the configuration file for
-.BR tmispell (1).
+.BR \%tmispell (1).
 .SH FILES
 .TP
-.I /etc/tmispell.conf
+.I \%/etc/tmispell.conf
 The configuration file that contains spell-checker entries and options.
 .PP
 .B "Syntax of configuration file"
@@ -23,9 +24,9 @@ is a comment character and everything on a line after it is ignored.
 .B Options
 .RS
 .TP
-.I ispell
-The location of the Ispell executable to be called as a fall-back. The
-full path to the Ispell executable must be given. This option is
+.I \%ispell
+The location of the \%Ispell executable to be called as a fall-back. The
+full path to the \%Ispell executable must be given. This option is
 mandatory.
 .TP
 .I tex-command-filter
@@ -56,28 +57,26 @@ A list of SGML or HTML tag attributes to spell-check.
 .PP
 The spell-checker module specification consists of seven strings on the same
 line, separated by whitespace(s) (i.e. space or tab) and possibly
-enclosed in double (") or single (\(aq) quotes. Backslash (\e) can be
+enclosed in double (") or single (\(aq) quotes. Backslash (\(rs) can be
 used to escape quote characters inside quotes. The meanings of the
 strings are:
 .RS 3
 .IP "1." 4
 The name by which the dictionary is known, similar to the name of an
-Ispell hash file name without the extension
+\%Ispell hash file name without the extension
 .IR .hash .
 This is mandatory.
 .IP "2." 4
 This option is not used in current version of
-.BR Tmispell .
+.BR \%Tmispell .
 .IP "3." 4
 This option is not used in current version of
-.BR Tmispell .
+.BR \%Tmispell .
 .IP "4." 4
 The input encoding this module uses (e.g. UTF-8). This is mandatory.
 .IP "5." 4
 The value of the locale variable
-.nh
-.B LC_CTYPE
-.hy
+.B \%LC_CTYPE
 that should be used with this module. This determines the default set of
 characters that are considered to belong to a word. If empty or not
 given, the value of a suitable environment variable is used.
@@ -105,63 +104,44 @@ tex-environment-filter="equation $ eqnarray displaymath math"
 .RE
 .hy
 .PP
-The first line specifies the location of the fall-back ispell program to
+The first line specifies the location of the fall-back \%ispell program to
 use.
 .PP
 The second line defines spell-checking settings for Finnish language.
-Language is identified by the name
-.nh
-\(lqsuomi\(rq.
-.hy
+Language is identified by the name \%\(lqsuomi\(rq.
 Following two options are not used in the current version of
-.BR Tmispell .
+.BR \%Tmispell .
 The input encoding to use is UTF-8. Only the letters specified by the
-locale
-.nh
-fi_FI.UTF-8
-.hy
-as well as period (.) and dash (-) are considered word characters.
-Boundary characters are ASCII apostrophe (\(aq) and colon (:).
+locale \%fi_FI.UTF-8 as well as period (.) and dash (-) are considered
+word characters. Boundary characters are ASCII apostrophe (\(aq) and
+colon (:).
 .PP
 Every time
-.B Tmispell
+.B \%Tmispell
 is invoked with
 .nh
 \(lq-d suomi\(rq or \(lq-d
 .IR /usr/lib/ispell/suomi.hash \(rq
 .hy
 as arguments, the Voikko spell-checking system is used for
-spell-checking. Otherwise the real Ispell is started.
+spell-checking. Otherwise the real \%Ispell is started.
 .PP
 The third line specifies that in TeX filter mode the parameters to
-commands
-.nh
-begin{}, end{} and usepackage{}
-.hy
-should not be spell-checked, whereas the second optional and second
-obligatory parameters to
-.nh
-\(lqnewcommand\(rq
-.hy
-should.
+commands \%begin{}, \%end{} and \%usepackage{} should not be
+spell-checked, whereas the second optional and second obligatory
+parameters to \%\(lqnewcommand\(rq should.
 .PP
 The fourth line specifies that in TeX filter mode no math environment
 should be spell-checked.
 .SH AUTHORS
 The original
-.B Tmispell
-was programmed by
-.nh
-Pauli Virtanen <pauli.virtanen@hut.fi>
-.hy
+.B \%Tmispell
+was programmed by Pau\%li Vir\%ta\%nen \%<pauli.virtanen@hut.fi>.
 .br
 Modifications and integration with Voikko spell-checking system by
-.nh
-Harri Pitk\(:anen <hatapitk@iki.fi>
+Har\%ri Pit\%k\(:a\%nen \%<hatapitk@iki.fi>.
 .SH "SEE ALSO"
-.BR tmispell (1),
-.BR ispell (1)
+.BR \%tmispell (1),
+.BR \%ispell (1)
 .PP
-Voikko homepage: http://voikko.sourceforge.net/
-.hy
-\" vim: tw=72
+Voikko homepage: \%http://voikko.sourceforge.net/

@@ -1,94 +1,79 @@
+.\" vim: ft=groff tw=72
 .TH "TMISPELL" "1" "2006-07-30"
 .SH NAME
-tmispell \- ispell wrapper which uses Voikko for spell-checking
+\%tmispell \- \%ispell wrapper which uses Voikko for spell-checking
 .SH SYNOPSIS
-.B tmispell
+.B \%tmispell
 .RB [ -F
 .IR config_file ]
 .RI [ ispell_options ]
 .RI [ file " ...]"
 .SH DESCRIPTION
-.B Tmispell
+.B \%Tmispell
 is an
-.BR ispell (1)
+.BR \%ispell (1)
 wrapper which uses Voikko spell-checking system to do the actual
 spell-checking for Finnish language.
 .PP
 What makes
-.B Tmispell
+.B \%Tmispell
 very useful is that many programs (e.g. email clients and word
-processors) use Ispell for spell-checking. Since
-.B Tmispell
-is a transparent wrapper for Ispell, other programs that would normally
-use Ispell will automatically use
-.B Tmispell
+processors) use \%Ispell for spell-checking. Since
+.B \%Tmispell
+is a transparent wrapper for \%Ispell, other programs that would
+normally use \%Ispell will automatically use
+.B \%Tmispell
 (and therefore Voikko) without any changes needed. Additionally,
-.B Tmispell
-is able to launch the real Ispell if
-.B Tmispell
+.B \%Tmispell
+is able to launch the real \%Ispell if
+.B \%Tmispell
 does not support the selected language. It is not necessary to have the
-real Ispell installed, though. Tmispell works fine without it, but
+real \%Ispell installed, though. \%Tmispell works fine without it, but
 currently Finnish is the only supported language then.
 .PP
-.B Tmispell
-can be used from command line exactly like Ispell. If
-.B Tmispell
-is correctly installed, the command
-.nh
-\(lqispell\(rq
-.hy
-actually starts
-.BR Tmispell .
+.B \%Tmispell
+can be used from command line exactly like \%Ispell. If
+.B \%Tmispell
+is correctly installed, the command \%\(lqispell\(rq actually starts
+.BR \%Tmispell .
 It can be used to spell-check any text
 .IR file (s)
 given as command line parameter. If a text file is given,
-.B Tmispell
+.B \%Tmispell
 starts in interactive mode. Press \(lq?\(rq to get help on available
 commands in interactive mode.
 .SH OPTIONS
 .TP
-.BI -F " config_file"
+.BI -F " \%config_file"
 Use the configuration file
-.I config_file
+.I \%config_file
 instead of the default
-.nh
-.IR /etc/tmispell.conf .
-.hy
+.IR \%/etc/tmispell.conf .
 .TP
-.I ispell_options
-.B Tmispell
-should understand all the options that Ispell does. For more
-information about Ispell's options, see
-.nh
-.BR ispell (1).
-.hy
+.I \%ispell_options
+.B \%Tmispell
+should understand all the options that \%Ispell does. For more
+information about \%Ispell's options, see
+.BR \%ispell (1).
 .SH FILES
 .TP
-.I /etc/tmispell.conf
+.I \%/etc/tmispell.conf
 The default configuration file for
-.BR Tmispell .
+.BR \%Tmispell .
 For more information, see
-.nh
-.BR tmispell.conf (5).
-.hy
+.BR \%tmispell.conf (5).
 .SH BUGS
 In interactive mode UTF-8 multibyte characters are not handled
 correctly.
 .SH AUTHORS
 The original
-.B Tmispell
-was programmed by
-.nh
-Pauli Virtanen <pauli.virtanen@hut.fi>
-.hy
+.B \%Tmispell
+was programmed by Pau\%li Vir\%ta\%nen \%<pauli.virtanen@hut.fi>.
 .br
 Modifications and integration with Voikko spell-checking system by
-.nh
-Harri Pitk\(:anen <hatapitk@iki.fi>
+Har\%ri Pit\%k\(:a\%nen \%<hatapitk@iki.fi>.
 .SH "SEE ALSO"
-.BR tmispell.conf (5),
-.BR ispell (1)
+.BR \%tmispell.conf (5),
+.BR \%ispell (1)
 .PP
-Voikko homepage: http://voikko.sourceforge.net/
-.hy
-\" vim: tw=72
+Voikko homepage: \%http://voikko.sourceforge.net/
