@@ -19,14 +19,6 @@ AC_PROG_LIBTOOL
 dnl ## Check CXX features
 AC_LANG_CPLUSPLUS
 
-dnl ## These are for ustring
-AC_CXX_BOOL
-AC_CXX_NAMESPACES
-AC_CXX_MUTABLE
-
-GLIBMM_CXX_HAS_STD_ITERATOR_TRAITS()
-GLIBMM_CXX_HAS_SUN_REVERSE_ITERATOR()
-
 dnl ## Language
 AC_LANG(C++)
 
@@ -47,6 +39,7 @@ AC_CHECK_HEADER([libvoikko/voikko.h],,
 	               Do you have libvoikko installed?])])
 
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.0.0)
+PKG_CHECK_MODULES(GTKMM, gtkmm-2.4)
 
 dnl ## Config file
 if test "x${sysconfdir}" = 'x${prefix}/etc'; then

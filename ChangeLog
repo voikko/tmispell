@@ -1,3 +1,8 @@
+2008-02-11 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Remove gtkmm sources, require external version of that
+	  library instead.
+
 2007-09-23 Harri Pitkänen <hatapitk@iki.fi>
 
 	* No longer link enchant plugin against ncurses. This
