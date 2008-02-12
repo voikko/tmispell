@@ -31,9 +31,9 @@ AC_CHECK_HEADERS(vector,,
 		       installed?])])
 AC_CHECK_HEADER([regex.h],,
 	[AC_MSG_ERROR([This program requires regex.h to work.])])
-AC_CHECK_HEADER([curses.h],,
-	[AC_MSG_ERROR([This program requires curses.h to work.
-		       Do you have Ncurses installed?])])
+AC_CHECK_HEADER([ncursesw/curses.h],,
+	[AC_MSG_ERROR([This program requires ncursesw/curses.h to work.
+		       Do you have Ncursesw installed?])])
 AC_CHECK_HEADER([libvoikko/voikko.h],,
 	[AC_MSG_ERROR([This program requires voikko.h to work.
 	               Do you have libvoikko installed?])])

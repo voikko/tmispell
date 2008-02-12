@@ -5,6 +5,8 @@
 	* Remove RPM spec file, it was outdated and distros do
 	  these things on their own these days.
 	* Increase version number to 0.7.
+	* Switch from ncurses to ncursesw to gain proper UTF-8
+	  support.
 
 2008-02-11 Harri Pitkänen <hatapitk@iki.fi>
 

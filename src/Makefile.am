@@ -4,7 +4,7 @@ MAINTAINERCLEANFILES =  Makefile.in .deps config.hh config.hh.in stamp-h.in
 
 bin_PROGRAMS = tmispell
 tmispell_LDADD = @LTLIBINTL@ $(GLIBMM_LIBS)
-tmispell_LDFLAGS = -lvoikko -lncurses
+tmispell_LDFLAGS = -lvoikko -lncursesw
 tmispell_SOURCES =	\
 	charset.hh	\
 	charset.cc	\
