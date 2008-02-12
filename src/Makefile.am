@@ -1,9 +1,9 @@
-INCLUDES=$(GLIB_CFLAGS) $(GTKMM_CFLAGS) $(CFLAGS)
+INCLUDES=$(GLIBMM_CFLAGS) $(CFLAGS)
 
 MAINTAINERCLEANFILES =  Makefile.in .deps config.hh config.hh.in stamp-h.in
 
 bin_PROGRAMS = tmispell
-tmispell_LDADD = @LTLIBINTL@ $(GLIB_LIBS) $(GTKMM_LIBS)
+tmispell_LDADD = @LTLIBINTL@ $(GLIBMM_LIBS)
 tmispell_LDFLAGS = -lvoikko -lncurses
 tmispell_SOURCES =	\
 	charset.hh	\

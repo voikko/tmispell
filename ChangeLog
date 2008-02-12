@@ -1,6 +1,14 @@
+2008-02-12 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Really use glibmm, gtkmm was used accidentally and it
+	  is not needed.
+	* Remove RPM spec file, it was outdated and distros do
+	  these things on their own these days.
+	* Increase version number to 0.7.
+
 2008-02-11 Harri Pitkänen <hatapitk@iki.fi>
 
-	* Remove gtkmm sources, require external version of that
+	* Remove glibmm sources, require external version of that
 	  library instead.
 
 2007-09-23 Harri Pitkänen <hatapitk@iki.fi>

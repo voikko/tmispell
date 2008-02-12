@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.60)
 
 dnl ## Package information
-AC_INIT([tmispell-voikko],[0.6.3],[hatapitk@iki.fi])
+AC_INIT([tmispell-voikko],[0.7],[hatapitk@iki.fi])
 AC_CONFIG_SRCDIR(src/tmispell.cc)
 AM_INIT_AUTOMAKE([1.10 foreign])
 AM_CONFIG_HEADER(src/config.hh)
@@ -39,7 +39,7 @@ AC_CHECK_HEADER([libvoikko/voikko.h],,
 	               Do you have libvoikko installed?])])
 
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.0.0)
-PKG_CHECK_MODULES(GTKMM, gtkmm-2.4)
+PKG_CHECK_MODULES(GLIBMM, glibmm-2.4)
 
 dnl ## Config file
 if test "x${sysconfdir}" = 'x${prefix}/etc'; then

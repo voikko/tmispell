@@ -23,7 +23,7 @@ cp /usr/share/gettext/po/remove-potcdate.sin po/
 
 ## Autoconf+etc.
 libtoolize --force --copy
-aclocal$AM_VERSION_SUFFIX -I src/glibmm/m4
+aclocal$AM_VERSION_SUFFIX
 autoheader
 automake$AM_VERSION_SUFFIX --add-missing --copy --force-missing --foreign
 autoconf

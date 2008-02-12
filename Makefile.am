@@ -4,7 +4,7 @@ MAINTAINERCLEANFILES =	Makefile.in aclocal.m4 configure missing mkinstalldirs \
 			po/ChangeLog po/Makefile.in.in po/POTFILES.in \
 			po/tmispell-voikko.pot
 
-EXTRA_DIST=tmispell.conf.example tmispell.spec README.fi
+EXTRA_DIST=tmispell.conf.example README.fi
 
 ACLOCAL_AMFLAGS = -I m4
 
