@@ -1,7 +1,7 @@
 2008-02-13 Teemu Likonen <tlikonen@iki.fi>
 
 	* Section "BUGS" removed from tmispell.1 manual page. The
-	  bug seems tobe gone as ncursesw is used now.
+	  bug seems to be gone as ncursesw is used now.
 
 2008-02-12 Harri Pitkänen <hatapitk@iki.fi>
 
