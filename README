@@ -3,6 +3,11 @@
   Pauli Virtanen <pauli.virtanen@hut.fi>	(original Tmispell)
   Harri Pitkänen <hatapitk@iki.fi>		(modifications for Voikko)
 
+
+NOTE! Tmispell is no longer actively maintained! Enchant provides similar
+ispell-compatible wrapper for multiple spell checker backends. It is
+recommended to use that if possible, or contribute to its development.
+
    --------------------------------------------------------------------------
 
 What Tmispell is?
@@ -41,7 +46,8 @@ Installation
    Linux distributions. Likely you want to use them instead of doing
    installation the hard way.
 
-    1. Download and install libvoikko[1] and its dependencies.
+    1. Download and install libvoikko[1] (version 1.5 or later) and its
+       dependencies.
 
     2. Compile and install Tmispell:
 

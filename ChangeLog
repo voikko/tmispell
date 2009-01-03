@@ -1,3 +1,14 @@
+2009-01-03 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Properly free suggestions strings returned from
+	  libvoikko in tmispell. The old way will break if
+	  libvoikko switches to using C++ allocation for
+	  strings and arrays. This change requires libvoikko
+	  1.5 or later.
+	* Add warning to README telling that this package is
+	  deprecated and Enchant should be used instead.
+	* Increase version number to 0.7.1.
+
 2008-11-14 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Add missing #include to make GCC 4.4 happy. Thanks to

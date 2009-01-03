@@ -148,7 +148,6 @@ void Spellchecker::get_suggestions(Glib::ustring const& word,
 	{
 		std::string str(vsuggestions[i]);
 		suggestions.push_back(conv_->from(str));
-		free(vsuggestions[i]);
 	}
-	free(vsuggestions);
+	voikko_free_suggest_cstr(vsuggestions);
 }
