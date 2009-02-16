@@ -34,7 +34,8 @@
 class PipeInterface
 {
 public:
-	PipeInterface(IspellAlike& parent) : parent_(parent) {}
+	PipeInterface(IspellAlike& parent) : parent_(parent),
+		filter_(0), include_depth_(0), terse_(false) {}
 	
 	void start();
 	

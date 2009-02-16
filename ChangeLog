@@ -1,3 +1,8 @@
+2009-02-16 Harri Pitkänen <hatapitk@iki.fi>
+
+	* Fix (apparently harmless) missing initializations
+	  found with cppcheck.
+
 2009-01-03 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Properly free suggestions strings returned from

@@ -34,7 +34,7 @@ static Error get_regerror(int errcode, regex_t const* compiled)
 
 /** Compiles the given pattern to a regular expression */
 RegExp::RegExp(const char* regstr, Flag flags)
-	: matches_(0)
+	: matches_(0), offset_(0)
 {
 	int regex_flags =
 		((flags & EXTENDED) ? REG_EXTENDED : 0) | 

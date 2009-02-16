@@ -169,6 +169,8 @@ CharsetConverter& CharsetConverter::locale()
 	if (locale_ == 0) {
 		std::string cset;
 		Glib::get_charset(cset);
+		// XXX: This will never get deleted, but that does not matter since
+		// it is just one object per application.
 		locale_ = new CharsetConverter(cset.c_str());
 	}
 	return *locale_;

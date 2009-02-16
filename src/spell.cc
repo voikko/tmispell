@@ -47,7 +47,7 @@ using std::vector;
 Spellchecker::Spellchecker(std::string const& library,
 			   std::string const& dictionary,
 			   std::string const& encoding)
-	: initialized_(false)
+	: initialized_(false), voikkohandle(0)
 {
 	try {
 		
