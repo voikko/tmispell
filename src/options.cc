@@ -293,13 +293,11 @@ Options::Options(int argc, char* const* argv)
 			continue; // This argument will not be passed to ispell
 
 		} else if (p.is_option("-v") ||
+		           p.is_option("-vv") ||
 			   p.is_option("--version")) { // Print version
 			print_version();
 			mode_ = quit;
 			return;
-		} else if (p.is_option("-vv")) { // Print extra information
-			mode_ = ispell;
-
 		} else if (p.is_option("--help")) { // Print usage
 			print_usage();
 			mode_ = quit;
