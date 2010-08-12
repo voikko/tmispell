@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 # Automake version.
-AM_VERSION_SUFFIX=-1.10
+AM_VERSION_SUFFIX=
 
 echo Cleaning autotools files...
 find -type d -name autom4te.cache -print0 | xargs -0 rm -rf \;
