@@ -28,7 +28,7 @@
 #include "glibmm/convert.h"
 
 #include <errno.h>
-#include <glib/gerror.h>
+#include <glib.h>
 
 #include "i18n.hh"
 #include "common.hh"

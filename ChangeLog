@@ -1,3 +1,7 @@
+2012-02-05 Ville-Pekka Vainio <vpvainio@iki.fi>
+
+	* Fix build against Glib 2.31.
+
 2010-08-12 Harri Pitkänen <hatapitk@iki.fi>
 
 	* Fix -vv option to do the same as -v.
