@@ -43,7 +43,7 @@
 /**
  * Voikko is a Finnish spell checker. More information is available from:
  *
- * http://voikko.sourceforge.net/
+ * http://voikko.puimula.org/
  */
 ENCHANT_PLUGIN_DECLARE("Voikko")
 
