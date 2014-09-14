@@ -160,13 +160,13 @@ voikko_provider_dispose (EnchantProvider * me)
 	g_free (me);
 }
 
-static char *
+const char *
 voikko_provider_identify (EnchantProvider * me)
 {
 	return "voikko";
 }
 
-static char *
+const char *
 voikko_provider_describe (EnchantProvider * me)
 {
 	return "Voikko Provider";
