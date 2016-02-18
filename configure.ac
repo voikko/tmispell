@@ -7,6 +7,8 @@ AC_CONFIG_SRCDIR(src/tmispell.cc)
 AM_INIT_AUTOMAKE([1.10 foreign])
 AM_CONFIG_HEADER(src/config.hh)
 
+AC_CONFIG_MACRO_DIR([m4])
+
 dnl ## Enable maintainer mode
 AM_MAINTAINER_MODE
 

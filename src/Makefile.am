@@ -1,4 +1,6 @@
-INCLUDES=$(GLIBMM_CFLAGS) $(CFLAGS)
+AUTOMAKE_OPTIONS=subdir-objects
+
+AM_CPPFLAGS=$(GLIBMM_CFLAGS) $(CFLAGS)
 
 MAINTAINERCLEANFILES =  Makefile.in .deps config.hh config.hh.in stamp-h.in
 

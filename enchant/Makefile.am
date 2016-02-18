@@ -1,6 +1,6 @@
 target_lib = libenchant_voikko.la
 
-INCLUDES=$(ENCHANT_CFLAGS)
+AM_CPPFLAGS=$(ENCHANT_CFLAGS)
 
 voikko_LTLIBRARIES = $(target_lib)
 voikkodir= $(libdir)/enchant
