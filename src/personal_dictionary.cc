@@ -124,10 +124,10 @@ bool PersonalDictionary::check_word(Glib::ustring const& word) const
 	while (p != words_.end() && !(w < *p)) {
 
 		if (p->get_capitalization() == w.get_capitalization() ||
-		    p->get_capitalization() == CapitalizedWord::lower &&
-		    (w.get_capitalization() == CapitalizedWord::upper ||
-		     w.get_capitalization() == CapitalizedWord::first)) {
-			return true;
+		    (p->get_capitalization() == CapitalizedWord::lower &&
+		     (w.get_capitalization() == CapitalizedWord::upper ||
+		      w.get_capitalization() == CapitalizedWord::first))) {
+			 return true;
 		}
 		++p;
 	}
