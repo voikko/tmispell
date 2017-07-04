@@ -93,7 +93,7 @@ Glib::ustring CharsetConverterPimpl::from(std::string str)
 	try {
 		std::string ostr = from_->convert(str);
 		return Glib::ustring(ostr.c_str());
-	} catch (Glib::ConvertError err) {
+	} catch (Glib::ConvertError &err) {
 		throw ConvertError(cset_, "UTF-8", str,
 				   err.what().c_str());
 	}
@@ -107,7 +107,7 @@ std::string CharsetConverterPimpl::to(Glib::ustring str)
 {
 	try {
 		return to_->convert(std::string(str.data(), str.bytes()));
-	} catch (Glib::ConvertError err) {
+	} catch (Glib::ConvertError &err) {
 		throw ConvertError("UTF-8", cset_, str,
 				   err.what().c_str());
 	}
