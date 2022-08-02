@@ -194,7 +194,7 @@ void CursesInterface::Pimpl::redraw_minimenu()
 {
 	werase(minimenu_w_);
 	wmove(minimenu_w_, 0, 0);
-	wprintw(minimenu_w_,
+	wprintw(minimenu_w_, "%s",
 		parent_.to_locale(_("[SP] <number> R)epl A)ccept I)nsert L)ookup U)ncap Q)uit "
 				    "e(X)it or ? for help")).c_str());
 	wrefresh(minimenu_w_);
